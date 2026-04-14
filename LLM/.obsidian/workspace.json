@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "68ffe041fe02cad0",
+    "type": "split",
+    "children": [
+      {
+        "id": "be18f3d3dc9eda79",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e807db9d59ce4a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LLM Map.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LLM Map"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5fa0aa2be36992bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "89843c872848e935",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d06e7f1184d4dd2d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "bba4c22366007b12",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "584161b30b8a810b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d9f3971d7bbd227a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c4e8897c88ddc52",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "69634e554da7ec1b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LLM Map.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for LLM Map"
+            }
+          },
+          {
+            "id": "37d179793a6c6e7b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "LLM Map.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from LLM Map"
+            }
+          },
+          {
+            "id": "8b23f227248efb72",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "47c11ecf7cf538e5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ef6c6689a24dbe9e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "LLM Map.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of LLM Map"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "1e807db9d59ce4a7",
+  "lastOpenFiles": [
+    "LLM, NLP и Трансформеры.md",
+    "LLM Map.md",
+    "Как LLM «думают» и почему они ошибаются.md",
+    "Concepts/Embeddings.md",
+    "Concepts/LLM Capabilities.md",
+    "Concepts/Positional Encoding.md",
+    "Concepts/Feed Forward Layer.md",
+    "NLP.md",
+    "Core/Transformer.md",
+    "LLM.md",
+    "Core/NLP (Natural Language Processing).md",
+    "Core/LLM (Large Language Model).md",
+    "Reasoning/LLM Thinking.md",
+    "Concepts/Context Window.md",
+    "Concepts/Pattern Conflict.md",
+    "Reasoning/Hallucinations.md",
+    "Concepts/No Ground Truth.md",
+    "Concepts/Attention.md",
+    "Reasoning/Chain-of-Thought.md",
+    "Concepts/Scaling.md",
+    "Concepts/Training Data Patterns.md",
+    "Concepts/Emergent Behavior.md",
+    "Concepts/Tokenization.md",
+    "Reasoning/Next Token Prediction.md",
+    "Untitled",
+    "Reasoning",
+    "Concepts",
+    "Core",
+    "Welcome.md"
+  ]
+}

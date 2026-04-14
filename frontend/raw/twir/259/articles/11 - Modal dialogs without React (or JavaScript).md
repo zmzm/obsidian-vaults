@@ -1,0 +1,120 @@
+---
+type: twir-item
+issue: 259
+item: 11
+item_type: item
+date: 2025-11-19
+source: https://laktek.com/modal-dialogs-without-react-javascript
+tags:
+status: auto
+quality: keep
+---
+
+[[2025-11-19-TWIR-259|Index]]
+
+# Item 11: Modal dialogs without React (or JavaScript)
+
+Source: [https://laktek.com/modal-dialogs-without-react-javascript](https://laktek.com/modal-dialogs-without-react-javascript)
+
+Summary:
+Native HTML <dialog> and popover APIs now allow developers to implement modal dialogs and overlays without React or custom JavaScript in most browsers. The article demonstrates declarative approaches using attributes like popovertarget, and highlights the built-in ::backdrop pseudo-class for styling overlays.
+
+Key takeaways:
+- <dialog> and popover APIs enable accessible modals without third-party libraries.
+- Declarative HTML attributes can control dialog visibility in modern browsers.
+- ::backdrop pseudo-class simplifies overlay styling and focus management.
+
+Recommendation:
+Summary sufficient
+
+Content:
+# Modal dialogs without React (or JavaScript)
+
+[](/videos/posts/show-modal-2.1883d5b1a6ee816bd653af1b5325796ec6b747731f5f4788c91877042f53b253.mp4)
+
+This is probably old news, but it went under my radar.
+
+This weekend, I was tinkering with a little hobby project and stumbled on MDN docs for [`<button>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button).
+I noticed a relatively unfamiliar `command` attribute, which can take values such as "show-modal" and "request-close", among others.
+
+This led me to discover the [native HTML `<dialog>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog), which is supported by all major browsers for quite some time (Safari and Safari iOS added it in version 15.4, which was released more than 3 years ago). All front-end code bases I've touched in the past 5-6 years would use some React-based UI library, and it would have its own Dialog component.
+
+The `command` attribute for the button has an accompanying `commandfor` attribute, which can be an ID of an element. This means a native HTML `<dialog>` can be controlled entirely from HTML without needing any JavaScript.
+
+```
+<button commandfor="sample-dialog" command="show-modal">
+  Open Dialog
+</button>
+
+<dialog id="sample-dialog">
+    <div>This is a sample dialog</div>
+    <button commandfor="sample-dialog" command="close">Close</button>
+</dialog>
+```
+
+However, my excitement was short-lived as I discovered `command` and `commandfor` are [currently not supported by Safari](https://caniuse.com/?search=command).
+
+You can still try the [example](/examples/dialog-command) in a supported browser (tip: right-click to view source)
+
+## Popover (non-modal)
+
+However, the MDN docs further said `commandfor` is a more general version of `popovertarget`.
+Turns out, there are two other attributes supported by `<button>`, called `popovertarget` and `popovertargetaction`.
+This can be used to declaratively control the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API), which is intended for creating popover content on top of regular page content. Any HTML element can be turned into a popover by simply adding a `popover` attribute.
+Great news is [Safari and Safari iOS supports](https://caniuse.com/?search=popover) `popover` along with `popvertarget` and `popovertargetaction`.
+
+Here's an HTML dialog controlled via declarative popover API.
+
+```
+<button popovertarget="sample-dialog" popovertargetaction="toggle">
+  Open Dialog
+</button>
+
+<dialog popover id="sample-dialog">
+    <div>This is a sample dialog</div>
+    <button popovertarget="sample-dialog" popovertargetaction="hide">Close</button>
+</dialog>
+```
+
+[Result](/examples/dialog-popover):
+
+This works in all major browsers, including both Safari and Safari iOS. Caveat is that it's not a modal - the rest of the page elements remain interactive (for example, you can still click a link under the dialog).
+
+## showModal()
+
+It's possible to turn the dialog into a modal with a single line of JavaScript. This works in [all major browsers](https://caniuse.com/?search=showmodal) (yeah, I know this is kinda cheating as the title of the blog post said "without JavaScript").
+
+The API is straightforward. The `<dialog>` element has a DOM method called `showModal`, which can be used to turn it into a modal using JavaScript. It also has a corresponding `close` method to close the modal.
+
+We can call these methods on the click handlers of the button.
+
+```
+<button onClick="document.getElementById('sample-dialog').showModal()">
+  Open Dialog
+</button>
+<dialog id="sample-dialog">
+  <div>This is a sample dialog</div>
+  <button onClick="document.getElementById('sample-dialog').close()">
+    Close
+  </button>
+</dialog>
+```
+
+[Result](/examples/dialog-show-modal):
+
+## ::backdrop
+
+Backdrops and overlays have been my pet peeve when it comes to dealing with modals in the past. I've encountered numerous CSS hacks for this problem throughout my career. There's always an element with `z-index: 9999 !important` piercing through the backdrop or some element stealing the focus on the tab.
+
+Thankfully, the `< dialog>` elements also come with a `::backdrop` pseudo-class, which solves most of these problems. No more hacky background `<div>`s.
+
+Here's how we can add a simple glass effect backdrop to our modal.
+
+```
+  dialog::backdrop {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+  }
+```
+
+[Result](/examples/dialog-show-modal-with-backdrop):

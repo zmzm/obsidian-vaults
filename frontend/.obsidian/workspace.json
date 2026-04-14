@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "5dadd163f36aee95",
+    "type": "split",
+    "children": [
+      {
+        "id": "f6da729d43a48567",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c7490191b094c19a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/twir/254/2025-10-15-TWIR-254.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-10-15-TWIR-254"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7f687b03bfaa7da8",
+    "type": "split",
+    "children": [
+      {
+        "id": "d03fb6a308f426e1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c973f0f0cb7d38ab",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "241e8a3acff20ced",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3c7dcefab98046f4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e5b00caa977b8859",
+    "type": "split",
+    "children": [
+      {
+        "id": "688dd3b8b9097a12",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72bc29892667d990",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "TWIR/275/2026-04-01-TWIR-275.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2026-04-01-TWIR-275"
+            }
+          },
+          {
+            "id": "bf0302c6806d49c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "TWIR/275/2026-04-01-TWIR-275.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2026-04-01-TWIR-275"
+            }
+          },
+          {
+            "id": "639492a84e4a4bba",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a28a4f131b6da2d6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "b44ef07072a9b9fb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "TWIR/275/2026-04-01-TWIR-275.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2026-04-01-TWIR-275"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c973f0f0cb7d38ab",
+  "lastOpenFiles": [
+    "raw/twir/259/articles/06 - State of React 2025 - Survey is now open.md",
+    "raw/twir/259/articles/01 - Product for Engineers - Non-obvious pricing advice for startups.md",
+    "raw/twir/258/articles/12 - Syntax.fm 954 - Fullstack TanStack! The Scoop with Tanner Linsley.md",
+    "raw/twir/258/articles/02 - Vercel — Support for TanStack Start.md",
+    "raw/twir/257/articles/10 - Shadcn Registry directory - A list of code registries you can browse and pull code and components from.md",
+    "raw/twir/257/articles/02 - Navigation API - Available in all browsers soon.md",
+    "raw/twir/257/articles/01 - Product for Engineers - 32 things we’ve learned about building a startup that scales.md",
+    "raw/twir/256/articles/05 - The Rari SSR Breakthrough 12x Faster, 10x Higher Throughput Than Next.js.md",
+    "raw/twir/256/articles/01 - Next.js Conf 25 - Opening Keynote.md",
+    "raw/twir/255/articles/04 - deep dive video on the new Field component.md",
+    "raw/twir/254/articles/07 - Building an Async Combobox with useSuspenseQuery() and useDeferredValue().md",
+    "raw/twir/254/articles/08 - HTMLs Best Kept Secret The output Tag.md",
+    "wiki/tools/TanStack Query.md",
+    "raw/twir/254/articles/03 - Context Inheritance in TanStack Router.md",
+    "raw/twir/254/articles/02 - Introducing the Async React Working Group.md",
+    "raw/twir/254/articles/01 - Next.js 16 beta.md",
+    "raw/twir/254/articles/10 - Unpacking Cloudflare Workers CPU Performance Benchmarks.md",
+    "raw/twir/254/articles/11 - React Alicante 2025 Recap.md",
+    "raw/twir/254/articles/05 - Serialization and deserialization without blowing React.md",
+    "raw/twir/254/articles/06 - Transform FormData Between UI and Database in React Router.md",
+    "raw/twir/254/articles/04 - The Perils of Reactivity.md",
+    "raw/twir/254/2025-10-15-TWIR-254.md",
+    "raw/twir/266/2026-01-28-TWIR-266.md",
+    "raw/twir/266/articles/01 - Make React apps fast where it actually matters (React 19 performance course).md",
+    "raw/twir/254/articles/09 - React Conf 2025 – Recap (React & React Native Days).md",
+    "raw/twir/254/articles/08 - HTML’s Best Kept Secret The output Tag.md",
+    "raw/twir/275 1/articles",
+    "raw/twir/275 1",
+    "raw/twir/254/articles",
+    "raw/twir/254",
+    "raw/articles/Unconfirmed 202735.crdownload",
+    "wiki/case-studies",
+    "raw/twir/255/articles",
+    "raw/twir/255",
+    "raw/twir/256/articles",
+    "raw/twir/256"
+  ]
+}

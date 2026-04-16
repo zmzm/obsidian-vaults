@@ -6,7 +6,9 @@ item_type: item
 date: 2025-11-26
 source: https://tkdodo.eu/blog/omit-for-discriminated-unions-in-type-script
 tags:
+  - "TypeScript"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +16,21 @@ status: auto
 # Item 7: Omit for Discriminated Unions in TypeScript
 
 Source: [https://tkdodo.eu/blog/omit-for-discriminated-unions-in-type-script](https://tkdodo.eu/blog/omit-for-discriminated-unions-in-type-script)
+
+Summary:
+This post explores the limitations of TypeScript's built-in Omit utility when used with discriminated union types, particularly in React component props. It explains how Omit is not distributive over unions, leading to type errors, and presents a distributive Omit workaround using conditional types to preserve union discrimination.
+
+Key takeaways:
+- Omit does not distribute over union types, which can break type safety in wrapper components.
+- Discriminated unions are useful for props that change shape based on flags (e.g., clearable).
+- A distributive Omit can be implemented with T extends any ? Omit<T, K> : never.
+- Ensures wrapper components remain type-safe and compatible with evolving base props.
+
+Recommendation:
+Read fully (for TypeScript-heavy codebases or advanced type manipulation)
+
+Why it matters:
+for TypeScript-heavy codebases or advanced type manipulation
 
 Content:
 # Omit for Discriminated Unions in TypeScript
@@ -161,8 +178,3 @@ Like the monospace font in the code blocks?
 Check out [monolisa.dev](https://www.monolisa.dev/?ref=dominik)
 
  [![Bytes - the JavaScript Newsletter that doesn't suck](/.netlify/images?w=4096&h=256&fit=cover&url=%2Fblog%2F_astro%2Fbytes.PgTxoh9S.jpg)](https://bytes.dev/?r=dom)
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

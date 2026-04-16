@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-04-14
+updated: 2026-04-16
 status: active
 ---
 
@@ -51,11 +51,13 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/case-studies/Async React Design Components|Async React Design Components]] — using async React primitives inside reusable component APIs.
 - [[wiki/case-studies/Atomic State in Deep Trees|Atomic State in Deep Trees]] — improving deep-tree performance by replacing broad context updates with atomic state.
 - [[wiki/case-studies/Building Bulletproof React Components|Building Bulletproof React Components]] — resilient component-authoring patterns for SSR, hydration, and concurrency.
+- [[wiki/case-studies/Building a Toast Component|Building a Toast Component]] — a UI primitive case study where motion, gestures, and developer experience shape the component contract.
 - [[wiki/case-studies/Error Rendering with RSC|Error Rendering with RSC]] — how failure handling differs across RSC, SSR, and browser rendering.
 - [[wiki/case-studies/React ProseMirror Performance|React ProseMirror Performance]] — API-shape-driven rerender reduction in a large editor integration.
 - [[wiki/case-studies/React Compiler Silent Failures|React Compiler Silent Failures]] — why compiler adoption needs workflow checks rather than silent fallback.
 - [[wiki/case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]] — empirical memory leak patterns across a large frontend corpus.
 - [[wiki/case-studies/Enzyme to RTL Migration|Enzyme to RTL Migration]] — large-scale test migration strategy and lessons.
+- [[wiki/case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]] — AI-assisted migration that only worked once codemods, guides, and validation gates constrained the workflow.
 - [[wiki/case-studies/Safer Frontend without React.FC|Safer Frontend without React.FC]] — a codebase-wide type-safety migration away from `React.FC`.
 - [[wiki/case-studies/Virtual Scrolling at Massive Scale|Virtual Scrolling at Massive Scale]] — systems-level rendering and interaction techniques for extreme data tables.
 
@@ -83,12 +85,16 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/sources/Next.js 16.2|Next.js 16.2]] — release anchor for platform direction, performance, and debugging improvements.
 - [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]] — enterprise architecture, SSR/SSG tradeoffs, and caching concerns in large Next.js apps.
 - [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]] — framework direction toward agent-facing tooling and structured runtime context.
+- [[wiki/sources/Next.js Skills|Next.js Skills]] — agent-oriented operational knowledge packaged as reusable Next.js workflow skills.
 - [[wiki/sources/Next.js catchError|Next.js catchError]] — framework-aware error handling in the App Router model.
 - [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]] — practical caching and i18n friction in the App Router model.
 - [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]] — the move from error-based to promise-based dynamic detection in PPR.
 - [[wiki/sources/React Compiler Rust Port|React Compiler Rust Port]] — implementation-level signal for the React Compiler direction.
+- [[wiki/sources/React Component API Game|React Component API Game]] — lightweight API-design practice signal for naming, prop shape, and maintainability judgment.
 - [[wiki/sources/React Key Prop|React Key Prop]] — practical reconciliation guidance around keys and component identity.
 - [[wiki/sources/React Router Integration Points|React Router Integration Points]] — loaders and actions as route-level integration glue rather than business logic containers.
+- [[wiki/sources/Testing Async React RSC Components|Testing Async React RSC Components]] — practical limits and workarounds for testing async Server Components below full integration tests.
+- [[wiki/sources/Vitest Browser Mode|Vitest Browser Mode]] — browser-realistic component testing as a layer between jsdom tests and e2e coverage.
 - [[wiki/sources/React use Hook|React use Hook]] — developer-facing explanation of `use()` as part of async-aware rendering.
 - [[wiki/sources/React useTransition|React useTransition]] — practical usage boundaries for transition-driven UI updates.
 - [[wiki/sources/React Router Type Safety|React Router Type Safety]] — generated route types and typed navigation ergonomics.
@@ -106,6 +112,9 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]] — first framework comparison synthesis based on the current source base.
 - [[wiki/syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]] — comparison of render-time async reads, scheduling, and post-render effects.
 - [[wiki/syntheses/React Compiler vs Fine-Grained Reactivity|React Compiler vs Fine-Grained Reactivity]] — comparison between compiler-assisted React optimization and dependency-graph runtime models.
+- [[wiki/syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]] — testing synthesis across RTL, browser-realistic component testing, and server/client integration boundaries.
+- [[wiki/syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]] — why framework conventions become more valuable as human-and-agent coordination infrastructure.
+- [[wiki/syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]] — synthesis for reusable component APIs under SSR, async rendering, host constraints, and performance pressure.
 
 ## System
 

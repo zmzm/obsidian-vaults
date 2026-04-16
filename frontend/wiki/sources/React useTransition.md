@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react
   - transitions
@@ -36,5 +36,5 @@ This source gives practical guidance on where `useTransition` actually fits in R
 
 ## Raw Sources
 
-- [[../../raw/twir/270/articles/12 - React’s useTransition The hook you’re probably using wrong|TWIR item note]]
+- [[../../raw/twir/270/articles/10 - React’s useTransition The hook you’re probably using wrong|TWIR item note]]
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]

@@ -8,6 +8,7 @@ source: https://cant-maintain.saschb2b.com/
 tags:
   - "API"
 status: auto
+quality: keep
 ---
 
 [[2026-03-18-TWIR-273|Index]]
@@ -17,11 +18,22 @@ status: auto
 Source: [https://cant-maintain.saschb2b.com/](https://cant-maintain.saschb2b.com/)
 
 Summary:
-This interactive game helps developers practice and internalize best practices for React component APIs by choosing between alternative prop designs. It draws on real conventions from React, MUI, and production codebases, offering quick challenges and explanations to improve API design instincts.
+This interactive game challenges developers to choose better component API designs, focusing on naming conventions, prop specificity, and maintainability. It draws on real-world patterns from React, MUI, and production codebases, offering side-by-side comparisons and explanations to help improve API intuition.
 
 Key takeaways:
-- Focuses on prop naming, specificity, and maintainability.
-- Offers hands-on practice with immediate feedback.
-- Useful for both learning and reinforcing good API design habits.
+- Helps developers practice and internalize good component API design.
+- Covers callback naming, boolean props, and other common patterns.
+- Provides instant feedback and explanations for each design choice.
+- Useful as a learning or team training tool.
 
-Recommendation: Summary sufficient (try the game for practical learning)
+Recommendation:
+Summary sufficient (try if interested in API design practice)
+
+Why it matters:
+try if interested in API design practice
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: Python clipper extracted too little content. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

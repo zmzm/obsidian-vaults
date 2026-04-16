@@ -10,6 +10,7 @@ tags:
   - "11"
   - "000"
 status: auto
+quality: keep
 ---
 
 [[2026-03-11-TWIR-272|Index]]
@@ -22,6 +23,13 @@ Summary:
 [Content unavailable; unable to summarize.]
 
 Key takeaways:
-- N/A
+- Not applicable.
 
-Recommendation: Summary sufficient
+Recommendation:
+Summary sufficient
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: 403 Client Error: Forbidden for url: https://www.patreon.com/posts/seven-years-to-typescript-152144830. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

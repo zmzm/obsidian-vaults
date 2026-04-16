@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react
   - component-design
@@ -34,15 +34,20 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../concepts/Server Components|Server Components]]
 - [[../tools/Next.js|Next.js]]
 - [[Caching in App Router]]
+- [[../syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]]
 - [[../case-studies/Building Bulletproof React Components|Building Bulletproof React Components]]
+- [[../case-studies/Building a Toast Component|Building a Toast Component]]
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
 - [[../case-studies/Error Rendering with RSC|Error Rendering with RSC]]
 - [[../case-studies/React ProseMirror Performance|React ProseMirror Performance]]
+- [[../sources/React Component API Game|React Component API Game]]
 
 ## Sources
 
 - [[../../raw/twir/255/articles/10 - Running Next.js inside ChatGPT A deep dive into native app integration|Running Next.js inside ChatGPT]]
+- [[../../raw/twir/261/articles/04 - Building a toast component|Building a toast component]]
 - [[../../raw/twir/268/articles/01 - Building Bulletproof React Components|Building Bulletproof React Components]]
+- [[../../raw/twir/273/articles/10 - Can’t Maintain - React Component API Game|Can’t Maintain - React Component API Game]]
 - [[../../raw/twir/271/articles/10 - Error rendering with RSC|Error rendering with RSC]]
 - [[../../raw/twir/275/articles/09 - Making React ProseMirror really, really fast|Making React ProseMirror really, really fast]]
 

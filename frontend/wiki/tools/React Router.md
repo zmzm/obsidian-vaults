@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react-router
   - routing
@@ -34,6 +34,7 @@ React Router is the routing and data-loading tool hub for this vault, especially
 - [[Next.js]]
 - [[../concepts/Server Components|Server Components]]
 - [[../patterns/Testing Strategy for React Apps|Testing Strategy for React Apps]]
+- [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 - [[../patterns/Type-Driven Frontend Safety|Type-Driven Frontend Safety]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../case-studies/Safer Frontend without React.FC|Safer Frontend without React.FC]]

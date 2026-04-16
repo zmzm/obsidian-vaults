@@ -8,6 +8,7 @@ source: https://engineering.gusto.com/the-journey-to-a-safer-frontend-why-we-rem
 tags:
   - "ReactFC"
 status: auto
+quality: keep
 ---
 
 [[2026-02-18-TWIR-269|Index]]
@@ -17,12 +18,22 @@ status: auto
 Source: [https://engineering.gusto.com/the-journey-to-a-safer-frontend-why-we-removed-react-fc-095ff0b3e2e4](https://engineering.gusto.com/the-journey-to-a-safer-frontend-why-we-removed-react-fc-095ff0b3e2e4)
 
 Summary:
-Gusto migrated away from using React.FC in their codebase after discovering it masked TypeScript errors and reduced type safety. The team automated the transition to explicit prop and return types, surfacing hidden bugs and improving code quality. The article outlines the rationale, migration process, and cultural impact of this change.
+Gusto's engineering team removed the use of React.FC from their codebase after discovering that it masked TypeScript errors and reduced type safety. By switching to explicit prop types and return values, they improved type checking, uncovered hidden bugs, and standardized component definitions. The migration was automated and enforced with linting to prevent regressions.
 
 Key takeaways:
-- React.FC can hide unused props and break type inference, leading to subtle bugs.
-- Migrating to explicit prop and return types improves TypeScript’s effectiveness and code reliability.
-- The migration was automated and enforced with a linter rule to prevent regressions.
-- The process uncovered and resolved numerous latent issues across the codebase.
+- React.FC can hide unused props and allow invalid default values, undermining TypeScript's safety guarantees.
+- Migrating to explicit prop typing and return types surfaces real issues and improves code quality.
+- The change was implemented at scale with automated scripts and enforced via lint rules.
+- The process led to both technical and cultural improvements in the codebase.
 
-Recommendation: Read fully (read fully only if planning a similar migration or interested in TypeScript/React best practices)
+Recommendation:
+Summary sufficient (read the full post if planning a similar migration or interested in TypeScript/React best practices)
+
+Why it matters:
+read the full post if planning a similar migration or interested in TypeScript/React best practices
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: 403 Client Error: Forbidden for url: https://engineering.gusto.com/the-journey-to-a-safer-frontend-why-we-removed-react-fc-095ff0b3e2e4. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

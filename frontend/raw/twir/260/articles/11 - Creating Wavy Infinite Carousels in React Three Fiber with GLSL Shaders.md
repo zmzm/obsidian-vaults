@@ -6,7 +6,9 @@ item_type: item
 date: 2025-11-26
 source: https://tympanus.net/codrops/2025/11/26/creating-wavy-infinite-carousels-in-react-three-fiber-with-glsl-shaders/
 tags:
+  - "GLSL"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -15,12 +17,27 @@ status: auto
 
 Source: [https://tympanus.net/codrops/2025/11/26/creating-wavy-infinite-carousels-in-react-three-fiber-with-glsl-shaders/](https://tympanus.net/codrops/2025/11/26/creating-wavy-infinite-carousels-in-react-three-fiber-with-glsl-shaders/)
 
+Summary:
+The post walks through building an infinite carousel in React Three Fiber using custom GLSL shaders for displacement effects. It covers setting up a GLImage component, managing textures and geometry, and composing carousels with reusable components, providing practical code examples for integrating shaders into React-based 3D scenes.
+
+Key takeaways:
+- Demonstrates how to use custom vertex and fragment shaders in R3F for advanced visual effects.
+- Shows how to structure reusable 3D components in React, leveraging hooks and refs.
+- Explains techniques for image fitting, animation, and carousel composition in 3D space.
+- Useful for developers interested in combining React, Three.js, and GLSL.
+
+Recommendation:
+Read fully (for those building custom 3D or shader-driven React components)
+
+Why it matters:
+for those building custom 3D or shader-driven React components
+
 Content:
 # Creating Wavy Infinite Carousels in React Three Fiber with GLSL Shaders
 
 After coming across various infinite carousel effects on X created by some peers, I decided to give it a try and create my own. The idea here is to practice R3F and shader techniques while making something that can be easily reused in other projects.
 
-[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/carousels.mp4?x13084)
+[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/carousels.mp4?x81522)
 
 ## Starter project
 
@@ -149,7 +166,7 @@ Then, we create our shader material arguments (the uniforms and shader files use
 
 We should obtain something like this:
 
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-17-at-22.00.20-800x432.png?x13084)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-17-at-22.00.20-800x432.png?x81522)
 
 Displaying an image on a plane geometry with shaders
 
@@ -199,7 +216,7 @@ export default Carousel;
 
 Here, we’re mapping our image list and using the index of each image to set a new prop named `position` so that our images look like this:
 
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-17-at-22.19.32-800x430.png?x13084)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-17-at-22.19.32-800x430.png?x81522)
 
 Column layout for our images
 
@@ -238,7 +255,7 @@ function mod(n: number, m: number) {
 
 We should now have something like this:
 
-[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record1.mov?x13084)
+[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record1.mov?x81522)
 
 Infinite effect on scroll
 
@@ -296,7 +313,7 @@ void main() {
 
 We should now have something like this:
 
-[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record2.mov?x13084)
+[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record2.mov?x81522)
 
 Displacement on our planes depending on wheel velocity
 
@@ -358,7 +375,7 @@ const shaderArgs = useMemo(
 
 We should now have something like this:
 
-[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record3.mov?x13084)
+[](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/record3.mov?x81522)
 
 Curved effect on our carousel
 
@@ -370,13 +387,13 @@ Now that we have an easily reusable and tweakable `<Carousel>` component, we can
 
 Here are some examples of what you can do with it:
 
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.13.02-800x446.png?x13084)
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.20.10-800x440.png?x13084)
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-01.14.03-800x448.png?x13084)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.13.02-800x446.png?x81522)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.20.10-800x440.png?x81522)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-01.14.03-800x448.png?x81522)
 
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.27.29-800x431.png?x13084)
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-24-at-22.49.43-800x434.png?x13084)
-![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Capture-decran-2025-11-18-a-17.01.24-800x431.png?x13084)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-18-at-00.27.29-800x431.png?x81522)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Screenshot-2025-11-24-at-22.49.43-800x434.png?x81522)
+![](https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2025/11/Capture-decran-2025-11-18-a-17.01.24-800x431.png?x81522)
 
 Examples available in the demo
 
@@ -386,8 +403,3 @@ You can also add a `direction` prop to the `Carousel` component to create a hori
 Finally, if you’d like to see more of my work, make sure to follow me on [X](https://www.x.com/colindmg) or [Linkedin](https://www.linkedin.com/in/colindmg). I post all my projects and experiments there.
 
 Thanks for reading! 🙂
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

@@ -11,6 +11,7 @@ tags:
   - "React2Shell"
   - "ServerComponents"
 status: auto
+quality: keep
 ---
 
 [[2025-12-10-TWIR-262|Index]]
@@ -20,14 +21,102 @@ status: auto
 Source: [https://blog.cloudflare.com/5-december-2025-outage/](https://blog.cloudflare.com/5-december-2025-outage/)
 
 Summary:
-Cloudflare experienced a 25-minute outage affecting ~28% of HTTP traffic due to changes made to mitigate the React Server Components vulnerability. The outage was triggered by an internal WAF configuration change that exposed a latent bug, unrelated to any cyber attack. The incident highlights the operational risks of rapid security mitigation and the need for safer rollout and configuration systems.
+Cloudflare experienced a 25-minute outage affecting 28% of HTTP traffic, triggered by a rushed WAF configuration change in response to the React Server Components vulnerability. The outage was not due to an attack but to a logic error in their proxy software when disabling an internal test tool. Cloudflare is prioritizing improvements to rollout safety and configuration management.
 
 Key takeaways:
-- Outage was caused by a WAF configuration change made in response to the React2Shell vulnerability.
-- The bug was in legacy proxy code, triggered by disabling an internal test tool.
-- Cloudflare is accelerating improvements to rollout and configuration safety.
-- No evidence of attack; the incident was operational, not security-related.
+- The outage was an operational side-effect of rapid security response to React2Shell.
+- No malicious activity was involved; a killswitch for WAF test rules caused a latent bug to surface.
+- Cloudflare is accelerating rollout of safer configuration and deployment systems.
+- Highlights the operational risks of urgent ecosystem-wide security patches.
 
-Recommendation: Read fully (read fully if you manage infrastructure or WAFs affected by React vulnerabilities)
+Recommendation:
+Read fully (read fully if you manage infrastructure or are interested in incident response details)
+
+Why it matters:
+read fully if you manage infrastructure or are interested in incident response details
+
+Content:
+# Cloudflare outage on December 5, 2025
+
+*Note: This post was updated to clarify the relationship of the internal WAF tool with the incident on Dec. 5.*
+
+On December 5, 2025, at 08:47 UTC (all times in this blog are UTC), a portion of Cloudflareâs network began experiencing significant failures. The incident was resolved at 09:12 (~25 minutes total impact), when all services were fully restored.
+
+A subset of customers were impacted, accounting for approximately 28% of all HTTP traffic served by Cloudflare. Several factors needed to combine for an individual customer to be affected as described below.
+
+The issue was not caused, directly or indirectly, by a cyber attack on Cloudflareâs systems or malicious activity of any kind. Instead, it was triggered by changes being made to our body parsing logic while attempting to detect and mitigate an industry-wide vulnerability [disclosed this week](https://blog.cloudflare.com/waf-rules-react-vulnerability/) in React Server Components.
+
+Any outage of our systems is unacceptable, and we know we have let the Internet down again following the incident on November 18. We will be publishing details next week about the work we are doing to stop these types of incidents from occurring.
+
+The graph below shows HTTP 500 errors served by our network during the incident timeframe (red line at the bottom), compared to unaffected total Cloudflare traffic (green line at the top).
+
+![500 error codes served by Cloudflareâs network during the incident](https://cf-assets.www.cloudflare.com/zkvhlag99gkb/43yFyHQhKjhPoLh4yB7pQ8/c1eb08a3e056530311e6056ecac522ed/image1.png)
+
+Cloudflare's Web Application Firewall (WAF) provides customers with protection against malicious payloads, allowing them to be detected and blocked. To do this, Cloudflareâs proxy buffers HTTP request body content in memory for analysis. Before today, the buffer size was set to 128KB.
+
+As part of our ongoing work to protect customers who use React against a critical vulnerability, [CVE-2025-55182](https://nvd.nist.gov/vuln/detail/CVE-2025-55182), we started rolling out an increase to our buffer size to 1MB, the default limit allowed by Next.js applications, to make sure as many customers as possible were protected.
+
+This first change was being rolled out using our gradual deployment system. During rollout, we noticed that our internal WAF testing tool did not support the increased buffer size. As this internal test tool was not needed at that time and had no effect on customer traffic, we made a second change to turn it off.
+
+This second change of turning off our WAF testing tool was implemented using our global configuration system. This system does not perform gradual rollouts, but rather propagates changes within seconds to the entire fleet of servers in our network and is under review [following the outage we experienced on November 18](https://blog.cloudflare.com/18-november-2025-outage/).Â
+
+Unfortunately, in our FL1 version of our proxy, under certain circumstances, the second change of turning off our WAF rule testing tool caused an error state that resulted in 500 HTTP error codes to be served from our network.
+
+As soon as the change propagated to our network, code execution in our FL1 proxy reached a bug in our rules module which led to the following Lua exception:
+
+```
+[lua] Failed to run module rulesets callback late_routing: /usr/local/nginx-fl/lua/modules/init.lua:314: attempt to index field 'execute' (a nil value)
+```
+
+resulting in HTTP code 500 errors being issued.
+
+The issue was identified shortly after the change was applied, and was reverted at 09:12, after which all traffic was served correctly.
+
+Customers that have their web assets served by our older FL1 proxy **AND** had the Cloudflare Managed Ruleset deployed were impacted. All requests for websites in this state returned an HTTP 500 error, with the small exception of some test endpoints such as `/cdn-cgi/trace`.
+
+Customers that did not have the configuration above applied were not impacted. Customer traffic served by our China network was also not impacted.
+
+Cloudflareâs rulesets system consists of sets of rules which are evaluated for each request entering our system. A rule consists of a filter, which selects some traffic, and an action which applies an effect to that traffic. Typical actions are â`block`â, â`log`â, or â`skip`â. Another type of action is â`execute`â, which is used to trigger evaluation of another ruleset.
+
+Our internal logging system uses this feature to evaluate new rules before we make them available to the public. A top level ruleset will execute another ruleset containing test rules. It was these test rules that we were attempting to disable.
+
+We have a killswitch subsystem as part of the rulesets system which is intended to allow a rule which is misbehaving to be disabled quickly. This killswitch system receives information from our global configuration system mentioned in the prior sections. We have used this killswitch system on a number of occasions in the past to mitigate incidents and have a well-defined Standard Operating Procedure, which was followed in this incident.
+
+However, we have never before applied a killswitch to a rule with an action of â`execute`â. When the killswitch was applied, the code correctly skipped the evaluation of the execute action, and didnât evaluate the sub-ruleset pointed to by it. However, an error was then encountered while processing the overall results of evaluating the ruleset:
+
+```
+if rule_result.action == "execute" then
+  rule_result.execute.results = ruleset_results[tonumber(rule_result.execute.results_index)]
+end
+```
+
+This code expects that, if the ruleset has action=âexecuteâ, the ârule\_result.executeâ object will exist. However, because the rule had been skipped, the rule\_result.execute object did not exist, and Lua returned an error due to attempting to look up a value in a nil value.
+
+This is a straightforward error in the code, which had existed undetected for many years. This type of code error is prevented by languages with strong type systems. In our replacement for this code in our new FL2 proxy, which is written in Rust, the error did not occur.
+
+### What about the changes being made after the incident on November 18, 2025?
+
+We made an unrelated change that caused a similar, [longer availability incident](https://blog.cloudflare.com/18-november-2025-outage/) two weeks ago on November 18, 2025. In both cases, a deployment to help mitigate a security issue for our customers propagated to our entire network and led to errors for nearly all of our customer base.
+
+We have spoken directly with hundreds of customers following that incident and shared our plans to make changes to prevent single updates from causing widespread impact like this. We believe these changes would have helped prevent the impact of todayâs incident but, unfortunately, we have not finished deploying them yet.
+
+We know it is disappointing that this work has not been completed yet. It remains our first priority across the organization. In particular, the projects outlined below should help contain the impact of these kinds of changes:
+
+- **Enhanced Rollouts & Versioning**: Similar to how we slowly deploy software with strict health validation, data used for rapid threat response and general configuration needs to have the same safety and blast mitigation features. This includes health validation and quick rollback capabilities among other things.
+- **Streamlined break glass capabilities:** Ensure that critical operations can still be achieved in the face of additional types of failures. This applies to internal services as well as all standard methods of interaction with the Cloudflare control plane used by all Cloudflare customers.
+- **"Fail-Open" Error Handling:** As part of the resilience effort, we are replacing the incorrectly applied hard-fail logic across all critical Cloudflare data-plane components. If a configuration file is corrupt or out-of-range (e.g., exceeding feature caps), the system will log the error and default to a known-good state or pass traffic without scoring, rather than dropping requests. Some services will likely give the customer the option to fail open or closed in certain scenarios. This will include drift-prevention capabilities to ensure this is enforced continuously.
+
+Before the end of next week we will publish a detailed breakdown of all the resiliency projects underway, including the ones listed above. While that work is underway, we are locking down all changes to our network in order to ensure we have better mitigation and rollback systems before we begin again.
+
+These kinds of incidents, and how closely they are clustered together, are not acceptable for a network like ours. On behalf of the team at Cloudflare we want to apologize for the impact and pain this has caused again to our customers and the Internet as a whole.
+
+|  |  |  |
+| --- | --- | --- |
+| Time (UTC) | Status | Description |
+| 08:47 | INCIDENT start | Configuration change deployed and propagated to the network |
+| 08:48 | Full impact | Change fully propagated |
+| 08:50 | INCIDENT declared | Automated alerts |
+| 09:11 | Change reverted | Configuration change reverted and propagation start |
+| 09:12 | INCIDENT end | Revert fully propagated, all traffic restored |
 
 Related notes: [[Server Components]]

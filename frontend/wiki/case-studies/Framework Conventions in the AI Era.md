@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - nextjs
   - frameworks
@@ -41,5 +41,5 @@ This case study captures a practical argument for frameworks as convention syste
 
 ## Raw Source
 
-- [[../../raw/twir/270/articles/10 - Removing Next.js Taught Me Why Frameworks Are Still Essential Even for AI|TWIR item note]]
+- [[../../raw/twir/270/articles/09 - Removing Next.js Taught Me Why Frameworks Are Still Essential Even for AI|TWIR item note]]
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]

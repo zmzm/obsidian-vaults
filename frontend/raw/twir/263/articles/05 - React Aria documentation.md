@@ -8,6 +8,7 @@ source: https://react-aria.adobe.com/getting-started
 tags:
   - "shadcn"
 status: auto
+quality: keep
 ---
 
 [[2025-12-17-TWIR-263|Index]]
@@ -17,12 +18,186 @@ status: auto
 Source: [https://react-aria.adobe.com/getting-started](https://react-aria.adobe.com/getting-started)
 
 Summary:
-The React Aria documentation provides a comprehensive guide to installing, styling, and composing accessible UI components using React Aria. It covers quick start examples, integration with tools like shadcn CLI and Storybook, and demonstrates building reusable, styled components from scratch. The docs emphasize flexibility in styling and encourage creating your own component APIs by composing React Aria primitives.
+The React Aria documentation provides a comprehensive guide to installing, composing, and styling accessible UI components. It demonstrates how to build custom components, integrate with styling solutions, and reuse patterns for consistent design. The docs also highlight tools for AI integration and Storybook starter kits.
 
 Key takeaways:
-- React Aria offers unstyled, accessible primitives for building custom UI components.
-- Supports integration with various styling solutions (CSS, Tailwind, CSS-in-JS).
-- Provides tools and starter kits for rapid adoption and component library development.
-- Encourages composition and API extension for reusable, maintainable components.
+- React Aria offers unstyled, accessible components for flexible customization.
+- Examples show how to assemble, style, and reuse components like Select.
+- Integration with shadcn CLI and Storybook starter kits streamlines setup.
+- Documentation supports AI-assisted workflows and IDE integration.
 
-Recommendation: Summary sufficient
+Recommendation:
+Read fully
+
+Content:
+# Getting started | React Aria
+
+How to install React Aria and build your first component.
+
+## Install
+
+Install React Aria with your preferred package manager.
+
+```
+npm install react-aria-components
+```
+
+## Quick start
+
+Copy and paste the CSS or [Tailwind](https://tailwindcss.com) examples into your project and make them your own. You can also download each example as a ZIP, open in StackBlitz, or install with [shadcn](https://ui.shadcn.com/docs/cli).
+
+Â
+
+### Vanilla CSS theme
+
+This sets the `--tint` CSS variable used by the Vanilla CSS examples.
+
+Indigo
+
+Â IndigoBlueCyanTurquoiseGreenYellowOrangeRedPinkPurple
+
+Favorite animalSelect an item
+
+Â AardvarkCatDogKangarooPandaSnake
+
+Example
+
+Select.tsx
+
+Select.css
+
+Example
+
+Select.tsx
+
+Select.css
+
+```
+import {Select, SelectItem} from './Select';
+
+<Select label="Favorite animal">
+  <SelectItem>Aardvark</SelectItem>
+  <SelectItem>Cat</SelectItem>
+  <SelectItem>Dog</SelectItem>
+  <SelectItem>Kangaroo</SelectItem>
+  <SelectItem>Panda</SelectItem>
+  <SelectItem>Snake</SelectItem>
+</Select>
+```
+
+Expand code
+
+### shadcn CLI
+
+Use the [shadcn](https://ui.shadcn.com/docs/cli) CLI to add the example code, styles, and dependencies to your project. Install individual components using the menu on each example, or add all components with the command below.
+
+```
+npx shadcn@latest add @react-aria/css
+```
+
+### Storybook starter kits
+
+If you're building a full component library, download a pre-built [Storybook](https://storybook.js.org/) starter kit. These include every component in a standalone development environment.
+
+### Working with AI
+
+Use the menu on each page in the docs to open or copy it into your favorite AI assistant. We also have an [MCP server](ai#mcp-server) which can be used directly in your IDE, [Agent Skills](ai#agent-skills) which can be installed in your project, and <llms.txt> which can help AI agents navigate the docs.
+
+## Build a component from scratch
+
+In this tutorial, we'll build a custom <Select> component.
+
+1. ### Import and assemble the parts
+
+   Each React Aria component renders a single DOM element. Complex components like `Select` compose together multiple parts to build a complete pattern.
+
+   ```
+   import {Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue} from 'react-aria-components/Select';
+
+   <Select>
+     <Label>Favorite Animal</Label>
+     <Button>
+       <SelectValue />
+     </Button>
+     <Popover>
+       <ListBox>
+         <ListBoxItem>Cat</ListBoxItem>
+         <ListBoxItem>Dog</ListBoxItem>
+         <ListBoxItem>Kangaroo</ListBoxItem>
+       </ListBox>
+     </Popover>
+   </Select>
+   ```
+2. ### Add your styles
+
+   React Aria does not include any styles by default, allowing you to build custom designs to fit your application or design system. You can use any styling solution, including vanilla CSS, Tailwind CSS, CSS-in-JS, etc.
+
+   Each React Aria component includes a default class name to use in your CSS, and data attributes for states such as pressed, hovered, selected, etc.
+
+   ```
+   .react-aria-ListBoxItem {
+     color: black;
+
+     &[data-selected] {
+       background: black;
+       color: white;
+     }
+   }
+   ```
+
+   You can also override these defaults with a custom `className` prop, and access states via render props. Check out our [styling guide](styling) to learn more.
+3. ### Create a reusable component
+
+   To reuse styles throughout your project, wrap all of the parts into a reusable component. Create your own API by extending React Aria's types with additional props. Components such as Popover can also be shared with other patterns so they don't need be styled separately each time.
+
+   ```
+   import type {SelectProps as AriaSelectProps, ListBoxItemProps} from 'react-aria-components/Select';
+   import {Select as AriaSelect, Button, Label, ListBox, ListBoxItem, SelectValue} from 'react-aria-components/Select';
+   import {Popover} from './Popover';
+   import './Select.css';
+
+   export interface SelectProps extends AriaSelectProps {
+     label?: string
+   }
+
+   export function Select(props: SelectProps) {
+     return (
+       <AriaSelect {...props}>
+         <Label>{props.label}</Label>
+         <Button className="select-button">
+           <SelectValue />
+         </Button>
+         <Popover>
+           <ListBox className="select-listbox">
+             {props.children}
+           </ListBox>
+         </Popover>
+       </AriaSelect>
+     );
+   }
+
+   export function SelectItem(props: ListBoxItemProps) {
+     return <ListBoxItem {...props} className="select-item" />;
+   }
+   ```
+4. ### Use your component
+
+   Now you can render a consistently styled `<Select>` anywhere in your project!
+
+   ```
+   import {Select, SelectItem} from './Select';
+
+   function App() {
+     return (
+       <Select label="Favorite animal">
+         <SelectItem>Cat</SelectItem>
+         <SelectItem>Dog</SelectItem>
+         <SelectItem>Kangaroo</SelectItem>
+       </Select>
+     );
+   }
+   ```
+
+## Framework setup
+
+React Aria works out of the box in any React framework. When you're ready, follow our [framework setup](frameworks) guide to optimize the bundle size, configure internationalization, and integrate with client side routers.

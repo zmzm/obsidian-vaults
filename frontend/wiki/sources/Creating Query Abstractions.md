@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - tanstack-query
   - abstractions
@@ -10,7 +10,7 @@ tags:
 
 # Creating Query Abstractions
 
-This source captures a useful design tension in TanStack Query: abstraction helps consistency, but too much abstraction weakens flexibility and type inference.
+This source captures a useful design tension in TanStack Query: abstraction can improve consistency, but over-abstraction weakens flexibility and type inference.
 
 ## Summary
 
@@ -34,5 +34,5 @@ This source captures a useful design tension in TanStack Query: abstraction help
 
 ## Raw Sources
 
-- [[../../raw/twir/270/articles/06 - TkDodo - Creating Query Abstractions|TWIR item note]]
+- [[../../raw/twir/270/articles/05 - TkDodo - Creating Query Abstractions|TWIR item note]]
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]

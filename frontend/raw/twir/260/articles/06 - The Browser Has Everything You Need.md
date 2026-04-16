@@ -7,6 +7,7 @@ date: 2025-11-26
 source: https://jovidecroock.com/blog/platform/
 tags:
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +15,18 @@ status: auto
 # Item 6: The Browser Has Everything You Need
 
 Source: [https://jovidecroock.com/blog/platform/](https://jovidecroock.com/blog/platform/)
+
+Summary:
+The article argues that the perceived trade-off between SPA and SSR architectures is often unnecessary, as browsers already support parallel resource loading via preload hints. By leveraging <link rel="preload"> for data and scripts, developers can achieve fast initial loads and navigation without complex framework solutions. The approach encourages treating data dependencies as static, enabling preloading and improved performance.
+
+Key takeaways:
+- Use <link rel="preload"> for critical data and resources to parallelize loading.
+- Preloading works best with predictable, URL-based data dependencies.
+- This technique bridges SSR and SPA benefits without complex hydration or streaming.
+- Encourages a shift to static analysis of data needs at render time.
+
+Recommendation:
+Summary sufficient
 
 Content:
 # The Browser Has Everything You Need
@@ -184,8 +197,3 @@ But they do eliminate a specific class of problem: the false choice between SSR 
 The browser already loads resources in parallel, we just need to tell it about our data dependencies.
 
 Stop treating SPAs and SSR as opposing paradigms, start thinking about resource hints as core infrastructure. The browser has everything you need, you just have to use it.
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

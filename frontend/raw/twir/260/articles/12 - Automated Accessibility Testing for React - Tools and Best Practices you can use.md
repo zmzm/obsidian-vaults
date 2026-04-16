@@ -7,6 +7,7 @@ date: 2025-11-26
 source: https://howtotestfrontend.com/resources/accessibility-testing-your-react-app
 tags:
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +15,18 @@ status: auto
 # Item 12: Automated Accessibility Testing for React - Tools and Best Practices you can use
 
 Source: [https://howtotestfrontend.com/resources/accessibility-testing-your-react-app](https://howtotestfrontend.com/resources/accessibility-testing-your-react-app)
+
+Summary:
+This article provides an overview of automated accessibility testing tools, libraries, and best practices for React applications. It emphasizes the importance of semantic HTML, outlines common accessibility pitfalls, and recommends integrating tools like ESLint a11y rules and React Testing Library into CI/CD workflows, while noting that manual testing remains essential.
+
+Key takeaways:
+- Automated tools can catch many basic accessibility issues, but do not replace manual testing.
+- React Testing Library encourages accessibility-first test queries (e.g., byRole, byLabelText).
+- ESLint accessibility plugins should be standard in all JS projects.
+- Accessibility benefits all users and is often a legal requirement.
+
+Recommendation:
+Summary sufficient
 
 Content:
 # Automated Accessibility Testing for React - Tools and Best Practices you can use
@@ -463,8 +476,3 @@ Using something like pa11y or Google Lighthouse like this can be useful if you h
 I am always keen to try out new tools and services.
 
 If you know of something decent that I've missed **please get in touch** and I will check it out & update this post!
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

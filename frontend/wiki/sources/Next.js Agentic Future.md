@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - nextjs
   - ai
@@ -31,6 +31,8 @@ This source captures Next.js positioning agents as first-class users of the fram
 ## Related Pages
 
 - [[../tools/Next.js|Next.js]]
+- [[Next.js Skills|Next.js Skills]]
+- [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
 - [[../sources/TWIR 269|TWIR 269]]
 
 ## Raw Sources

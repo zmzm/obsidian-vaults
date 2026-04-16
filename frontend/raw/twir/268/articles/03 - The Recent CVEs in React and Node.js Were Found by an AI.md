@@ -9,6 +9,7 @@ tags:
   - "CVEs"
   - "Nodejs"
 status: auto
+quality: keep
 ---
 
 [[2026-02-11-TWIR-268|Index]]
@@ -18,9 +19,19 @@ status: auto
 Source: [https://winfunc.com/blog/recent-0-days-in-nodejs-and-react-were-found-by-an-ai](https://winfunc.com/blog/recent-0-days-in-nodejs-and-react-were-found-by-an-ai)
 
 Summary:
-Content not available (404 error).
+Content unavailable due to a fetch error (404).
 
 Key takeaways:
-- No summary or actionable information due to missing content.
+- No summary or insights available.
 
-Recommendation: Summary sufficient
+Recommendation:
+Summary sufficient (no content to review)
+
+Why it matters:
+no content to review
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: 404 Client Error: Not Found for url: https://winfunc.com/blog/recent-0-days-in-nodejs-and-react-were-found-by-an-ai. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

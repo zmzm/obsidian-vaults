@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react
   - framework
@@ -41,6 +41,8 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../patterns/Caching in App Router|Caching in App Router]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
+- [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
+- [[../syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]]
 - [[../sources/TWIR 274|TWIR 274]]
 - [[../sources/TWIR 255|TWIR 255]]
 - [[../sources/TWIR 257|TWIR 257]]
@@ -51,6 +53,7 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js at Enterprise Level|Next.js at Enterprise Level]]
 - [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
+- [[../sources/Next.js Skills|Next.js Skills]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/Next.js catchError|Next.js catchError]]
 - [[../case-studies/Next.js App Router Exit|Next.js App Router Exit]]

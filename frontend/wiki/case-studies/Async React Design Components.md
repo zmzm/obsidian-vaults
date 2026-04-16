@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react
   - async-react
@@ -41,5 +41,5 @@ This case study captures how Async React primitives can be built into reusable d
 
 ## Raw Source
 
-- [[../../raw/twir/270/articles/05 - Aurora Scharff - Building Design Components with Action Props using Async React|TWIR item note]]
+- [[../../raw/twir/270/articles/04 - Aurora Scharff - Building Design Components with Action Props using Async React|TWIR item note]]
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]

@@ -7,6 +7,7 @@ date: 2025-11-26
 source: https://product.hubspot.com/blog/migrated-from-enzyme-to-react-testing-library
 tags:
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +15,21 @@ status: auto
 # Item 9: Moving Mountains: How We Migrated from Enzyme to React Testing Library
 
 Source: [https://product.hubspot.com/blog/migrated-from-enzyme-to-react-testing-library](https://product.hubspot.com/blog/migrated-from-enzyme-to-react-testing-library)
+
+Summary:
+HubSpot shares their multi-year migration from Enzyme to React Testing Library (RTL), covering planning, education, execution, and scaling strategies. The migration involved over 76,000 tests, required runtime instrumentation to assess scope, and emphasized user-centric testing philosophy, with a focus on minimizing disruption and supporting teams throughout the process.
+
+Key takeaways:
+- Enzyme is deprecated and lacks support for React 18+; RTL is now the standard for user-focused testing.
+- Migration required careful planning, education, and tooling to support hundreds of teams.
+- Progress was tracked and communicated transparently, with a focus on not blocking feature delivery.
+- Lessons learned include the importance of migration tooling and balancing infrastructure with product work.
+
+Recommendation:
+Read fully (for organizations planning or undergoing large-scale test migrations)
+
+Why it matters:
+for organizations planning or undergoing large-scale test migrations
 
 Content:
 # Moving Mountains: How We Migrated from Enzyme to React Testing Library
@@ -114,8 +130,3 @@ Finally, small teams win. This is something we absolutely wouldn’t do differen
 ## **Wrapping It Up**
 
 We couldn’t be happier with the results of the migration. Our product teams are shipping more confidently, and we have been able to continue our modernization efforts. We’ve started experiments with modern features like [Suspense](https://react.dev/reference/react/Suspense) and the [React Compiler](https://react.dev/learn/react-compiler), and we’re excited to apply those learnings across our frontend stack. A huge thank you to all of the teams involved in this massive undertaking, and a special thank you to [Francesco Signoretti](https://www.linkedin.com/in/signorettif/), [Romulo Ferreira](https://www.linkedin.com/in/romulonf/), [Eleanor Reich](https://www.linkedin.com/in/eleanor-reich-9a8480122/), [Kevin Bon](https://www.linkedin.com/in/bon-kevin/), and [Matt McCherry](https://www.linkedin.com/in/mattmccherry/) for shepherding this work to completion.
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

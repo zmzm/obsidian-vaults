@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-14
+updated: 2026-04-16
 tags:
   - react
   - testing
@@ -34,6 +34,10 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - [[../concepts/Server Components|Server Components]]
 - [[../tools/React Router|React Router]]
 - [[../case-studies/Enzyme to RTL Migration|Enzyme to RTL Migration]]
+- [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
+- [[../sources/Testing Async React RSC Components|Testing Async React RSC Components]]
+- [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+- [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 
 ## Sources
 

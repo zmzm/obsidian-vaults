@@ -7,6 +7,7 @@ date: 2026-01-21
 source: https://github.com/prettier/prettier/pull/18533
 tags:
 status: auto
+quality: keep
 ---
 
 [[2026-01-21-TWIR-265|Index]]
@@ -16,12 +17,31 @@ status: auto
 Source: [https://github.com/prettier/prettier/pull/18533](https://github.com/prettier/prettier/pull/18533)
 
 Summary:
-This article critically examines React 19's useOptimistic hook, highlighting its limitations and the complexity of implementing robust optimistic UI patterns in concurrent React. It walks through common pitfalls, such as race conditions and state desynchronization, and demonstrates why useOptimistic is not a complete solution for all optimistic update scenarios. The author provides code examples and discusses the need for careful state management even with the new hook.
+This article analyzes the challenges of implementing optimistic UI updates in React, especially with the new useOptimistic hook in React 19. It demonstrates common pitfalls (race conditions, UI flicker), the complexity of correct manual implementations, and the limitations of useOptimistic in concurrent scenarios. The author concludes that while useOptimistic helps, developers must still handle edge cases and cannot rely on it as a silver bullet.
 
 Key takeaways:
-- useOptimistic simplifies optimistic UI in some cases but does not eliminate race conditions or all manual state management.
-- Optimistic updates in concurrent React remain complex, especially with transitions and rapid user interactions.
-- Developers must still handle edge cases and potential UI inconsistencies.
-- The article provides practical code samples illustrating these challenges.
+- Optimistic UI remains complex even with React's useOptimistic, especially under concurrent updates.
+- Manual implementations require careful state management to avoid race conditions and UI inconsistencies.
+- useOptimistic simplifies some aspects but does not eliminate all pitfalls.
+- Developers should be cautious and test thoroughly when implementing optimistic updates.
 
-Recommendation: Read fully (for anyone implementing optimistic UI in React)
+Recommendation:
+Read fully (for anyone implementing optimistic UI in React)
+
+Why it matters:
+for anyone implementing optimistic UI in React
+
+Content:
+# Upgrade MDX parser by fisker · Pull Request #18533 · prettier/prettier · GitHub
+
+```
+* extract micromark-extension-mdxjs
+
+* defer the ESM parse to embed
+
+* add a test case for undefined variable export
+
+---------
+
+Co-authored-by: autofix-ci[bot] <114827586+autofix-ci[bot]@users.noreply.github.com>
+```

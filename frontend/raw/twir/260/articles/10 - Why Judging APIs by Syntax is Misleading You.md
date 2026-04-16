@@ -6,7 +6,9 @@ item_type: item
 date: 2025-11-26
 source: https://jjenzz.com/judging-apis-by-syntax-is-misleading/
 tags:
+  - "APIs"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +16,18 @@ status: auto
 # Item 10: Why Judging APIs by Syntax is Misleading You
 
 Source: [https://jjenzz.com/judging-apis-by-syntax-is-misleading/](https://jjenzz.com/judging-apis-by-syntax-is-misleading/)
+
+Summary:
+This article argues that APIs with similar syntax can operate at very different abstraction layers, affecting portability, constraints, and capabilities. Using styling libraries and the "use client" directive as examples, it emphasizes the importance of understanding the underlying layer rather than judging by surface appearance.
+
+Key takeaways:
+- APIs that look similar may have very different runtime, build-time, or framework assumptions.
+- Layer differences impact portability, developer experience, and integration options.
+- "use client" is a low-level primitive, enabling frameworks to build consistent behaviors on top.
+- Evaluating APIs by their abstraction layer leads to better architectural decisions.
+
+Recommendation:
+Summary sufficient
 
 Content:
 # Why Judging APIs by Syntax is Misleading You
@@ -176,8 +190,3 @@ If two APIs look the same, surface syntax doesn't tell us much. The interesting 
 - The more freedom it leaves open, the lower-level it usually sits.
 
 Once we acknowledge the layer, we can finally understand the tool behind the surface. A small shift in perspective often reveals a deeper story—one that isn't visible from syntax alone.
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

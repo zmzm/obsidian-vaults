@@ -6,7 +6,11 @@ item_type: item
 date: 2026-04-01
 source: https://github.com/vercel/next.js/pull/92012
 tags:
+  - "Nextjs"
+  - "PR"
+  - "experimentaluseOffline"
 status: auto
+quality: keep
 ---
 
 [[2026-04-01-TWIR-275|Index]]
@@ -15,24 +19,29 @@ status: auto
 
 Source: [https://github.com/vercel/next.js/pull/92012](https://github.com/vercel/next.js/pull/92012)
 
+Summary:
+A new experimental useOffline() hook is introduced in Next.js, available from next/navigation, which returns true when the app is offline. The hook is managed by a provider in the app router and uses useState and useOptimistic to ensure state updates even during blocked transitions. This feature is behind the experimental.useOffline flag and is designed to help developers show offline indicators and handle retry logic.
+
+Key takeaways:
+- useOffline() hook detects offline state and is easy to integrate in app components.
+- State management ensures updates during navigation or connectivity changes.
+- Currently experimental and subject to change; feedback and testing encouraged.
+- Useful for building resilient, user-friendly offline experiences in Next.js apps.
+
+Recommendation:
+Summary sufficient
+
 Content:
-# [experiment] Add useOffline hook to expose offline state to userland by acdlite · Pull Request #92012 · vercel/next.js
+# [experiment] Add useOffline hook to expose offline state to userland by acdlite · Pull Request #92012 · vercel/next.js · GitHub
 
-Merged
+```
+**Current:**
 
-[acdlite](https://github.com/acdlite) added a commit that referenced this pull request
+1. #92011
 
-[Mar 28, 2026](https://github.com/vercel/next.js/pull/92012#ref-commit-9045011)
+**Up next:**
 
-[![@acdlite](https://avatars.githubusercontent.com/u/3624098?s=40&u=94d8ba563cef4d8fd24c4b666272a71af46a2fa1&v=4)](https://github.com/acdlite)
-
-\*\*Current:\*\*
-
-1. [#92011](https://github.com/vercel/next.js/pull/92011)
-
-\*\*Up next:\*\*
-
-2. [#92012](https://github.com/vercel/next.js/pull/92012)
+2. #92012
 
 ---
 
@@ -41,46 +50,16 @@ error, instead of falling back to MPA navigation or surfacing an error,
 the request blocks until connectivity is restored and then retries
 automatically.
 
-Offline detection works by treating any \`fetch()\` rejection as a network
+Offline detection works by treating any `fetch()` rejection as a network
 error (server errors resolve with a status code, they don't reject).
 Once offline, a polling loop does HEAD requests with exponential backoff
 to detect when connectivity returns. Browser offline/online events also
 feed into this loop. Successful fetches from other code paths can
 short-circuit the loop if they happen to land first.
 
-Follow-up work will add a \`useOffline\` hook so apps can show an offline
+Follow-up work will add a `useOffline` hook so apps can show an offline
 indicator to the user, and allow navigations to read from stale cache
 entries while offline.
 
-Gated behind \`experimental.useOffline\`.
-
-[![@acdlite](https://avatars.githubusercontent.com/u/3624098?s=40&u=94d8ba563cef4d8fd24c4b666272a71af46a2fa1&v=4)](https://github.com/acdlite) [acdlite](https://github.com/acdlite) changed the base branch from use-offline-retry to canary
-
-[March 28, 2026 00:48](https://github.com/vercel/next.js/pull/92012#event-23989319114)
-
-[![@acdlite](https://avatars.githubusercontent.com/u/3624098?s=40&v=4)](https://github.com/acdlite)
-
-Adds a useOffline() hook exported from next/navigation that returns
-true when the app is offline. The state is owned by a provider
-component rendered in the app router, using useState + useOptimistic
-so the value can update even during blocked transitions (e.g., a
-navigation that's waiting for connectivity).
-
-Gated behind the experimental.useOffline flag.
-
-Refresh of use-offline-hook
-
-[![@acdlite](https://avatars.githubusercontent.com/u/3624098?s=40&u=94d8ba563cef4d8fd24c4b666272a71af46a2fa1&v=4)](https://github.com/acdlite) [acdlite](https://github.com/acdlite) marked this pull request as ready for review
-
-[March 28, 2026 00:59](https://github.com/vercel/next.js/pull/92012#event-23989466538)
-
-Open
-
-[![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4)](https://github.com/apps/github-actions) [github-actions](https://github.com/apps/github-actions) bot locked as **resolved** and limited conversation to collaborators
-
-[Apr 11, 2026](https://github.com/vercel/next.js/pull/92012#event-24406885839)
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient
+Gated behind `experimental.useOffline`.
+```

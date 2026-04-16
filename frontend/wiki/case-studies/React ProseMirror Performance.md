@@ -37,6 +37,7 @@ This case study captures a concrete performance problem in the React and ProseMi
 
 - [[../topics/React Rendering|React Rendering]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
+- [[../syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]]
 
 ## Raw Source
 

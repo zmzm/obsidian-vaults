@@ -6,7 +6,10 @@ item_type: item
 date: 2025-11-26
 source: https://tanstack.com/blog/tanstack-router-route-matching-tree-rewrite
 tags:
+  - "TanStack"
+  - "TanStackRouter"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +17,21 @@ status: auto
 # Item 2: TanStack Router - How we accidentally made route matching more performant by aiming for correctness
 
 Source: [https://tanstack.com/blog/tanstack-router-route-matching-tree-rewrite](https://tanstack.com/blog/tanstack-router-route-matching-tree-rewrite)
+
+Summary:
+TanStack Router achieved a massive performance improvement in route matching by moving from a flat list-based algorithm to a segment trie structure. This rewrite focused on correctness, resolving issues with ambiguous matches and inconsistent sorting, while also delivering up to 20,000× faster route matching in large apps. The new approach shifts algorithmic complexity from the number of routes to the number of path segments, making matching scalable as apps grow.
+
+Key takeaways:
+- Segment trie enables O(M) matching (M = path segments), versus previous O(N) (N = number of routes).
+- Correctness improvements fix bugs with optional segments, wildcards, and route priorities.
+- Implementation details include stack-based DFS traversal and bitmasking for optional segments.
+- Real-world apps see significant speedups, especially as route count increases.
+
+Recommendation:
+Read fully (for deep understanding of routing performance and implementation details)
+
+Why it matters:
+for deep understanding of routing performance and implementation details
 
 Content:
 # How we accidentally made route matching more performant by aiming for correctness
@@ -299,6 +317,8 @@ This data structure performs about half as well as a regular Object for writes, 
 
 ![benchmark results for LRU cache vs Object vs Map](/.netlify/images?url=%2Fblog-assets%2Ftanstack-router-route-matching-tree-rewrite%2Flru-benchmark.png&w=800&q=80)
 
+## The full story[#](#the-full-story)
+
 The numbers we have presented so far are impressive. They are also cherry-picked from the biggest apps we tested, which is biased in favor of the new algorithm. And they are comparisons against the old, uncached algorithm. In reality, we added caching a while ago. We can see the full progression over the last 4 months:
 
 ![route matching performance over 4 evolutions of the algorithm](/.netlify/images?url=%2Fblog-assets%2Ftanstack-router-route-matching-tree-rewrite%2Fmatching-evolution-benchmark.png&w=800&q=80)
@@ -317,8 +337,3 @@ While we are very happy with these results (and are probably done optimizing rou
 ---
 
 This wasn't a "let's make it faster" project, it was a "let's make it correct" project that happened to yield massive performance improvements as a side effect. We rarely see numbers this large in real benchmarks, so we hope you’ll forgive a bit of cherry-picking in this post.
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

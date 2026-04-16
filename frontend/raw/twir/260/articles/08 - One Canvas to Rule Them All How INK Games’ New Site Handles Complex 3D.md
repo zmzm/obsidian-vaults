@@ -6,7 +6,10 @@ item_type: item
 date: 2025-11-26
 source: https://tympanus.net/codrops/2025/11/21/one-canvas-to-rule-them-all-how-ink-games-new-site-handles-complex-3d/
 tags:
+  - "INK"
+  - "3D"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +17,21 @@ status: auto
 # Item 8: One Canvas to Rule Them All: How INK Games’ New Site Handles Complex 3D
 
 Source: [https://tympanus.net/codrops/2025/11/21/one-canvas-to-rule-them-all-how-ink-games-new-site-handles-complex-3d/](https://tympanus.net/codrops/2025/11/21/one-canvas-to-rule-them-all-how-ink-games-new-site-handles-complex-3d/)
+
+Summary:
+The article details the architecture behind INK Games' new site, which uses a single shared canvas for all 3D sections to optimize performance. Built with Next.js, React Three Fiber, GSAP, and Strapi, it leverages R3F's View and Mask components, custom shaders, and scroll-triggered animations to deliver interactive and performant 3D experiences.
+
+Key takeaways:
+- Single canvas approach avoids performance issues with multiple WebGL contexts.
+- R3F View and Mask components enable sectioned, masked 3D rendering within one canvas.
+- Integration with GSAP and ScrollTrigger for smooth, scroll-based animations.
+- Uses gltfjsx for optimized model imports and dynamic material manipulation.
+
+Recommendation:
+Read fully (for teams building complex 3D/animation-rich React sites)
+
+Why it matters:
+for teams building complex 3D/animation-rich React sites
 
 Content:
 # One Canvas to Rule Them All: How INK Games’ New Site Handles Complex 3D
@@ -110,8 +128,3 @@ We’re really happy with how it turned out 🙂
 - Lenis for scroll
 - React Three Fiber + drei for WebGL
 - Strapi for CMS
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

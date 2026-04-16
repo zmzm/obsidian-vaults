@@ -10,6 +10,7 @@ tags:
   - "8"
   - "1"
 status: auto
+quality: keep
 ---
 
 [[2026-02-04-TWIR-267|Index]]
@@ -19,12 +20,109 @@ status: auto
 Source: [https://go.posthog.com/twir-feb4](https://go.posthog.com/twir-feb4)
 
 Summary:
-PostHog shares eight key lessons from building and scaling their AI agent over a year, focusing on model improvements, agent architecture, and user experience. They found that continuous model upgrades have unpredictable impacts, single-loop agents outperform workflow graphs and subagents, and maintaining context and transparency is crucial. The article also discusses the pitfalls of relying on frameworks and the importance of simple tools like to-do tracking for agent reliability. Insights are grounded in real-world product analytics automation and iterative development.
+PostHog shares insights from a year of building and iterating on their AI agent, now integrated into their product analytics platform. The article details architectural lessons, the impact of rapid model improvements, and practical strategies for building robust, context-aware agents. Key points include the superiority of single-loop agent designs, the importance of transparent step-by-step reasoning, and the pitfalls of over-reliance on frameworks. The piece is rich in real-world anecdotes and technical takeaways for anyone building agentic systems in production.
 
 Key takeaways:
-- Model improvements can drastically and unexpectedly change agent behavior and capabilities.
-- Single-loop agent architectures with persistent context outperform workflow graphs and subagents for most tasks.
-- Maintaining and exposing context, as well as showing all agent steps to users, builds trust and reliability.
-- Framework lock-in can hinder rapid iteration; simple, composable tools are preferred.
+- Model upgrades can have unpredictable, far-reaching effects on agent behavior and capabilities.
+- Single-loop agent architectures outperform graph-based workflows and subagent hierarchies for most tasks.
+- Maintaining wide, relevant context and surfacing every reasoning step to users are critical for trust and effectiveness.
+- Framework lock-in can be detrimental; custom, minimal solutions often scale better in fast-moving AI environments.
 
-Recommendation: Read fully (deep, practical insights for anyone building or integrating AI agents in React-based products)
+Recommendation:
+Read fully
+
+Content:
+# 8 learnings from 1 year of agents - PostHog AI
+
+Today we launch **PostHog AI, the AI agent built into PostHog**. A year in the making, we've gone a long way from our first chat prototype made over a hackathon. It all started with just one tool: "create trends chart" - and no real [agentic capabilities](https://simonwillison.net/2025/Sep/18/agents/).
+
+Now, PostHog AI can access your data and setup via dozens of tools, and works tirelessly in a loop until it achieves the task you give it. Like a product analyst, it creates multi-step analyses of product usage, writes SQL queries, sets up new feature flags and experiments, digs into impactful errors - and more, all across PostHog. Thanks to a thorough beta period, it's already [used by thousands of users weekly](https://posthog.com/customers/rayfit).
+
+The road here has been full of adventures. Agents are paradoxical: some say [agent design is hard](https://lucumr.pocoo.org/2025/11/21/agents-are-hard/), and they're right! Others say [it's incredibly easy to build one](https://fly.io/blog/everyone-write-an-agent/) – weirdly that's true at the same time.
+
+Here's what I can tell you *we* have learned about [building productive agents](/newsletter/building-ai-agents) so far.
+
+The one constant of a year of building: model improvements change more than what you think at first. It's shocking how reasoning models were still experimental 12 months ago, because today reasoning is essential to PostHog AI's capabilities. Tool use has improved massively, as frontier models of November 2025 are able to make sense of complex tools with much greater reliability. We're currently using Claude Sonnet 4.5 for the core agent loop, as it hits a sweet spot of quality, speed, and cost – but even this will be out of date before you know it.
+
+The two model-related step changes in our implementation were:
+
+- introduction of cost-effective reasoning with OpenAI's o4-mini – this significantly improved and simplified creation of complex queries, especially those requiring data exploration to get right, ReAct BeGone!
+- reliable use of tools with the Claude 4 family from Anthropic �– the agent could finally be let loose to use a wider variety of tools without going off track
+
+It remains hard to estimate what impact a model upgrade will really have! [A great post on this by Sean Goedecke](https://www.seangoedecke.com/are-new-models-good/). While the progress isn't so obvious as GPT-2 vs. GPT-3, it's still relentless.
+
+Graph-style workflows seemed like the right choice for getting work done. In the GPT-4o era, calling tools in a loop with the same system prompt was a recipe for confusion, and so we've spent months chasing new graph-based ways of orchestrating tools. Just look at the architecture iterations we've cycled through, back when our assistant [was a hedgehog named Max](/blog/why-we-killed-our-ai-product-assistant). The initial one couldn't even answer questions with text, it could exclusively create queries, whatever the user input was!
+
+![Max v0](https://res.cloudinary.com/dmukukwp6/image/upload/0_4bf2079f8e.png)
+
+![Max v1](https://res.cloudinary.com/dmukukwp6/image/upload/1_29c665ed1c.png)
+
+![Max v2](https://res.cloudinary.com/dmukukwp6/image/upload/2_919f46dc86.png)
+
+The truth is, graphs are a terrible way of orchestrating free-form work. In a graph, the LLM can't self-correct and context is all too easily lost. Today, thanks to the advances in model capabilities, the PostHog AI architecture is pleasingly straightforward:
+
+![PostHog AI](https://res.cloudinary.com/dmukukwp6/image/upload/3_a44006789d.png)
+
+By looping back, the LLM is able to execute across dozens of steps, while continuously verifying output. A hard-coded workflow may be cheap to execute, but it's all moot when it can't actually get work done.
+
+> What is the odd "switch mode tool" in the chart? *Shhh*, it's our not-so-secret sauce. Switching modes is a variant of tool search – critical in scaling our agent's number of tools to PostHog's entire surface area. More on the topic in a separate upcoming post.
+
+Even in an agentic loop, it's tempting to organize task execution into specialized subagents. Doesn't it feel so clever to come up with these architectures? "The Widget CEO will delegate work to the Widget Engineer, and then the work will be verified by the Widget Tester, with input from the Widget Product Manager".
+
+While the idea is smart, the results are… dumb. Context is everything for an LLM - when every layer of abstraction introduces loss of context, the ability to string tools together and self-correct course washes away. Subagents still have their place – when you're looking to parallelize work, that's the way to go. What's important is that the delegated tasks are self-contained, and ideally independent.
+
+As we've seen with Claude Code's success, incredible things come out of a single LLM loop with simple tools. God bless emergent behavior.
+
+Right, so it's all in having single LLM loop with a single message history, and that's magically better.
+
+Well, okay, there's one more secret ingredient: the `todo_write` tool. So deceptively simple and universal, it's a natural way of keeping the LLM on track. Every time the LLM uses it at the end of a step, it reinforces what it needs to do next – there's nothing this tool actually needs to *do*.
+
+Suddenly instead of getting lost after a few tool calls, the agent can keep going and going, constantly correcting course. Writing to-dos is one of those intuitive super-powers, the way chain-of-thought used to be.
+
+![](https://res.cloudinary.com/dmukukwp6/image/upload/todos_17634fa3c2.png)
+
+## 5. Wider context is key
+
+Did I mention context matters? It really does, at every step of a task, because people define tasks in the most ambiguous ways. How would *you* answer "where do users drop off in cfmp conversion"? It looks like a bunch of typos sneaked in - unless you know CFMP is a product offerred by the user, and then you need to understand how it fits into their world (this is a real example). What your agent needs is a `CLAUDE.md` equivalent – core context that's always attached.
+
+Core context massively improves agent trajectories, but it's a new to-do for a user, and none us love it when a new tool creates setup work. We've found it critical for core context creation to be effortless, yet not forced. Ultimately, as all great artists do, we stole from the best – and implemented the `/init` command, snatched from Claude Code.
+
+In PostHog AI, `/init` learns about your product and business via multi-step web search (currently using GPT-5-mini). The results form the agent's [project-level memory](/docs/posthog-ai/edit-memory). In the case your data doesn't contain URLs to work with, a few questions are asked directly, but it's something we try to minimize.
+
+![](https://res.cloudinary.com/dmukukwp6/image/upload/init_0a12b8b5cf.png)
+
+Context is *everywhere*. It lives on the web, but it lives in your Slack too, in your email inbox, in your notes app. This is one of the problems in applied AI that already have a number of solutions, but aren't *solved* yet. We have some ideas, stay tuned for those.
+
+We've tried hiding some of the details that seemed raw. The full chains of reasoning, the failed tool calls, the tool call arguments, all hidden from the user's view. The constant feedback was: "I can see the output, but *feels hard to trust it when the process was a mystery*."
+
+PostHog AI has since started streaming every tool call and reasoning token. It turns out humans are like LLMs – or maybe it's the reverse. A black box is uninspiring no matter how good the results are. Details give us confidence in what's happening. Show it all, the good, the bad, the ugly.
+
+![](https://res.cloudinary.com/dmukukwp6/image/upload/Screenshot_2025_11_25_at_20_29_30_badd899b59.png)
+
+Early on, we migrated from the OpenAI Python SDK to LangChain + LangGraph. Today, we absolutely wouldn't.
+
+Every time you use a framework, you lock into its ecosystem. Remember the memes that JavaScript gets a new frontend framework every second? That's LLMs now, only LLMs evolve much faster than JS ever did, and the frameworks deliver less value. The ecosystems are fragile.
+
+LLM calling abstractions like LiteLLM or Vercel AI crumble when AI providers add new models or new features. See: the mess that web search results are, as OpenAI and Anthropic format them entirely differently, while the frameworks try to maintain one facade.
+
+Even worse: LLM call orchestrators like LangGraph. While conceptually elegant, they lock you into a specific way of thinking, and when that way [becomes obsolete](#agents-beat-workflows) – good luck refactoring everything away.
+
+AI may settle upon its React one day, but for now the framework wars rage on. It might just be best to stay neutral and low-level. It's just calling function at the end of the day.
+
+[Some](https://x.com/gdb/status/1733553161884127435) say evals can be all you need. For foundation models: certainly, those datasets are foundational. For agents: [evals are a great tool to have](/blog/testing-ai-agents), but things get nuanced.
+
+Reality is *gnarly*: for many real-world, multi-step tasks, setting up a realistically complex environment is a greater challenge then building the agent itself. Such an environment must support every possible tool call the agent can make if you want to judge actual performance. [Reality has a surprising amount of detail](http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail), after all. You can cover the expected happy paths easily with evals, but soon users will create plenty of paths you wouldn't have thought of.
+
+What we've found even more important than raw evals: looking at real usage, and evaluating the agent's work ad-hoc. For this, we've been running ***Traces Hour*** - a weekly gathering of the PostHog AI team focused 100% on analyzing LLM traces from production, i.e. real user interactions. (Plug: [PostHog LLM analytics](https://posthog.com/llm-analytics) is great for this.) Evals make the most sense when they stem from such investigations. Engineering is 10x'd when you grasp your users' experience, and this goes for building agents too.
+
+We've been using PostHog AI for months. It's not perfect, but it handles the reality of product data: everything is interconnected. Events feed into sessions, sessions branch into errors, clicks overlap multiple paths – a bowl of tangled noodles.
+
+PostHog AI untangles that structure and reconstructs a clean, logical sequence. We use it to debug SQL, understand user behavior, set up experiments, and analyze errors – work that would normally mean digging through multiple screens or writing queries.
+
+Try it out now: [Open PostHog](https://app.posthog.com/), click "PostHog AI" in the top right, grant AI access to data (requires admin permissions), run `/init`, and start asking it to do things.
+
+This is just the start. What's coming: deep research capabilities, sophisticated session analysis, proactive insights from background analysis, and tighter integration with code. Over the next weeks and months we'll be sharing far more of what we've learned too.
+
+And if you find this exciting, so much that you've already built at least a toy agent – we're hiring [AI Product Engineers](/careers/ai-product-engineer)! There's lots more we want to ship, and I'd love to have you on board. [Apply right here.](/careers/ai-product-engineer)
+
+**PostHog AI – for builders, from builders.**

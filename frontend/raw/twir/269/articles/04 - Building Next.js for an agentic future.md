@@ -8,6 +8,7 @@ source: https://nextjs.org/blog/agentic-future
 tags:
   - "Nextjs"
 status: auto
+quality: keep
 ---
 
 [[2026-02-18-TWIR-269|Index]]
@@ -17,12 +18,50 @@ status: auto
 Source: [https://nextjs.org/blog/agentic-future](https://nextjs.org/blog/agentic-future)
 
 Summary:
-Next.js has been evolving to better support AI agents by exposing internal state and runtime information, making debugging and upgrades more accessible for both humans and agents. Experiments like the in-browser Vector agent and the MCP (Meta Control Plane) integration have led to practical improvements in developer tooling and agent support. The focus is now on treating agents as first-class users, embedding context and visibility directly into the framework.
+Next.js has been evolving to better support AI agents by improving visibility into runtime errors, internal state, and developer workflows. Experiments like the in-browser agent Vector and the MCP integration have informed a new approach: treating agents as first-class users and exposing structured data and context to them. This enables more effective debugging and AI-driven development experiences.
 
 Key takeaways:
-- Next.js is adapting to support AI agents by exposing runtime state and structured data.
-- The Vector in-browser agent was sunset, but its insights drove improvements in core tooling.
-- MCP integration surfaces errors, routes, and context to agents, improving automated debugging and upgrades.
-- The team is working to make these features more accessible and automatic in future releases.
+- AI agents struggle with debugging due to lack of visibility into browser and framework state.
+- Next.js experimented with an in-browser agent (Vector) and ultimately integrated agent support directly into the framework via MCP.
+- Exposing internal state, logs, and documentation to agents improves their ability to assist developers.
+- The team is working to automate and expand these capabilities for broader adoption.
 
-Recommendation: Read fully (for those interested in AI/devtools integration or Next.js internals)
+Recommendation:
+Read fully (for those interested in AI-assisted development, Next.js internals, or developer tooling)
+
+Why it matters:
+for those interested in AI-assisted development, Next.js internals, or developer tooling
+
+Content:
+---
+title: Building Next.js for an agentic future
+description: "How we built and sunset an in-browser agent, shipped MCP integration, and learned that better AI agent support means thinking from the agent's perspective."
+url: "https://nextjs.org/blog/agentic-future"
+publishedAt: February 12th 2026
+authors:
+- Jiachi Liu
+---
+We've spent the past year improving the Next.js agent experience. Along the way, we built and sunset an in-browser agent, shipped MCP integration, and learned that the real answer to better agent support is thinking from the agent's perspective.
+### Agents couldn't see the browser
+Earlier this summer, we were working on improving the Next.js devtools when we noticed a pattern. Developers would see an error in the browser, copy the details, paste them into an AI editor, and ask the agent to fix it.
+The problem was that agents can't see the browser. Runtime errors, client-side warnings, and rendered components are all invisible to them. When a user says "fix the error," the agent doesn't know what error they mean.
+Our first response was updating the copy button to capture structured error data. Then we added a feature that forwards browser logs to the terminal. Small fixes, but they pointed toward a bigger realization. We needed to make Next.js itself visible to agents.
+### Experimenting with an in-browser agent
+That led to an ambitious idea. What if we built an agent directly inside Next.js that worked like smart devtools?
+We built an in-browser chat agent called Vector. Similar to `react-grab` but integrated with Next.js, Vector let you select elements on the page, see their source code, and prompt for changes. It had Next.js best practices baked in to help agents avoid hallucination.
+\_Subtitle: Vector's interface showing error detection and suggested fixes.\_
+Vector was useful, but it overlapped with general coding agents like Cursor and Claude Code. Most developers were already using those tools for all of their projects anyway, not just Next.js. The UI selection made it easy to point at exactly what you wanted to change, but it wasn't something people needed every day.
+We sunset Vector, but took what made it useful (structured visibility and framework-specific knowledge) and decided to build those into Next.js itself.
+### MCP made Next.js state visible to agents
+Around the Next.js v16 release in October 2025, users were struggling to debug with agents. The common prompt was "fix the error," asking agents to resolve issues from the browser overlay. But agents would request the page HTML and find nothing wrong.
+Runtime failures, browser JavaScript errors, and async errors all lived in the browser, not in the HTML. The rendered page, layout segments, routes, and other internal state were invisible to agents.
+MCP gave us a way to expose this data. The first version surfaced internal states like errors, routes, and rendered segments, but exposing data alone wasn't enough. Agents also needed to discover running dev servers and communicate with them, which led to `next-devtools-mcp`.
+\_Subtitle: The Next.js MCP responding to "whats use cache?" with documentation and context.\_
+The MCP also packages prompts and tools to help with upgrades and cache component migrations. There's a [detailed talk about the MCP integration](https://www.youtube.com/watch?v=WT7\_TJS0tFE) if you want to learn more.
+### The answer is to think like an agent
+MCP confirmed what Vector taught us. Agents need visibility into what Next.js is doing, but that's only part of the story. The deeper lesson was treating agents as first-class users of Next.js and thinking from their perspective. What information do they need? When do they need it? How do they consume it?
+This mindset led to practical changes. If agents read terminal output during development, then logging Server Action invocations and forwarding browser errors gives them the hints they need. If agents struggle with framework concepts not in their training data, then embedding a compressed docs index `agents.md` or providing structured workflows ([Next.js skills](https://github.com/vercel-labs/next-skills)) gives them better context than documentation alone.
+Those questions run through everything we built. The need for visibility led to better logging, the need for knowledge led to agents.md, and the need for discovery led to MCP. When you treat agents as first-class users and meet them where they are, debugging becomes a tight feedback loop between code, runtime, and AI.
+### What's next
+We're now working on making this easier to adopt. You can already run `npx @next/codemod` to generate an up-to-date docs index for your project, and we're expanding our eval suite to cover more Next.js 16 APIs so we can measure what actually helps agents. Longer term, we want this built into `next dev` so agents get the right context automatically without any setup.
+We're eager to hear your feedback and ideas on how to make Next.js work even better with agents.

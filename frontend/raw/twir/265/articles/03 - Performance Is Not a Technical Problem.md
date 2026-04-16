@@ -7,6 +7,7 @@ date: 2026-01-21
 source: https://x.com/shuding/status/2013632751568851233
 tags:
 status: auto
+quality: keep
 ---
 
 [[2026-01-21-TWIR-265|Index]]
@@ -16,9 +17,16 @@ status: auto
 Source: [https://x.com/shuding/status/2013632751568851233](https://x.com/shuding/status/2013632751568851233)
 
 Summary:
-Content could not be extracted from this article.
+Content could not be extracted from the article.
 
 Key takeaways:
 - No actionable information available.
 
-Recommendation: Summary sufficient
+Recommendation:
+Summary sufficient
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: Python clipper extracted too little content. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

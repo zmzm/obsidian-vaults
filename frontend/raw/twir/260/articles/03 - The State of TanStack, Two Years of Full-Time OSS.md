@@ -6,7 +6,11 @@ item_type: item
 date: 2025-11-26
 source: https://tanstack.com/blog/tanstack-2-years
 tags:
+  - "TanStack"
+  - "Full-Time"
+  - "OSS"
 status: auto
+quality: keep
 ---
 
 [[2025-11-26-TWIR-260|Index]]
@@ -14,6 +18,18 @@ status: auto
 # Item 3: The State of TanStack, Two Years of Full-Time OSS
 
 Source: [https://tanstack.com/blog/tanstack-2-years](https://tanstack.com/blog/tanstack-2-years)
+
+Summary:
+Tanner Linsley reflects on two years of running TanStack as a full-time, sustainable open source organization. The post covers the challenges of building a full-stack framework (TanStack Start), the importance of team and funding, impressive growth metrics, and the shift in focus from individual achievement to community-driven success. It also outlines upcoming features and expresses gratitude to contributors and sponsors.
+
+Key takeaways:
+- TanStack has grown to 13 projects, 36 core contributors, and over 4 billion downloads.
+- Sustainability achieved through sponsorships, enabling fair compensation and long-term planning.
+- Major upcoming milestones: TanStack Start 1.0, React Server Component support, and a new major library.
+- Emphasis on community, kindness, and principled open source values.
+
+Recommendation:
+Summary sufficient
 
 Content:
 # The State of TanStack, Two Years of Full-Time OSS
@@ -117,8 +133,3 @@ These past two years have been the most demanding and fulfilling of my career. W
 If TanStack has helped you or your team, here's how to help us keep going:
 
 Every bit of support helps more than you realize.
-
-Key takeaways:
-- No key takeaways extracted.
-
-Recommendation: Summary sufficient

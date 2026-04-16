@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-04-14
+updated: 2026-04-16
 status: active
 ---
 
@@ -117,3 +117,30 @@ status: active
 - Added `Type-Driven Frontend Safety` to connect route typing, safer component signatures, and codebase-wide reliability migrations.
 - Rewired `Enzyme to RTL Migration`, `Safer Frontend without React.FC`, `React Router`, and `Trusted Types` so the testing and safety branch is no longer mostly isolated.
 - Promoted `Trusted Types` to active now that it sits inside a clearer safety cluster instead of a single-source island.
+
+## [2026-04-16] maintenance | Sync wiki links with refreshed raw TWIR archive
+
+- Rechecked the wiki against the updated raw TWIR archive after broad raw-source changes.
+- Fixed stale raw-article links where issue item numbers shifted in TWIR #270.
+- Lightly refreshed touched source and case-study pages without changing the overall wiki structure.
+- Left the broader wiki architecture intact because the existing concept, tool, pattern, and synthesis layers still fit the expanded raw base.
+
+## [2026-04-16] synthesis | New syntheses for testing, framework constraints, and component design
+
+- Added a testing synthesis connecting RTL, browser-mode component testing, async RSC testing limits, and route-level integration boundaries.
+- Added a framework synthesis connecting Next.js agentic direction, host-environment integration, and the value of conventions in AI-assisted work.
+- Added a component-design synthesis connecting resilient component APIs, async-aware design, host constraints, and performance-sensitive integrations.
+- Linked the new syntheses back into the index plus the existing `Testing Strategy for React Apps`, `Resilient React Components`, and `Next.js` hubs.
+
+## [2026-04-16] ingest | Targeted pass over testing and AI/framework branches
+
+- Added source pages for async RSC testing limits, Vitest Browser Mode, and Next.js workflow skills.
+- Added a case study for a 6000-test AI-assisted migration to capture where codemods, migration guides, and validation gates made agentic work reliable.
+- Rewired the new testing synthesis and pattern pages to use these stronger sources instead of depending mostly on raw notes.
+- Strengthened the framework-constraints branch with supporting evidence that Next.js knowledge is being packaged directly for agent workflows.
+
+## [2026-04-16] ingest | Component-design support pass
+
+- Added a case study for `Building a Toast Component` to capture how interaction design, motion, and developer experience shape reusable UI primitives.
+- Added `React Component API Game` as a light API-design source to support the maintainability side of component authoring.
+- Rewired the component-design synthesis and resilience pattern to include these signals instead of depending only on SSR- and performance-heavy examples.

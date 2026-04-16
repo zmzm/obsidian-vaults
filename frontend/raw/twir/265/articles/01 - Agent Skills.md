@@ -7,6 +7,7 @@ date: 2026-01-21
 source: https://agentskills.io/
 tags:
 status: auto
+quality: keep
 ---
 
 [[2026-01-21-TWIR-265|Index]]
@@ -16,12 +17,19 @@ status: auto
 Source: [https://agentskills.io/](https://agentskills.io/)
 
 Summary:
-Agent Skills is an open format and ecosystem for extending AI coding agents with new capabilities, featuring a growing index of skills and integrations across popular tools like Junie, Gemini CLI, Autohand, OpenCode, OpenHands, Mux, Cursor, Amp, Letta, Firebender, Goose, GitHub Copilot, VS Code, Claude, OpenAI Codex, and more. The format enables agents to discover, install, and use skills for tasks such as code generation, refactoring, testing, and project management. The documentation index and a carousel of supported clients highlight the breadth of agent integrations and their respective skill sets.
+Agent Skills is an open, extensible format for defining and sharing capabilities for AI coding agents, with a focus on interoperability and discoverability. The project aggregates a wide range of agent implementations (e.g., Junie, Gemini CLI, Autohand, OpenCode, Copilot, Claude, etc.), each with documentation and integration instructions. The React code snippet provided demonstrates a logo carousel component for displaying agent logos. The initiative aims to standardize how agents acquire and advertise new skills, making it easier for developers to find and use agent features across tools.
 
 Key takeaways:
-- Agent Skills provides a standardized, open format for extending AI coding agents with new skills.
-- Many major AI coding agents and editors (VS Code, Copilot, Cursor, etc.) support this format, enabling interoperability.
-- Skills cover a wide range of developer tasks, from code writing to debugging and project automation.
-- The documentation index offers a centralized way to discover available skills and their usage.
+- Agent Skills provides a unified, open format for agent capabilities, promoting cross-tool compatibility.
+- The project lists numerous coding agents and platforms, each with their own documentation and integration points.
+- The React example illustrates practical UI for showcasing agent integrations.
+- Useful for developers building or integrating with AI coding agents, or exploring the agent ecosystem.
 
-Recommendation: Summary sufficient
+Recommendation:
+Summary sufficient
+
+Content:
+Content not available.
+
+Notes:
+Content extraction failed: Python clipper failed: Python clipper extracted too little content. Install deps: pip3 install requests readability-lxml markdownify beautifulsoup4 lxml

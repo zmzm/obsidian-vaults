@@ -8,6 +8,7 @@ source: https://skills.sh/
 tags:
   - "Skillssh"
 status: auto
+quality: keep
 ---
 
 [[2026-01-21-TWIR-265|Index]]
@@ -17,12 +18,25 @@ status: auto
 Source: [https://skills.sh/](https://skills.sh/)
 
 Summary:
-Skills.sh is a leaderboard and directory of AI agent skills, aggregating a vast collection of skills contributed by various organizations and individuals. The list covers a wide spectrum of domains, including React, Next.js, Azure, Firebase, marketing, testing, design systems, and more, with skills tailored for both general and specialized use cases. It serves as a discovery hub for developers looking to enhance their AI agents with targeted capabilities.
+Skills.sh is a leaderboard and registry of agent skills contributed by various organizations and individuals, covering a wide spectrum of development, design, cloud, and AI tasks. The list includes React-specific skills, best practices, and integrations with platforms like Vercel, Microsoft, Supabase, Firebase, and more. The registry enables discovery and sharing of reusable skills for AI agents and developer tools.
 
 Key takeaways:
-- Centralized repository of agent skills, including many relevant to React and front-end workflows.
-- Skills span technical, design, marketing, and productivity domains.
-- Useful for quickly finding and integrating new agent skills into developer workflows.
-- Includes best practices and integrations for popular frameworks and platforms.
+- Centralized index of agent skills, including many relevant to React and frontend development.
+- Skills span best practices, cloud integrations, UI/UX, testing, and more.
+- Useful for discovering reusable logic and patterns for agent-powered workflows.
+- Encourages community contribution and visibility of new skills.
 
-Recommendation: Summary sufficient
+Recommendation:
+Summary sufficient
+
+Content:
+# The Agent Skills Directory
+
+```
+███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+███████╗█████╔╝ ██║██║     ██║     ███████╗
+╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+```

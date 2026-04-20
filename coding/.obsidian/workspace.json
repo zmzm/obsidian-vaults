@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2026-04-03.md",
+                "file": "frontend/INDEX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-04-03"
+              "title": "INDEX"
             }
           }
         ]
@@ -183,11 +183,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "429816ce0b3e0f30",
+  "active": "8df476a6eb558878",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "backend-cleanup-audit.md",
+    "backend/INDEX.md",
+    "backend/security/references/environment-config.md",
+    "frontend/coding/references/hook-file-conventions.md",
+    "frontend/coding/references/test-placement.md",
+    "frontend/coding/references/component-structure.md",
+    "backend/testing/references/test-layer-patterns.md",
+    "backend/refactor/references/permission-required.md",
+    "backend/refactor/references/anti-patterns.md",
+    "backend/coding/references/dtos.md",
+    "backend/api/references/query-parameters.md",
+    "backend/api/references/nested-resources.md",
+    "backend/api/SKILL.md",
+    "AGENTS.md",
+    "cleanup-audit.md",
+    "index.md",
+    "log.md",
+    "RULES.md",
     "Untitled.base",
+    "templates/SKILL.template.md",
+    "templates/REFERENCE.template.md",
+    "templates/INDEX.template.md",
+    "templates",
+    "common/INDEX.md",
     "2026-04-03.md",
+    "Untitled.canvas",
     "Welcome.md"
   ]
 }

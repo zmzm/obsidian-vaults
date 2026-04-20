@@ -1,29 +1,36 @@
 # Vaults Workspace
 
-This repository contains personal knowledge-base vaults and related working material.
+Personal knowledge-base vaults maintained as LLM-driven wikis, stored as markdown and browsed in Obsidian.
 
-## Structure
+## Vaults
 
-- `frontend/` — the main frontend-focused vault, organized as an LLM-maintained wiki on top of raw TWIR source material.
-- `LLM/` — separate LLM-related notes and experiments.
-- `coding/` — coding-related notes and working material.
-- `LLM-WIKI.md` — high-level notes about the LLM wiki pattern used in this workspace.
+### `frontend/` — Frontend Wiki
 
-## Frontend Vault
+The primary vault. An LLM-maintained wiki built on top of *This Week in React* source material.
 
-The `frontend/` vault is currently the most structured part of the repository.
+**Layers:**
+- `raw/twir/` — TWIR issues with per-article notes as the intake layer
+- `wiki/` — curated durable knowledge
 
-It uses a split between:
+**Wiki page types:** concepts, tools, patterns, topics, case-studies, sources, syntheses
 
-- `raw/` for incoming source material
-- `wiki/` for normalized knowledge pages
-- `system/` for supporting structure
+**Navigation:** `index.md` (content map), `log.md` (append-only operation log), `AGENTS.md` (agent rules).
 
-Inside `frontend/raw/twir/`, TWIR issues and article notes are kept as the intake layer.
-Inside `frontend/wiki/`, concepts, tools, patterns, topics, syntheses, and case studies are maintained as durable knowledge.
+### `LLM/` — LLM Notes
 
-## Notes
+Notes on transformer architecture, reasoning models, and how LLMs work internally.
 
-- The repository is markdown-first and intended to be browsed in Obsidian.
-- Raw notes may be noisy by design, but broken and no-signal items should be filtered out before they are kept.
-- The wiki layer is intentionally more curated and structured than the raw layer.
+### `coding/` — Coding Wiki
+
+A second LLM-maintained wiki covering backend, frontend, and general coding practices.
+
+## Workspace-level Files
+
+- `LLM-WIKI.md` — a detailed writeup of the LLM wiki pattern: the raw/wiki/schema architecture, ingest/query/lint workflows, and implementation notes.
+
+## Conventions
+
+- Markdown-first, Obsidian-compatible with `[[wikilinks]]`.
+- Each vault is self-contained: its own `AGENTS.md`, `index.md`, `log.md`.
+- Raw layers store immutable sources; wiki layers hold agent-curated knowledge.
+- All vaults follow the ingest → normalize → synthesize → lint cycle described in `LLM-WIKI.md`.

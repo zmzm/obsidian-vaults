@@ -144,3 +144,12 @@ status: active
 - Added a case study for `Building a Toast Component` to capture how interaction design, motion, and developer experience shape reusable UI primitives.
 - Added `React Component API Game` as a light API-design source to support the maintainability side of component authoring.
 - Rewired the component-design synthesis and resilience pattern to include these signals instead of depending only on SSR- and performance-heavy examples.
+
+## [2026-04-20] maintenance | Clean TWIR 240-253: remove broken and useless articles
+
+- Scanned all 14 TWIR issues (240-253), totaling ~146 articles.
+- All articles had broken content extraction (Python clipper missing `lxml_html_clean`). Evaluated each on summary quality and topic relevance instead.
+- Removed 59 articles classified as: sponsored/promotional content (Strapi, PostHog), clickbait rants (React is Awful, I tried Solid.js now I hate React, etc.), off-topic material (Three.js/WebGL, Astro, Telegram bots, Rive, ViteLand), outdated event announcements (Next.js Conf CFP, conference lists), thin tutorials (Stripe in 5 minutes, hooks from scratch, SEO guidelines), podcasts without substance, monthly recap duplicates, and niche items with no wiki path (Clojure RSC, valtio-reactive).
+- Updated all 14 TWIR index files to remove references to deleted articles and cleaned up TL;DR and Action Items sections.
+- Kept 87 articles covering: React core PRs (cacheSignal, Activity, Fragment refs, ViewTransition, useEffectEvent), React Compiler progress, Next.js releases and PRs, TanStack Start and TanStack DB, React Router evolution, Server Components patterns, testing strategy, SSR/self-hosting, and framework ecosystem shifts.
+- No wiki pages or index.md referenced TWIR 240-253 articles, so no cross-layer link updates were needed.

@@ -1,7 +1,7 @@
 ---
 type: log
 status: active
-updated: 2026-04-16
+updated: 2026-04-20
 ---
 
 # Log
@@ -45,3 +45,9 @@ updated: 2026-04-16
 - Split the oversized frontend file-structure page into `component-structure.md`, `hook-file-conventions.md`, and `test-placement.md`.
 - Rewired affected skill maps to the new canonical references.
 - Next sensible step: third pass on lower-level redundancy, especially whether some remaining `core-principles` pages in `accessibility`, `testing`, `ui`, and `i18n` should be renamed or further narrowed.
+
+## [2026-04-20] docs | QMD rollout guide
+
+- Added `qmd-setup.md` with commands for clean rebuild, collection creation, context setup, embeddings, and verification on another machine.
+- Linked the new guide from `index.md` so the vault now contains its own `QMD` deployment instructions.
+- Next sensible step: if the collection layout or context texts change later, update the setup guide and keep it aligned with the actual local `QMD` baseline.

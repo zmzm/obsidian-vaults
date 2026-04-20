@@ -1,7 +1,7 @@
 ---
 type: index
 status: active
-updated: 2026-04-16
+updated: 2026-04-20
 ---
 
 # Coding Vault Index
@@ -19,6 +19,7 @@ This file is the map of the coding vault. Start here, then move into the most re
 - [[AGENTS]] — operating rules for how to navigate and maintain this vault.
 - [[RULES]] — shared rule hierarchy and wording model for all coding skills.
 - [[log]] — append-only record of notable vault changes.
+- [[qmd-setup|QMD Setup Guide]] — commands for recreating collections, contexts, and embeddings on another machine.
 - [[templates/SKILL.template|Skill Template]] — canonical structure for new `SKILL.md` files.
 - [[templates/REFERENCE.template|Reference Template]] — canonical structure for new `references/*.md` files.
 - [[templates/INDEX.template|Index Template]] — canonical structure for new domain index pages.

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-14
+updated: 2026-04-21
 tags:
   - nextjs
   - tanstack-start
@@ -29,6 +29,7 @@ Next.js currently looks stronger as a broad production platform with deeper tool
 - SSR performance focus: the strongest TanStack Start source in the vault is a concrete throughput and hot-path optimization case study.
 - Developer control: the framework is presented as favoring composability and explicitness over framework magic.
 - Practical full-stack primitives: newer sources now add middleware and single-flight mutation patterns, which make the framework story more concrete than before.
+- RSC composition model: newer material now presents a more explicit "RSC as streamed data" mental model rather than a server-owned tree.
 
 ## Main Tradeoff
 
@@ -43,6 +44,7 @@ This is not just a DX difference. It affects caching, Server Components ergonomi
 - Evidence for TanStack Start is still narrower, but it is now less abstract than before.
 - The vault currently has stronger performance, migration, and architectural explicitness evidence for TanStack Start than broad operational coverage.
 - Newer Next.js sources now improve the platform side of the comparison through stronger evidence on explicit caching, PPR, and operational architecture.
+- The newest comparison wave also adds a fresh migration story from a client-heavy product and a sharper RSC-composition contrast.
 
 That means this comparison is directionally useful, but still asymmetric.
 
@@ -58,12 +60,17 @@ That means this comparison is directionally useful, but still asymmetric.
 - [[../concepts/Server Components|Server Components]]
 - [[../topics/SSR Performance|SSR Performance]]
 - [[../patterns/Caching in App Router|Caching in App Router]]
+- [[Next.js Portability Boundaries]]
 - [[../sources/TWIR 256|TWIR 256]]
 - [[../sources/TWIR 267|TWIR 267]]
+- [[../sources/TWIR 276|TWIR 276]]
+- [[../sources/TWIR 277|TWIR 277]]
+- [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/TanStack Start Middleware|TanStack Start Middleware]]
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/TWIR 269|TWIR 269]]
+- [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
 ## Sources
 
@@ -75,14 +82,18 @@ That means this comparison is directionally useful, but still asymmetric.
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
 - [[../sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../../raw/twir/256/2025-10-29-TWIR-256|TWIR #256]]
 - [[../../raw/twir/266/2026-01-28-TWIR-266|TWIR #266]]
 - [[../../raw/twir/267/2026-02-04-TWIR-267|TWIR #267]]
 - [[../../raw/twir/269/articles/07 - Next.js Finally Has Competition (TanStack Start)|Next.js Finally Has Competition (TanStack Start)]]
 - [[../../raw/twir/269/2026-02-18-TWIR-269|TWIR #269]]
+- [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
+- [[../../raw/twir/277/2026-04-15-TWIR-277|TWIR #277]]
 - [[../../raw/twir/273/articles/07 - TanStack Start - 5x SSR Throughput after profiling SSR Hot Paths|TanStack Start - 5x SSR Throughput after profiling SSR Hot Paths]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
+- [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
 ## Open Questions
 

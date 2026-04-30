@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -25,7 +25,7 @@ TWIR #274 is a strong routing source for Next.js 16.2, `use cache`, `use()`, and
 - It is a strong issue for moving the vault from general React themes into framework-level operational detail.
 - It helps connect release notes, practical workarounds, and longer-term coding-style changes.
 
-## Limitations
+## Caveats
 
 - It remains a secondary digest and should not replace the underlying framework or library sources.
 

@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -24,7 +24,7 @@ TWIR #271 is a useful routing source for React Foundation context, Server Compon
 - It strengthens the historical and conceptual side of the `React Rendering` and `Server Components` pages.
 - It also helps contextualize framework ecosystem movement around React.
 
-## Limitations
+## Caveats
 
 - Several items are news-oriented rather than durable technical references.
 

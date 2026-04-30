@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-16
+updated: 2026-04-22
 tags:
   - react-router
   - loaders
@@ -31,6 +31,8 @@ This source frames React Router loaders and actions as integration boundaries ra
 ## Related Pages
 
 - [[../tools/React Router|React Router]]
+- [[React Router Middleware]]
+- [[React Router Callsite Revalidation]]
 - [[../sources/TWIR 270|TWIR 270]]
 
 ## Raw Sources

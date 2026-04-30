@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -24,7 +24,7 @@ TWIR #255 is a strong routing source for Next.js 16, Cache Components, early asy
 - It is one of the best early sources in the vault for the `Caching in App Router` and `Server Components` branches.
 - It strengthens the bridge between framework release direction and practical rendering tradeoffs.
 
-## Limitations
+## Caveats
 
 - Some issue items are recap or ecosystem material rather than durable technical references.
 

@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - tanstack-query
   - eslint
@@ -32,6 +32,8 @@ This source captures an important convention-level change in the TanStack Query 
 
 - [[../tools/TanStack Query|TanStack Query]]
 - [[../topics/React Rendering|React Rendering]]
+- [[Creating Query Abstractions]]
+- [[Custom ESLint Rules]]
 
 ## Raw Sources
 

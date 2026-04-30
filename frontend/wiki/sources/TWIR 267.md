@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -23,7 +23,7 @@ TWIR #267 is a useful routing source for real-world migration pressure away from
 - It gives the comparison branch a stronger real-world migration case instead of relying only on opinionated summaries.
 - It helps turn the framework comparison into something grounded in team constraints and workflow outcomes.
 
-## Limitations
+## Caveats
 
 - The issue itself is broad and only part of it maps into the current framework-comparison branch.
 

@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-16
+updated: 2026-04-22
 tags:
   - nextjs
   - frameworks
@@ -38,6 +38,7 @@ This case study captures a practical argument for frameworks as convention syste
 - [[../tools/Next.js|Next.js]]
 - [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
+- [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
 
 ## Raw Source
 

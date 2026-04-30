@@ -33,6 +33,7 @@ Signals are a reactivity model where updates propagate through a dependency grap
 - [[../tools/TanStack Query|TanStack Query]]
 - [[React Compiler]]
 - [[../syntheses/React Compiler vs Fine-Grained Reactivity|React Compiler vs Fine-Grained Reactivity]]
+- [[../case-studies/Atomic State in Deep Trees|Atomic State in Deep Trees]]
 - [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
 
 ## Sources

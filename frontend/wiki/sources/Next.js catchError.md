@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - nextjs
   - error-handling
@@ -31,6 +31,8 @@ This source captures why framework-aware error handling matters in the Next.js A
 
 - [[../tools/Next.js|Next.js]]
 - [[../concepts/Server Components|Server Components]]
+- [[../patterns/Resilient React Components|Resilient React Components]]
+- [[../case-studies/Error Rendering with RSC|Error Rendering with RSC]]
 
 ## Raw Sources
 

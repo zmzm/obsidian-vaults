@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-14
+updated: 2026-04-21
 tags:
   - react
   - use-hook
@@ -28,6 +28,7 @@ tags:
 
 - The current source set already contains a clear developer-facing explanation of `use()`.
 - It also connects naturally to `React Rendering`, `Server Components`, and caching concerns.
+- The older archive now also adds `cacheSignal()`, which makes the cache-side lifecycle around async reads more explicit instead of treating cancellation as an afterthought.
 
 ## Related Pages
 
@@ -35,6 +36,7 @@ tags:
 - [[../topics/React Rendering|React Rendering]]
 - [[../patterns/Caching in App Router|Caching in App Router]]
 - [[../tools/Next.js|Next.js]]
+- [[../sources/React cacheSignal|React cacheSignal]]
 - [[../syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]]
 - [[../sources/React use Hook|React use Hook]]
 - [[../sources/TWIR 274|TWIR 274]]
@@ -42,7 +44,9 @@ tags:
 ## Sources
 
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
+- [[../../raw/twir/245/2025-07-30-TWIR-245|TWIR #245]]
 - [[../sources/React use Hook|React use Hook]]
+- [[../sources/React cacheSignal|React cacheSignal]]
 
 ## Open Questions
 

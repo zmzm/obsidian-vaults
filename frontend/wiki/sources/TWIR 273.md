@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -25,7 +25,7 @@ TWIR #273 is a strong routing source for Server Components, SSR tradeoffs, and t
 - It gives the vault a bridge between framework architecture and rendering internals.
 - It is especially useful for selecting which rendering and server-driven app topics deserve durable pages.
 
-## Limitations
+## Caveats
 
 - Like the other digest pages, it is a secondary source and should route the agent toward underlying articles.
 - At least one item in the issue has incomplete extracted content.

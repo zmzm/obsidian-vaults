@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -24,7 +24,7 @@ TWIR #256 is a useful routing source for TanStack Start as an explicit framework
 - It materially strengthens the comparison branch between Next.js and TanStack Start.
 - It is one of the first places in the raw layer where TanStack Start appears as more than a side mention.
 
-## Limitations
+## Caveats
 
 - Some issue items are incomplete or not directly relevant to the current wiki structure.
 

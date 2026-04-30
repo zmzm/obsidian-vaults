@@ -32,6 +32,7 @@ This source captures a meaningful shift in React Router ergonomics toward genera
 
 - [[../tools/React Router|React Router]]
 - [[../tools/Next.js|Next.js]]
+- [[../patterns/Typed Routing and URL State|Typed Routing and URL State]]
 
 ## Raw Sources
 

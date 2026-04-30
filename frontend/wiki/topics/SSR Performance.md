@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-04-14
+updated: 2026-04-21
 tags:
   - ssr
   - performance
@@ -29,6 +29,7 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - The raw layer already includes strong material on custom RSC frameworks and TanStack Start SSR optimization.
 - Even with limited coverage, there is enough here to justify a durable topic page rather than leaving these ideas scattered.
 - The newer raw layer also adds a more direct RSC performance comparison and stronger platform-level caching signals from Next.js itself.
+- It now also includes lower-level stream-pipeline work inside Next.js and another framework-migration story where build and iteration speed were decisive.
 
 ## Related Pages
 
@@ -37,21 +38,32 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - [[../tools/Next.js|Next.js]]
 - [[../tools/TanStack Start|TanStack Start]]
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
+- [[../syntheses/Next.js Portability Boundaries|Next.js Portability Boundaries]]
 - [[../sources/TWIR 255|TWIR 255]]
+- [[../sources/TWIR 276|TWIR 276]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
+- [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/TWIR 273|TWIR 273]]
+- [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
+- [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
 ## Sources
 
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
 - [[../../raw/twir/273/2026-03-18-TWIR-273|TWIR #273]]
+- [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
+- [[../../raw/twir/277/2026-04-15-TWIR-277|TWIR #277]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
+- [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
 
 ## Open Questions
 

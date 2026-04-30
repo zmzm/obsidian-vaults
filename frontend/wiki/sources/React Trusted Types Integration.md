@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - react
   - security
@@ -34,6 +34,7 @@ This source records React support for Trusted Types and is the key source curren
 
 - [[../concepts/Trusted Types|Trusted Types]]
 - [[../tools/Next.js|Next.js]]
+- [[../patterns/Type-Driven Frontend Safety|Type-Driven Frontend Safety]]
 
 ## Raw Sources
 

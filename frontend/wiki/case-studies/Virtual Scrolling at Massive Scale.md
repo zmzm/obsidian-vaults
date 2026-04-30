@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - react
   - performance
@@ -37,6 +37,7 @@ This case study captures how table rendering at extreme scale requires purpose-b
 
 - [[../topics/React Rendering|React Rendering]]
 - [[../topics/SSR Performance|SSR Performance]]
+- [[GitHub Diff Performance]]
 
 ## Raw Source
 

@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - react
   - server-components
@@ -39,6 +39,7 @@ This case study captures how error handling changes across React Server Componen
 - [[../tools/Next.js|Next.js]]
 - [[../topics/SSR Performance|SSR Performance]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
+- [[../sources/Next.js catchError|Next.js catchError]]
 
 ## Raw Source
 

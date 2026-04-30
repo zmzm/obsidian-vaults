@@ -40,6 +40,7 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
 - [[../case-studies/Error Rendering with RSC|Error Rendering with RSC]]
 - [[../case-studies/React ProseMirror Performance|React ProseMirror Performance]]
+- [[../sources/Next.js catchError|Next.js catchError]]
 - [[../sources/React Component API Game|React Component API Game]]
 
 ## Sources

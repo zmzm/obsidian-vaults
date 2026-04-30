@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -23,7 +23,7 @@ TWIR #266 is a useful routing source for TanStack Start mutation workflows and f
 - It strengthens the practical side of the TanStack Start branch.
 - It helps connect framework comparison to concrete data-flow and mutation patterns.
 
-## Limitations
+## Caveats
 
 - Much of the issue is outside the current core wiki focus.
 

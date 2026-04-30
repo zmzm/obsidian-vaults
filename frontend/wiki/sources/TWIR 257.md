@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -24,7 +24,7 @@ TWIR #257 is a useful routing source for Partial Prerendering, cache-related req
 - It materially strengthens the caching branch of the wiki.
 - It helps move App Router caching discussion beyond isolated feature descriptions and into the mechanics of dynamic dependency detection.
 
-## Limitations
+## Caveats
 
 - Only part of the issue maps directly onto the current wiki structure.
 

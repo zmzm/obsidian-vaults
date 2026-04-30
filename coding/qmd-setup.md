@@ -18,7 +18,7 @@ It covers:
 ## Assumptions
 
 - `qmd` is installed and available in the shell.
-- the vault lives at a path equivalent to `/Users/admin/Documents/vaults/coding`.
+- the vault lives at a path equivalent to `/home/pentagon-admin/Documents/apps/obsidian-vaults/coding`.
 - Ollama is available if you want vector embeddings and `qmd query` / `qmd vsearch` to work well.
 
 ## Recommended Collection Layout
@@ -57,10 +57,10 @@ qmd collection add /ABSOLUTE/PATH/TO/coding/common --name coding-common --mask '
 Example for this machine:
 
 ```bash
-qmd collection add /Users/admin/Documents/vaults/coding --name coding-root --mask '*.md'
-qmd collection add /Users/admin/Documents/vaults/coding/frontend --name coding-frontend --mask '**/*.md'
-qmd collection add /Users/admin/Documents/vaults/coding/backend --name coding-backend --mask '**/*.md'
-qmd collection add /Users/admin/Documents/vaults/coding/common --name coding-common --mask '**/*.md'
+qmd collection add /home/pentagon-admin/Documents/apps/obsidian-vaults/coding --name coding-root --mask '*.md'
+qmd collection add /home/pentagon-admin/Documents/apps/obsidian-vaults/coding/frontend --name coding-frontend --mask '**/*.md'
+qmd collection add /home/pentagon-admin/Documents/apps/obsidian-vaults/coding/backend --name coding-backend --mask '**/*.md'
+qmd collection add /home/pentagon-admin/Documents/apps/obsidian-vaults/coding/common --name coding-common --mask '**/*.md'
 ```
 
 ## Update Existing Collections

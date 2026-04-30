@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-16
+updated: 2026-04-22
 tags:
   - tanstack-query
   - abstractions
@@ -30,6 +30,8 @@ This source captures a useful design tension in TanStack Query: abstraction can 
 ## Related Pages
 
 - [[../tools/TanStack Query|TanStack Query]]
+- [[../patterns/Client-First Data Sync|Client-First Data Sync]]
+- [[TanStack Query prefer-query-options]]
 - [[../sources/TWIR 270|TWIR 270]]
 
 ## Raw Sources

@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-04-16
+updated: 2026-04-22
 status: active
 ---
 
@@ -153,3 +153,88 @@ status: active
 - Updated all 14 TWIR index files to remove references to deleted articles and cleaned up TL;DR and Action Items sections.
 - Kept 87 articles covering: React core PRs (cacheSignal, Activity, Fragment refs, ViewTransition, useEffectEvent), React Compiler progress, Next.js releases and PRs, TanStack Start and TanStack DB, React Router evolution, Server Components patterns, testing strategy, SSR/self-hosting, and framework ecosystem shifts.
 - No wiki pages or index.md referenced TWIR 240-253 articles, so no cross-layer link updates were needed.
+
+## [2026-04-21] ingest | Broadened archive coverage and new issue pass
+
+- Added detailed digest pages for every previously missing TWIR issue from #219 through #265, plus new digest pages for TWIR #276 and #277.
+- Promoted new source pages for the Precompute pattern, TanStack's RSC-as-data-streams framing, React2DoS, Next.js Node.js stream work, React Router callsite revalidation, and custom ESLint rules.
+- Added new case studies for Railway's migration off Next.js and GitHub's diff rendering performance work.
+- Next sensible step: use the newly indexed issue layer to promote more individual articles into source, case-study, or synthesis pages where repetition justifies it.
+
+## [2026-04-21] lint | Reconnect new archive and issue pages into the wiki graph
+
+- Updated the global index so the full issue-level TWIR layer, new sources, and new case studies are navigable from the vault map.
+- Rewired Next.js, Server Components, TanStack Start, React Router, rendering, caching, safety, and comparison pages to absorb the new material.
+- Expanded the lint branch beyond type-only safety by connecting custom ESLint rules and effect-discipline enforcement back into the main graph.
+
+## [2026-04-21] ingest | Promote repeated themes from TWIR 219-254
+
+- Added durable pages for `TanStack DB`, `React Activity`, `React Router Middleware`, `Next.js Middleware Bypass`, and `Server Components Beyond Next.js`.
+- Upgraded the data, routing, rendering, testing, and framework branches so repeated archive signals are no longer trapped inside issue summaries.
+- Used the newly indexed TWIR layer as support rather than as an endpoint, promoting only themes with repeated cross-issue evidence.
+
+## [2026-04-21] ingest | Promote transition, testing, and portability branches
+
+- Added durable pages for `React View Transitions`, `Storybook`, and `Next.js Deployment Adapters`.
+- Rewired rendering, testing, and framework pages so these themes now sit in the main graph instead of living only in archive issue summaries.
+- Used repetition across multiple TWIR issues as the threshold for promotion rather than one especially interesting article.
+
+## [2026-04-21] ingest | Tighten async cache, action security, and Storybook testing branches
+
+- Added supporting source pages for `React cacheSignal`, `Next.js Server Actions Security`, and `Storybook Component Testing`.
+- Rewired `React use()`, `Next.js`, `Storybook`, and `Testing Strategy for React Apps` so these recurring ideas no longer depend on issue pages alone.
+- Used this pass to connect low-level async cache lifecycle, public action boundaries, and story-driven component testing back into the main wiki graph.
+
+## [2026-04-21] ingest | Promote effect API and Next.js portability synthesis
+
+- Added `React useEffectEvent` as a dedicated concept page instead of leaving the API buried inside release summaries and the broader effects pattern.
+- Added `Next.js Portability Boundaries` as a synthesis page connecting adapters, non-Vercel metadata breakage, and host-level stream/runtime friction.
+- Rewired `React Rendering`, `Effects and Cleanup Discipline`, `Next.js`, `Next.js Deployment Adapters`, and supporting TWIR issue pages so both branches sit inside the main graph.
+
+## [2026-04-22] ingest | Deepen portability branch with host-specific supporting pages
+
+- Added `Next.js Metadata Streaming Portability` as a supporting source page for the non-Vercel metadata and SEO failure mode.
+- Added `Next.js Host Runtime Friction` as a case study tying Cloudflare/OpenNext runtime behavior, stream adapters, and SSR hot-path costs together.
+- Rewired `Next.js`, `SSR Performance`, `Next.js Deployment Adapters`, `Next.js Node.js Streams for RSC`, the portability synthesis, and the global index so the portability branch now has real supporting structure below the synthesis layer.
+
+## [2026-04-22] ingest | Split typed routing from generic type safety
+
+- Added `URL State Safety` as a supporting source page for schema-aware search params, write throttling, and migration-minded URL state.
+- Added `Typed Routing and URL State` as a dedicated pattern page connecting route manifests, typed links, validated search params, and route-tree inheritance across Next.js, React Router, and TanStack Router.
+- Rewired `Type-Driven Frontend Safety`, `React Router`, `TanStack Start`, `Next.js`, `React Router Type Safety`, and the global index so routing safety no longer sits buried inside generic typing guidance.
+
+## [2026-04-22] ingest | Separate component confidence from generic testing advice
+
+- Added `Component Confidence Boundaries` as a dedicated pattern page for story-driven coverage, browser-realistic component tests, and the limits of component-level confidence.
+- Rewired `Testing Strategy for React Apps`, `Storybook`, `Storybook Component Testing`, `Vitest Browser Mode`, and the global index so this branch is no longer flattened into one generic testing page.
+- Used Storybook 9, Storybook coverage, Vitest Browser Mode, shift-left testing practice, and accessibility-oriented selector guidance as the supporting signal set.
+
+## [2026-04-22] ingest | Deepen TanStack DB into sync-model pages
+
+- Added `TanStack DB Query-Driven Sync` as a supporting source page for live-query maintenance, normalized collections, and API-facing query pushdown.
+- Added `Client-First Data Sync` as a dedicated pattern page connecting sync-engine thinking, local-first UX, TanStack DB, and the limits of plain query-cache architectures.
+- Rewired `TanStack DB`, `TanStack Query`, `TanStack Start`, and the global index so the data-sync branch now has a clearer model layer instead of one tool page carrying the whole argument.
+
+## [2026-04-22] structure | Rebalance overloaded framework and rendering hubs
+
+- Trimmed issue-heavy and loosely related links out of the most crowded hub pages so they point more consistently at durable concepts, patterns, sources, and case studies.
+- Reframed `Next.js`, `TanStack Start`, `TanStack Query`, `React Router`, and `React Rendering` so the broad hubs behave more like routers and less like mixed summary pages.
+- Next sensible step: normalize the global index if it starts flattening too many branches into one long page again.
+
+## [2026-04-22] structure | Separate framework-hub responsibilities more clearly
+
+- Reframed `Next.js` around platform surface, runtime direction, portability, security, and caching rather than letting migration stories dominate the hub.
+- Reframed `TanStack Start` around explicit middleware, routing, mutation, and sync-model primitives rather than treating it mainly as the anti-Next.js branch.
+- Kept direct comparison and migration material linked, but pushed it back down into synthesis and case-study pages where tradeoff arguments belong.
+
+## [2026-04-22] structure | Normalize the global index
+
+- Split the overloaded `Case Studies` section into framework-fit, architecture/performance, and testing/migration blocks.
+- Replaced the flat `Sources` list with grouped issue-digest ranges plus thematic source clusters for frameworks, runtime/rendering, and data/testing/safety.
+- Kept direct links to every `TWIR 219-277` digest while making the index materially shorter and easier to scan.
+
+## [2026-04-22] lint | Backlink audit for second-order orphans
+
+- Audited pages that were reachable from `index.md` but still weakly embedded in thematic pages.
+- Reconnected weaker article-level nodes across query authoring, routing, rendering, security, and AI/framework branches.
+- Kept this pass focused on durable article-level wiring instead of inflating the already large issue-digest layer.

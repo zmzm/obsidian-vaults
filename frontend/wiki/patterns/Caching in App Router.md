@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-14
+updated: 2026-04-21
 tags:
   - nextjs
   - caching
@@ -30,6 +30,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - It also ties naturally into App Router ergonomics and framework-aware APIs.
 - The newer raw layer adds a more operational view of caching and SSR tradeoffs in larger Next.js deployments.
 - It now also includes a strong release anchor for explicit cache design and a stronger source on Partial Prerendering mechanics.
+- Newer issue coverage also adds a concrete precompute workaround for separating request context from cacheable render paths.
 
 ## Related Pages
 
@@ -42,9 +43,11 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
+- [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../sources/Next.js at Enterprise Level|Next.js at Enterprise Level]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
 - [[../sources/TWIR 274|TWIR 274]]
+- [[../sources/TWIR 276|TWIR 276]]
 
 ## Sources
 
@@ -52,10 +55,12 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../../raw/twir/257/2025-11-05-TWIR-257|TWIR #257]]
 - [[../../raw/twir/268/2026-02-11-TWIR-268|TWIR #268]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
+- [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js at Enterprise Level|Next.js at Enterprise Level]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
+- [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
 
 ## Open Questions

@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - react
   - rendering
@@ -30,31 +30,35 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - This is enough to justify evolving this page into a central map for rendering and scheduling topics.
 - TWIR #273 and #274 also add historical async-rendering context and developer-facing APIs like `use()`.
 - TWIR #270 and #272 now add more concrete material on transitions and state update internals.
+- The surrounding graph is also now more balanced: rendering links outward to async APIs, client-data models, and framework transport choices instead of only to React internals.
 
 ## Related Pages
 
 - [[../concepts/React Compiler|React Compiler]]
+- [[../concepts/React View Transitions|React View Transitions]]
 - [[../concepts/Signals|Signals]]
 - [[../concepts/Server Components|Server Components]]
+- [[../concepts/React Activity|React Activity]]
 - [[../concepts/React Identity and Reconciliation|React Identity and Reconciliation]]
 - [[../concepts/React use()|React use()]]
+- [[../concepts/React useEffectEvent|React useEffectEvent]]
 - [[../tools/Next.js|Next.js]]
 - [[../tools/React Router|React Router]]
 - [[../tools/TanStack Query|TanStack Query]]
+- [[../tools/TanStack DB|TanStack DB]]
 - [[SSR Performance]]
+- [[../patterns/Client-First Data Sync|Client-First Data Sync]]
 - [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
 - [[../syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]]
 - [[../syntheses/React Compiler vs Fine-Grained Reactivity|React Compiler vs Fine-Grained Reactivity]]
+- [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
 - [[../sources/How React Fiber Renders Your UI|How React Fiber Renders Your UI]]
 - [[../sources/Async React Evolution|Async React Evolution]]
 - [[../sources/How State Updates Work Internally|How State Updates Work Internally]]
 - [[../sources/React Key Prop|React Key Prop]]
 - [[../sources/React useTransition|React useTransition]]
 - [[../sources/React use Hook|React use Hook]]
-- [[../sources/TWIR 273|TWIR 273]]
-- [[../sources/TWIR 274|TWIR 274]]
-- [[../sources/TWIR 275|TWIR 275]]
 - [[../case-studies/Async React Design Components|Async React Design Components]]
 - [[../case-studies/Atomic State in Deep Trees|Atomic State in Deep Trees]]
 - [[../case-studies/Building Bulletproof React Components|Building Bulletproof React Components]]
@@ -62,6 +66,7 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../case-studies/React Compiler Silent Failures|React Compiler Silent Failures]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
 - [[../case-studies/Virtual Scrolling at Massive Scale|Virtual Scrolling at Massive Scale]]
+- [[../case-studies/GitHub Diff Performance|GitHub Diff Performance]]
 
 ## Sources
 
@@ -71,6 +76,7 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
 - [[../sources/Async React Evolution|Async React Evolution]]
+- [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 - [[../sources/How State Updates Work Internally|How State Updates Work Internally]]
 - [[../sources/React Key Prop|React Key Prop]]
 - [[../sources/React useTransition|React useTransition]]

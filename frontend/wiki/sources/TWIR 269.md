@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -25,7 +25,7 @@ TWIR #269 is a strong routing source for Next.js platform direction, agent-orien
 - It strengthens the `Next.js` page with platform-direction context beyond release notes.
 - It also adds useful comparison and competitive framing for modern full-stack React frameworks.
 
-## Limitations
+## Caveats
 
 - The issue contains several unrelated ecosystem items, so only part of it maps directly into the current wiki structure.
 

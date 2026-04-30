@@ -56,6 +56,7 @@ It is a debate about whether teams want implicit local conventions or explicit s
 
 - [[../tools/Next.js|Next.js]]
 - [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
+- [[Next.js Portability Boundaries|Next.js Portability Boundaries]]
 - [[../case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]]
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
 - [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]

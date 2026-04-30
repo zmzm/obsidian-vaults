@@ -1,7 +1,7 @@
 ---
 type: tool
-status: seed
-updated: 2026-04-14
+status: active
+updated: 2026-04-22
 tags:
   - tanstack
   - query
@@ -28,22 +28,28 @@ TanStack Query is the tool hub for client/server data synchronization, query abs
 - The current raw layer already points to stronger convention enforcement around colocated query definitions.
 - That makes this page useful not only as a library overview but also as a place to track authoring discipline and tooling-driven patterns.
 - Newer raw material also adds a more nuanced source on abstraction tradeoffs over the query API.
+- The archive now also adds a serious adjacent branch in `TanStack DB`, which changes the story from query authoring conventions alone to richer client-side data modeling.
 
 ## Related Pages
 
 - [[../concepts/Signals|Signals]]
 - [[../topics/React Rendering|React Rendering]]
+- [[TanStack DB]]
+- [[../patterns/Client-First Data Sync|Client-First Data Sync]]
 - [[TanStack Start]]
 - [[../sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]]
 - [[../sources/Creating Query Abstractions|Creating Query Abstractions]]
-- [[../sources/TWIR 270|TWIR 270]]
+- [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 
 ## Sources
 
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
 - [[../../raw/twir/266/2026-01-28-TWIR-266|TWIR #266]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
+- [[../../raw/twir/245/2025-07-30-TWIR-245|TWIR #245]]
+- [[../../raw/twir/249/2025-09-10-TWIR-249|TWIR #249]]
 - [[../sources/Creating Query Abstractions|Creating Query Abstractions]]
+- [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 - [[../sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]]
 - [[../sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]]
 

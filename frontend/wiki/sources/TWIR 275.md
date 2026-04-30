@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -27,7 +27,7 @@ TWIR #275 is a curated digest issue that is especially useful as a routing sourc
 - It already contains concise summaries and outbound source links.
 - It provides a coherent snapshot of what mattered in the React ecosystem on 2026-04-01.
 
-## Limitations
+## Caveats
 
 - It is a secondary digest, not a primary source.
 - Its summaries are useful for triage, but not enough for high-confidence technical detail in all cases.

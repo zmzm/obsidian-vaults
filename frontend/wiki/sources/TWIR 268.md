@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -25,7 +25,7 @@ TWIR #268 is a useful routing source for durable component design, enterprise Ne
 - It broadens the vault from framework releases into component and architecture quality.
 - It is especially useful as an early bridge between React correctness concerns and framework operating constraints.
 
-## Limitations
+## Caveats
 
 - Some items are unavailable or only partially summarized.
 - The issue is better as a routing source than as a final authority for technical detail.

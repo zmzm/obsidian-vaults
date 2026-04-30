@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-14
+updated: 2026-04-21
 tags:
   - react
   - rsc
@@ -28,6 +28,7 @@ Server Components are a React architecture model where part of the component tre
 - The raw layer already contains both framework-level usage and custom framework implementation perspectives.
 - The vault has enough material to treat this as an active concept rather than a placeholder.
 - The newer source base also adds more concrete performance-oriented evidence instead of only framework or API framing.
+- It now also includes stronger evidence on protocol-level security risk and an explicit alternative model where RSC behaves more like cacheable streamed data.
 
 ## Related Pages
 
@@ -35,6 +36,7 @@ Server Components are a React architecture model where part of the component tre
 - [[../tools/React Router|React Router]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../topics/SSR Performance|SSR Performance]]
+- [[React Activity]]
 - [[React use()]]
 - [[../patterns/Caching in App Router|Caching in App Router]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
@@ -42,7 +44,12 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/TWIR 257|TWIR 257]]
 - [[../sources/TWIR 273|TWIR 273]]
 - [[../sources/TWIR 274|TWIR 274]]
+- [[../sources/TWIR 277|TWIR 277]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
+- [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
+- [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/React2DoS|React2DoS]]
+- [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../case-studies/Next.js App Router Exit|Next.js App Router Exit]]
@@ -54,9 +61,16 @@ Server Components are a React architecture model where part of the component tre
 
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
 - [[../../raw/twir/257/2025-11-05-TWIR-257|TWIR #257]]
+- [[../../raw/twir/261/2025-12-03-TWIR-261|TWIR #261]]
+- [[../../raw/twir/262/2025-12-10-TWIR-262|TWIR #262]]
+- [[../../raw/twir/263/2025-12-17-TWIR-263|TWIR #263]]
 - [[../../raw/twir/273/2026-03-18-TWIR-273|TWIR #273]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
+- [[../../raw/twir/277/2026-04-15-TWIR-277|TWIR #277]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
+- [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/React2DoS|React2DoS]]
+- [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]

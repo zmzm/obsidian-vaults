@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-14
+updated: 2026-04-22
 tags:
   - twir
   - digest
@@ -24,7 +24,7 @@ TWIR #272 is a useful routing source for state internals, React Compiler tradeof
 - It provides stronger support for the rendering/compiler branch of the wiki.
 - It helps connect React internals to compiler and framework mental models.
 
-## Limitations
+## Caveats
 
 - Some of the most interesting items are only partially summarized or unavailable.
 

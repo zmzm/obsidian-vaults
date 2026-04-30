@@ -30,6 +30,7 @@ This source captures the current argument for browser-realistic component testin
 
 ## Related Pages
 
+- [[../patterns/Component Confidence Boundaries|Component Confidence Boundaries]]
 - [[../patterns/Testing Strategy for React Apps|Testing Strategy for React Apps]]
 - [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 - [[../sources/TWIR 261|TWIR 261]]

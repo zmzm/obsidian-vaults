@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-14
+updated: 2026-04-30
 tags:
   - security
   - browser
@@ -27,6 +27,7 @@ Trusted Types are a browser security mechanism that restricts dangerous DOM sink
 
 - The current raw layer already contains a concrete React integration source, which is enough to treat this as an active concept rather than just a placeholder.
 - Even though this branch is still smaller than the rendering and framework branches, it now has a clearer place inside a broader frontend-safety cluster.
+- TWIR #218 adds an adjacent CSS-in-JS injection example, which broadens the branch from DOM HTML sinks to unsafe frontend value flows more generally.
 
 ## Related Pages
 
@@ -34,11 +35,14 @@ Trusted Types are a browser security mechanism that restricts dangerous DOM sink
 - [[../topics/React Rendering|React Rendering]]
 - [[../patterns/Type-Driven Frontend Safety|Type-Driven Frontend Safety]]
 - [[../sources/React Trusted Types Integration|React Trusted Types Integration]]
+- [[../sources/Styled Components XSS Risk|Styled Components XSS Risk]]
 
 ## Sources
 
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
+- [[../../raw/twir/218/articles/09 - The XSS dangers in interpolating styled-components|The XSS dangers in interpolating styled-components]]
 - [[../sources/React Trusted Types Integration|React Trusted Types Integration]]
+- [[../sources/Styled Components XSS Risk|Styled Components XSS Risk]]
 
 ## Open Questions
 

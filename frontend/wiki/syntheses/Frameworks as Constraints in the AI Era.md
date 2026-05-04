@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-16
+updated: 2026-04-30
 tags:
   - frameworks
   - ai
@@ -34,6 +34,7 @@ The current source base suggests that frameworks become more valuable in the AI 
 - Next.js is positioning runtime context, debugging state, and tool integration as part of framework direction.
 - Real host-environment integration work shows that framework behavior is deeply shaped by embedding constraints, not just by browser APIs.
 - A direct experiment removing Next.js in an AI-heavy workflow suggests that losing conventions harms maintainability and coordination before it harms feature velocity.
+- Newer accessibility and security material adds a sharper failure mode: AI tools can produce visually plausible but semantically invalid UI, and third-party agentic tooling can become part of the operational risk surface.
 
 ## Main Distinction
 
@@ -62,6 +63,8 @@ It is a debate about whether teams want implicit local conventions or explicit s
 - [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
 - [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
 - [[../sources/Next.js Skills|Next.js Skills]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/TWIR 278|TWIR 278]]
 
 ## Sources
 
@@ -71,6 +74,7 @@ It is a debate about whether teams want implicit local conventions or explicit s
 - [[../case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]]
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
 - [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
 - [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../../raw/twir/255/articles/10 - Running Next.js inside ChatGPT A deep dive into native app integration|Running Next.js inside ChatGPT]]
 - [[../../raw/twir/266/articles/13 - Next.js Skills - Newly published Vercel Agent skills for common Next.js workflows|Next.js Skills - Newly published Vercel Agent skills for common Next.js workflows]]

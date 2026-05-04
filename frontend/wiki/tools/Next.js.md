@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-22
+updated: 2026-04-30
 tags:
   - react
   - framework
@@ -29,6 +29,7 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - Stable adapters, `use cache`, App Router ergonomics, stream-pipeline work, and debugging/tooling changes are all already represented in the source set.
 - Evidence that framework fit can break down in client-heavy products is still important, but it now lives mainly in supporting syntheses and case studies instead of defining the whole hub.
 - The page should therefore stay centered on framework surface area and route outward to portability, security, and fit-specific branches when those questions become primary.
+- Early archive coverage now adds both sides of the framework-fit story: composable caching as a first-party platform direction, and ComfyDeploy as a client-heavy dashboard case where Next.js was not the right fit.
 
 ## Related Pages
 
@@ -56,6 +57,7 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
+- [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../case-studies/Next.js App Router Exit|Next.js App Router Exit]]
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
 - [[../case-studies/Next.js Middleware Bypass|Next.js Middleware Bypass]]
@@ -64,9 +66,13 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
+- [[../case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]]
 
 ## Sources
 
+- [[../../raw/twir/215/2025-01-02-TWIR-215|TWIR #215]]
+- [[../../raw/twir/216/2025-01-08-TWIR-216|TWIR #216]]
+- [[../../raw/twir/217/2025-01-15-TWIR-217|TWIR #217]]
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
 - [[../../raw/twir/227/2025-03-26-TWIR-227|TWIR #227]]
 - [[../../raw/twir/229/2025-04-09-TWIR-229|TWIR #229]]
@@ -88,6 +94,7 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
 - [[../sources/Next.js Skills|Next.js Skills]]
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
+- [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Next.js Server Actions Security|Next.js Server Actions Security]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/Next.js catchError|Next.js catchError]]

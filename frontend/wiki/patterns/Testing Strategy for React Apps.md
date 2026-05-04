@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-21
+updated: 2026-04-30
 tags:
   - react
   - testing
@@ -29,6 +29,8 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - The source base already contains a large migration from Enzyme to RTL, material on `act()`, async RSC testing limitations, browser-based component testing, and shift-left testing strategy.
 - That is enough to justify a dedicated pattern page rather than leaving testing material scattered or raw-only.
 - The older archive now also adds route-middleware testing as a distinct example of integration-oriented frontend verification.
+- TWIR #278 and #279 reinforce accessibility as a semantic UI contract that should be enforced through primitives, linting, component tests, and review, especially when AI tools generate code.
+- TWIR #216 adds Slack's Playwright/Axe workflow as a concrete example of operational accessibility testing with filtering and fixtures.
 
 ## Related Pages
 
@@ -42,16 +44,23 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
 - [[../sources/Testing Async React RSC Components|Testing Async React RSC Components]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 
 ## Sources
 
 - [[../../raw/twir/258/articles/09 - Everything you need to know about act() in React tests|Everything you need to know about act() in React tests]]
+- [[../../raw/twir/216/articles/03 - Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../../raw/twir/259/articles/10 - Testing async React RSC components|Testing async React RSC components]]
 - [[../../raw/twir/261/articles/12 - Vitest Browser Mode - The Future of Frontend Testing|Vitest Browser Mode - The Future of Frontend Testing]]
 - [[../../raw/twir/225/articles/03 - Test Middleware in React Router|Test Middleware in React Router]]
 - [[../../raw/twir/265/articles/13 - Front-end testing at Preply shifting left towards component testing|Front-end testing at Preply: shifting left towards component testing]]
 - [[../../raw/twir/274/articles/08 - Test IDs are an a11y smell|Test IDs are an a11y smell]]
+- [[../../raw/twir/278/articles/05 - AI-Generated UI Is Inaccessible by Default|AI-Generated UI Is Inaccessible by Default]]
+- [[../../raw/twir/279/articles/05 - Accessibility in React Common Mistakes and How to Fix Them|Accessibility in React: Common Mistakes and How to Fix Them]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../case-studies/Enzyme to RTL Migration|Enzyme to RTL Migration]]
 
 ## Open Questions

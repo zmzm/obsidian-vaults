@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-21
+updated: 2026-04-30
 tags:
   - react
   - view-transitions
@@ -28,6 +28,7 @@ React View Transitions is the concept page for declarative UI-tree animations co
 
 - The archive now contains multiple signals around ViewTransition from experiments through official API material.
 - That is enough to justify a dedicated concept page instead of leaving the topic diffused across issue summaries and generic rendering discussions.
+- TWIR #217 adds an early explanation of the experimental React API and why it depends on async rendering boundaries such as transitions and Suspense.
 
 ## Related Pages
 
@@ -36,6 +37,7 @@ React View Transitions is the concept page for declarative UI-tree animations co
 - [[../topics/React Rendering|React Rendering]]
 - [[../tools/Next.js|Next.js]]
 - [[../sources/TWIR 227|TWIR 227]]
+- [[../sources/TWIR 217|TWIR 217]]
 - [[../sources/TWIR 231|TWIR 231]]
 - [[../sources/TWIR 239|TWIR 239]]
 - [[../sources/TWIR 253|TWIR 253]]
@@ -44,6 +46,7 @@ React View Transitions is the concept page for declarative UI-tree animations co
 ## Sources
 
 - [[../../raw/twir/227/articles/09 - Experimenting with React View Transitions|Experimenting with React View Transitions]]
+- [[../../raw/twir/217/articles/01 - Revealed React's experimental animations API|Revealed React's experimental animations API]]
 - [[../../raw/twir/231/articles/01 - React Labs View Transitions, Activity, and more|React Labs View Transitions, Activity, and more]]
 - [[../../raw/twir/239/articles/03 - Bringing React's ViewTransition to vanilla JS|Bringing React's ViewTransition to vanilla JS]]
 - [[../../raw/twir/253/articles/02 - ViewTransition|ViewTransition]]

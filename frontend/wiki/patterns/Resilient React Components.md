@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-16
+updated: 2026-04-30
 tags:
   - react
   - component-design
@@ -27,6 +27,7 @@ Resilient React Components is the pattern page for designing component APIs that
 ## Current Signals
 
 - The current source base already includes a strong authoring guide for robust React components, an embedded-host integration story, and practical error-model differences in server-driven React.
+- TWIR #215 adds a dropdown API source where composition, trigger behavior, state control, and accessibility are part of resilience for UI primitives.
 - That is enough to justify a dedicated pattern page rather than routing everything through `Next.js` or `Server Components`.
 
 ## Related Pages
@@ -42,10 +43,12 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../case-studies/React ProseMirror Performance|React ProseMirror Performance]]
 - [[../sources/Next.js catchError|Next.js catchError]]
 - [[../sources/React Component API Game|React Component API Game]]
+- [[../sources/Dropdown Component API|Dropdown Component API]]
 
 ## Sources
 
 - [[../../raw/twir/255/articles/10 - Running Next.js inside ChatGPT A deep dive into native app integration|Running Next.js inside ChatGPT]]
+- [[../../raw/twir/215/articles/01 - Building a dropdown|Building a dropdown]]
 - [[../../raw/twir/261/articles/04 - Building a toast component|Building a toast component]]
 - [[../../raw/twir/268/articles/01 - Building Bulletproof React Components|Building Bulletproof React Components]]
 - [[../../raw/twir/273/articles/10 - Can’t Maintain - React Component API Game|Can’t Maintain - React Component API Game]]

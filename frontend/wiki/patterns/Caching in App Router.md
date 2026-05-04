@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-21
+updated: 2026-04-30
 tags:
   - nextjs
   - caching
@@ -31,6 +31,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - The newer raw layer adds a more operational view of caching and SSR tradeoffs in larger Next.js deployments.
 - It now also includes a strong release anchor for explicit cache design and a stronger source on Partial Prerendering mechanics.
 - Newer issue coverage also adds a concrete precompute workaround for separating request context from cacheable render paths.
+- TWIR #216 adds the earlier first-party composable-caching source where `use cache` is framed as a compiler-visible boundary, not only a runtime helper.
 
 ## Related Pages
 
@@ -41,6 +42,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/TWIR 255|TWIR 255]]
 - [[../sources/TWIR 257|TWIR 257]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
@@ -51,12 +53,14 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 
 ## Sources
 
+- [[../../raw/twir/216/2025-01-08-TWIR-216|TWIR #216]]
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
 - [[../../raw/twir/257/2025-11-05-TWIR-257|TWIR #257]]
 - [[../../raw/twir/268/2026-02-11-TWIR-268|TWIR #268]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js at Enterprise Level|Next.js at Enterprise Level]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]

@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-04-22
+updated: 2026-04-30
 tags:
   - react
   - rendering
@@ -31,6 +31,8 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - TWIR #273 and #274 also add historical async-rendering context and developer-facing APIs like `use()`.
 - TWIR #270 and #272 now add more concrete material on transitions and state update internals.
 - The surrounding graph is also now more balanced: rendering links outward to async APIs, client-data models, and framework transport choices instead of only to React internals.
+- TWIR #279 adds a clearer React-level explanation of out-of-order server streaming through Suspense placeholders and later content swaps.
+- TWIR #218 adds React Scan as a small tooling signal for surfacing unnecessary rerenders during development.
 
 ## Related Pages
 
@@ -59,6 +61,8 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../sources/React Key Prop|React Key Prop]]
 - [[../sources/React useTransition|React useTransition]]
 - [[../sources/React use Hook|React use Hook]]
+- [[../sources/React Out-of-Order Streaming|React Out-of-Order Streaming]]
+- [[../sources/React Scan|React Scan]]
 - [[../case-studies/Async React Design Components|Async React Design Components]]
 - [[../case-studies/Atomic State in Deep Trees|Atomic State in Deep Trees]]
 - [[../case-studies/Building Bulletproof React Components|Building Bulletproof React Components]]
@@ -71,10 +75,12 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 ## Sources
 
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
+- [[../../raw/twir/218/2025-01-22-TWIR-218|TWIR #218]]
 - [[../../raw/twir/272/2026-03-11-TWIR-272|TWIR #272]]
 - [[../../raw/twir/273/2026-03-18-TWIR-273|TWIR #273]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
+- [[../../raw/twir/279/2026-04-29-TWIR-279|TWIR #279]]
 - [[../sources/Async React Evolution|Async React Evolution]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 - [[../sources/How State Updates Work Internally|How State Updates Work Internally]]
@@ -82,6 +88,8 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../sources/React useTransition|React useTransition]]
 - [[../sources/React use Hook|React use Hook]]
 - [[../sources/How React Fiber Renders Your UI|How React Fiber Renders Your UI]]
+- [[../sources/React Out-of-Order Streaming|React Out-of-Order Streaming]]
+- [[../sources/React Scan|React Scan]]
 
 ## Open Questions
 

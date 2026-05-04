@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-04-22
+updated: 2026-04-30
 status: active
 ---
 
@@ -10,6 +10,10 @@ This file is the map of the vault. Start here, then drill into specific pages.
 
 ## Raw
 
+- [[raw/twir/215/2025-01-02-TWIR-215|TWIR #215]] — source issue and related article notes.
+- [[raw/twir/216/2025-01-08-TWIR-216|TWIR #216]] — source issue and related article notes.
+- [[raw/twir/217/2025-01-15-TWIR-217|TWIR #217]] — source issue and related article notes.
+- [[raw/twir/218/2025-01-22-TWIR-218|TWIR #218]] — source issue and related article notes.
 - [[raw/twir/258/2025-11-12-TWIR-258|TWIR #258]] — source issue and related article notes.
 - [[raw/twir/259/2025-11-19-TWIR-259|TWIR #259]] — source issue and related article notes.
 - [[raw/twir/260/2025-11-26-TWIR-260|TWIR #260]] — source issue and related article notes.
@@ -23,6 +27,8 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[raw/twir/275/2026-04-01-TWIR-275|TWIR #275]] — source issue and related article notes.
 - [[raw/twir/276/2026-04-08-TWIR-276|TWIR #276]] — source issue and related article notes.
 - [[raw/twir/277/2026-04-15-TWIR-277|TWIR #277]] — source issue and related article notes.
+- [[raw/twir/278/2026-04-22-TWIR-278|TWIR #278]] — source issue and related article notes.
+- [[raw/twir/279/2026-04-29-TWIR-279|TWIR #279]] — source issue and related article notes.
 
 ## Concepts
 
@@ -70,6 +76,7 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]] — host-environment integration lessons from running Next.js inside ChatGPT.
 - [[wiki/case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]] — why framework conventions become more valuable, not less, in AI-assisted engineering.
 - [[wiki/case-studies/Railway Off Next.js|Railway Off Next.js]] — a production migration story where a client-heavy product moved from Next.js toward a Vite- and TanStack-based stack.
+- [[wiki/case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]] — an earlier dashboard migration where plain React, TanStack Router, and Rspack fit better than Next.js.
 - [[wiki/case-studies/Next.js Middleware Bypass|Next.js Middleware Bypass]] — a security incident showing how framework internals, deployment topology, and communication affect real production risk.
 
 ### React Architecture And Performance
@@ -97,18 +104,19 @@ This section is grouped by role so the index stays navigable without losing dire
 
 ### Issue Digests
 
+- `215-218`: [[wiki/sources/TWIR 215|TWIR 215]], [[wiki/sources/TWIR 216|TWIR 216]], [[wiki/sources/TWIR 217|TWIR 217]], [[wiki/sources/TWIR 218|TWIR 218]]
 - `219-229`: [[wiki/sources/TWIR 219|TWIR 219]], [[wiki/sources/TWIR 220|TWIR 220]], [[wiki/sources/TWIR 221|TWIR 221]], [[wiki/sources/TWIR 222|TWIR 222]], [[wiki/sources/TWIR 223|TWIR 223]], [[wiki/sources/TWIR 224|TWIR 224]], [[wiki/sources/TWIR 225|TWIR 225]], [[wiki/sources/TWIR 226|TWIR 226]], [[wiki/sources/TWIR 227|TWIR 227]], [[wiki/sources/TWIR 228|TWIR 228]], [[wiki/sources/TWIR 229|TWIR 229]]
 - `230-239`: [[wiki/sources/TWIR 230|TWIR 230]], [[wiki/sources/TWIR 231|TWIR 231]], [[wiki/sources/TWIR 232|TWIR 232]], [[wiki/sources/TWIR 233|TWIR 233]], [[wiki/sources/TWIR 234|TWIR 234]], [[wiki/sources/TWIR 235|TWIR 235]], [[wiki/sources/TWIR 236|TWIR 236]], [[wiki/sources/TWIR 237|TWIR 237]], [[wiki/sources/TWIR 238|TWIR 238]], [[wiki/sources/TWIR 239|TWIR 239]]
 - `240-249`: [[wiki/sources/TWIR 240|TWIR 240]], [[wiki/sources/TWIR 241|TWIR 241]], [[wiki/sources/TWIR 242|TWIR 242]], [[wiki/sources/TWIR 243|TWIR 243]], [[wiki/sources/TWIR 244|TWIR 244]], [[wiki/sources/TWIR 245|TWIR 245]], [[wiki/sources/TWIR 246|TWIR 246]], [[wiki/sources/TWIR 247|TWIR 247]], [[wiki/sources/TWIR 248|TWIR 248]], [[wiki/sources/TWIR 249|TWIR 249]]
 - `250-259`: [[wiki/sources/TWIR 250|TWIR 250]], [[wiki/sources/TWIR 251|TWIR 251]], [[wiki/sources/TWIR 252|TWIR 252]], [[wiki/sources/TWIR 253|TWIR 253]], [[wiki/sources/TWIR 254|TWIR 254]], [[wiki/sources/TWIR 255|TWIR 255]], [[wiki/sources/TWIR 256|TWIR 256]], [[wiki/sources/TWIR 257|TWIR 257]], [[wiki/sources/TWIR 258|TWIR 258]], [[wiki/sources/TWIR 259|TWIR 259]]
 - `260-269`: [[wiki/sources/TWIR 260|TWIR 260]], [[wiki/sources/TWIR 261|TWIR 261]], [[wiki/sources/TWIR 262|TWIR 262]], [[wiki/sources/TWIR 263|TWIR 263]], [[wiki/sources/TWIR 264|TWIR 264]], [[wiki/sources/TWIR 265|TWIR 265]], [[wiki/sources/TWIR 266|TWIR 266]], [[wiki/sources/TWIR 267|TWIR 267]], [[wiki/sources/TWIR 268|TWIR 268]], [[wiki/sources/TWIR 269|TWIR 269]]
-- `270-277`: [[wiki/sources/TWIR 270|TWIR 270]], [[wiki/sources/TWIR 271|TWIR 271]], [[wiki/sources/TWIR 272|TWIR 272]], [[wiki/sources/TWIR 273|TWIR 273]], [[wiki/sources/TWIR 274|TWIR 274]], [[wiki/sources/TWIR 275|TWIR 275]], [[wiki/sources/TWIR 276|TWIR 276]], [[wiki/sources/TWIR 277|TWIR 277]]
+- `270-279`: [[wiki/sources/TWIR 270|TWIR 270]], [[wiki/sources/TWIR 271|TWIR 271]], [[wiki/sources/TWIR 272|TWIR 272]], [[wiki/sources/TWIR 273|TWIR 273]], [[wiki/sources/TWIR 274|TWIR 274]], [[wiki/sources/TWIR 275|TWIR 275]], [[wiki/sources/TWIR 276|TWIR 276]], [[wiki/sources/TWIR 277|TWIR 277]], [[wiki/sources/TWIR 278|TWIR 278]], [[wiki/sources/TWIR 279|TWIR 279]]
 
 ### Frameworks And Routing
 
-- `Next.js`: [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
+- `Next.js`: [[wiki/sources/Next.js Composable Caching|Next.js Composable Caching]], [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - `React Router / URL contracts`: [[wiki/sources/React Router Middleware|React Router Middleware]], [[wiki/sources/React Router Callsite Revalidation|React Router Callsite Revalidation]], [[wiki/sources/React Router Integration Points|React Router Integration Points]], [[wiki/sources/React Router Type Safety|React Router Type Safety]], [[wiki/sources/URL State Safety|URL State Safety]]
-- `TanStack Start / RSC stacks`: [[wiki/sources/TanStack Start Middleware|TanStack Start Middleware]], [[wiki/sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]], [[wiki/sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]], [[wiki/sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]], [[wiki/sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]], [[wiki/sources/Custom React Server Components Framework|Custom React Server Components Framework]]
+- `TanStack Start / RSC stacks`: [[wiki/sources/TanStack Start Middleware|TanStack Start Middleware]], [[wiki/sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]], [[wiki/sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]], [[wiki/sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]], [[wiki/sources/TanStack Start Content Apps|TanStack Start Content Apps]], [[wiki/sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]], [[wiki/sources/Custom React Server Components Framework|Custom React Server Components Framework]], [[wiki/sources/RSC Bundle Boundaries|RSC Bundle Boundaries]], [[wiki/sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
 ### React Runtime And Rendering
 
@@ -122,13 +130,17 @@ This section is grouped by role so the index stays navigable without losing dire
 - [[wiki/sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]] — practical comparison of CSR, SSR, and RSC with measurable performance framing.
 - [[wiki/sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]] — comparison between React Compiler and more compiler-first reactive models.
 - [[wiki/sources/React Compiler Rust Port|React Compiler Rust Port]] — implementation-level signal for the React Compiler direction.
+- [[wiki/sources/React Compiler Adoption Maturity|React Compiler Adoption Maturity]] — migration and ecosystem-readiness signal for React Compiler adoption.
+- [[wiki/sources/React Compiler at Wakelet|React Compiler at Wakelet]] — production adoption signal with measured UX gains and migration caveats.
+- [[wiki/sources/React Out-of-Order Streaming|React Out-of-Order Streaming]] — React-level explanation of Suspense-driven server streaming mechanics.
+- [[wiki/sources/React Scan|React Scan]] — lightweight tooling signal for detecting unnecessary React rerenders.
 
 ### Data, Testing, And Safety
 
 - `Client data and query models`: [[wiki/sources/Creating Query Abstractions|Creating Query Abstractions]], [[wiki/sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]], [[wiki/sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
-- `Testing`: [[wiki/sources/Storybook Component Testing|Storybook Component Testing]], [[wiki/sources/Vitest Browser Mode|Vitest Browser Mode]], [[wiki/sources/Testing Async React RSC Components|Testing Async React RSC Components]]
-- `Safety and policy`: [[wiki/sources/Custom ESLint Rules|Custom ESLint Rules]], [[wiki/sources/React Trusted Types Integration|React Trusted Types Integration]], [[wiki/sources/React2DoS|React2DoS]]
-- `Authoring`: [[wiki/sources/React Component API Game|React Component API Game]]
+- `Testing`: [[wiki/sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]], [[wiki/sources/Storybook Component Testing|Storybook Component Testing]], [[wiki/sources/Vitest Browser Mode|Vitest Browser Mode]], [[wiki/sources/Testing Async React RSC Components|Testing Async React RSC Components]]
+- `Safety and policy`: [[wiki/sources/Custom ESLint Rules|Custom ESLint Rules]], [[wiki/sources/React Trusted Types Integration|React Trusted Types Integration]], [[wiki/sources/React2DoS|React2DoS]], [[wiki/sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]], [[wiki/sources/Styled Components XSS Risk|Styled Components XSS Risk]]
+- `Authoring`: [[wiki/sources/Dropdown Component API|Dropdown Component API]], [[wiki/sources/Progressive React Forms|Progressive React Forms]], [[wiki/sources/React Component API Game|React Component API Game]]
 
 ## Syntheses
 

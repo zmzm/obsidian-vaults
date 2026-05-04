@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-22
+updated: 2026-04-30
 tags:
   - testing
   - component-testing
@@ -29,6 +29,8 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - The archive now shows Storybook evolving toward a unified interaction, accessibility, visual, and coverage-oriented surface.
 - Vitest Browser Mode adds a stronger runtime model for component tests than classic jsdom-only setups.
 - Additional testing material reinforces the boundary: shifting left toward component testing is valuable, but selectors, coverage numbers, and stories still need user-facing discipline and clear limits.
+- AI-generated UI makes this boundary sharper: visual plausibility is not component confidence unless semantic HTML, accessible names, keyboard behavior, and focus behavior are also checked.
+- Slack's accessibility-testing workflow adds a production example where browser-level checks are integrated but still treated as bounded evidence rather than complete confidence.
 
 ## Related Pages
 
@@ -36,6 +38,8 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - [[../tools/Storybook|Storybook]]
 - [[../sources/Storybook Component Testing|Storybook Component Testing]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 - [[../sources/TWIR 237|TWIR 237]]
 - [[../sources/TWIR 240|TWIR 240]]
@@ -51,6 +55,10 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - [[../../raw/twir/261/articles/12 - Vitest Browser Mode - The Future of Frontend Testing|Vitest Browser Mode - The Future of Frontend Testing]]
 - [[../../raw/twir/265/articles/13 - Front-end testing at Preply shifting left towards component testing|Front-end testing at Preply: shifting left towards component testing]]
 - [[../../raw/twir/274/articles/08 - Test IDs are an a11y smell|Test IDs are an a11y smell]]
+- [[../../raw/twir/278/articles/05 - AI-Generated UI Is Inaccessible by Default|AI-Generated UI Is Inaccessible by Default]]
+- [[../../raw/twir/216/articles/03 - Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../sources/Storybook Component Testing|Storybook Component Testing]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
 

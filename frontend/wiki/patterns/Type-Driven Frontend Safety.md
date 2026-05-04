@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-21
+updated: 2026-04-30
 tags:
   - typescript
   - react
@@ -29,6 +29,8 @@ Type-Driven Frontend Safety is the pattern page for using types, generated contr
 - The current source base includes generated route typing in React Router, practical examples around discriminated unions and compound components, and a codebase-wide migration away from `React.FC`.
 - That is enough to justify a dedicated pattern page instead of leaving frontend safety split between isolated case studies and library pages.
 - The newer archive also reinforces the policy side of safety: lint rules and explicit enforcement are part of how frontend guarantees stay reliable at scale.
+- Accessibility material around AI-generated UI broadens this page beyond TypeScript: semantic UI contracts also need enforceable checks and safe primitives.
+- React 19 form material adds a concrete case where TypeScript generics and component APIs can align input names with FormData access.
 
 ## Related Pages
 
@@ -37,16 +39,24 @@ Type-Driven Frontend Safety is the pattern page for using types, generated contr
 - [[../concepts/Trusted Types|Trusted Types]]
 - [[../sources/Custom ESLint Rules|Custom ESLint Rules]]
 - [[../sources/React Trusted Types Integration|React Trusted Types Integration]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Progressive React Forms|Progressive React Forms]]
+- [[../sources/Styled Components XSS Risk|Styled Components XSS Risk]]
 - [[../case-studies/Safer Frontend without React.FC|Safer Frontend without React.FC]]
 
 ## Sources
 
 - [[../../raw/twir/260/articles/07 - Omit for Discriminated Unions in TypeScript|Omit for Discriminated Unions in TypeScript]]
+- [[../../raw/twir/217/articles/12 - Make FormData and input names type-safe in React|Make FormData and input names type-safe in React]]
+- [[../../raw/twir/218/articles/09 - The XSS dangers in interpolating styled-components|The XSS dangers in interpolating styled-components]]
 - [[../../raw/twir/264/articles/03 - Building Type-Safe Compound Components|Building Type-Safe Compound Components]]
 - [[../../raw/twir/274/articles/09 - Type Safety in React Router|Type Safety in React Router]]
 - [[../sources/Custom ESLint Rules|Custom ESLint Rules]]
 - [[../sources/React Router Type Safety|React Router Type Safety]]
 - [[../sources/URL State Safety|URL State Safety]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
+- [[../sources/Progressive React Forms|Progressive React Forms]]
+- [[../sources/Styled Components XSS Risk|Styled Components XSS Risk]]
 - [[../case-studies/Safer Frontend without React.FC|Safer Frontend without React.FC]]
 
 ## Open Questions

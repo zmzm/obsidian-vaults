@@ -68,9 +68,11 @@ That means this comparison is directionally useful, but still asymmetric.
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/TanStack Start Middleware|TanStack Start Middleware]]
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/TWIR 269|TWIR 269]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
+- [[../case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]]
 
 ## Sources
 
@@ -80,6 +82,7 @@ That means this comparison is directionally useful, but still asymmetric.
 - [[../topics/SSR Performance|SSR Performance]]
 - [[../sources/TanStack Start Middleware|TanStack Start Middleware]]
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 - [[../sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
@@ -94,6 +97,7 @@ That means this comparison is directionally useful, but still asymmetric.
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
+- [[../case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]]
 
 ## Open Questions
 

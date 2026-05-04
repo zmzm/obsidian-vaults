@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-21
+updated: 2026-04-30
 tags:
   - server-components
   - nextjs
@@ -23,6 +23,7 @@ The archive increasingly suggests that Server Components are best understood as 
 - React Router material shows RSC integrating directly with routing, data loading, and streaming UI concerns.
 - Forket demonstrates that even framework-light or custom environments can adopt the model if they are willing to own bundling, boundaries, and serialization.
 - TanStack's newer framing pushes furthest: RSCs become streamed data that can be fetched and cached on explicit application terms.
+- Earlier source material also makes the surrounding implementation cost visible: bundlers must own client references and manifests, while server functions offer a different client-driven RPC-style alternative.
 
 ## What Still Tends to Belong to Frameworks
 
@@ -56,16 +57,22 @@ The real question is not whether RSC can exist beyond Next.js. It clearly can. T
 - [[../sources/TWIR 248|TWIR 248]]
 - [[../sources/TWIR 251|TWIR 251]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
 ## Sources
 
-- [[../../raw/twir/226/articles/01 - Parcel v2.14.0 - React Server Components beta support|Parcel v2.14.0 - React Server Components beta support]]
+- [[../../raw/twir/226/articles/01 - Parcel v2.14.0|Parcel v2.14.0 - React Server Components beta support]]
+- [[../../raw/twir/216/articles/02 - RSC and Server Action Bundle Practice|RSC and Server Action Bundle Practice]]
+- [[../../raw/twir/218/articles/04 - Why Server Functions Matter In A Server Component World|Why Server Functions Matter In A Server Component World]]
 - [[../../raw/twir/232/2025-04-30-TWIR-232|TWIR #232]]
 - [[../../raw/twir/235/2025-05-21-TWIR-235|TWIR #235]]
 - [[../../raw/twir/244/2025-07-23-TWIR-244|TWIR #244]]
 - [[../../raw/twir/248/articles/05 - React Server Components support without a framework|React Server Components support without a framework]]
 - [[../../raw/twir/251/2025-09-24-TWIR-251|TWIR #251]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
 ## Open Questions
 

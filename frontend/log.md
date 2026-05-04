@@ -1,10 +1,31 @@
 ---
 type: log
-updated: 2026-04-22
+updated: 2026-04-30
 status: active
 ---
 
 # Log
+
+## [2026-04-30] ingest | Backfill TWIR 215 through 218
+
+- Added digest source pages for TWIR #215, #216, #217, and #218 after removing two remaining empty raw article records.
+- Promoted source pages for dropdown component APIs, progressive React forms, Next.js composable caching, RSC bundle boundaries, Slack accessibility testing, React Compiler at Wakelet, server functions versus Server Components, React Scan, and styled-components XSS risk.
+- Added the `ComfyDeploy Off Next.js` case study as an early client-heavy dashboard migration away from Next.js.
+- Rewired Next.js, caching, Server Components, React Compiler, React View Transitions, React use(), React Rendering, TanStack Start, testing, component-confidence, type-safety, Trusted Types, and framework-comparison pages.
+
+## [2026-04-30] ingest | Promote TWIR 278 and 279 into wiki graph
+
+- Added digest source pages for TWIR #278 and TWIR #279 after the raw cleanup pass.
+- Promoted source pages for TanStack Start content apps, AI-generated UI accessibility, React Compiler adoption maturity, and React out-of-order streaming.
+- Rewired React Compiler, React Rendering, Server Components, SSR Performance, TanStack Start, testing, component-confidence, type-safety, and AI-era framework pages to absorb the new material.
+- Left React Email, the Vercel security bulletin, Radix-to-Base UI migration, and TSRX as digest-level references for now because they do not yet justify dedicated durable pages.
+
+## [2026-04-30] maintenance | Clean low-signal raw TWIR items
+
+- Reviewed raw TWIR issues #215-#218 and #278-#279 before source-page ingestion.
+- Removed broken, inaccessible, promotional, podcast/recap, Expo/off-path, and low-signal GitHub PR or milestone article records.
+- Updated the affected TWIR issue MOC files so article lists, TL;DR bullets, and action items no longer point at deleted raw items.
+- Left technically substantive article summaries and GitHub discussion pages in place for later promotion into source, case-study, or synthesis pages.
 
 ## [2026-04-10] setup | Initial LLM Wiki scaffold
 

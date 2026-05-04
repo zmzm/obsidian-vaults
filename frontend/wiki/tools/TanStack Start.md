@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-22
+updated: 2026-04-30
 tags:
   - tanstack-start
   - framework
@@ -29,6 +29,8 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - The clearest evidence clusters around middleware, SSR hot-path work, explicit routing contracts, single-flight mutation handling, and sync-oriented client data models.
 - Server Components as streamed data and migration-away-from-Next.js material remain useful, but they now support this branch rather than define it.
 - This hub should stay centered on the framework's own primitives and use comparison pages only for tradeoff synthesis.
+- TWIR #278 adds a content-app example where server functions and isomorphic loaders give TanStack Start a normal app-building use case, not just a migration story.
+- TWIR #218 adds a conceptual comparison between server functions and RSC, which clarifies why TanStack Start keeps server functions as an explicit primitive.
 
 ## Related Pages
 
@@ -47,21 +49,27 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
 - [[../sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../sources/TanStack Start Content Apps|TanStack Start Content Apps]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
 ## Sources
 
 - [[../../raw/twir/256/2025-10-29-TWIR-256|TWIR #256]]
+- [[../../raw/twir/218/2025-01-22-TWIR-218|TWIR #218]]
 - [[../../raw/twir/266/2026-01-28-TWIR-266|TWIR #266]]
 - [[../../raw/twir/267/2026-02-04-TWIR-267|TWIR #267]]
 - [[../../raw/twir/277/2026-04-15-TWIR-277|TWIR #277]]
+- [[../../raw/twir/278/2026-04-22-TWIR-278|TWIR #278]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 - [[../sources/TanStack Start Middleware|TanStack Start Middleware]]
 - [[../sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]]
 - [[../sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../sources/TanStack Start Content Apps|TanStack Start Content Apps]]
+- [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
 ## Open Questions
 

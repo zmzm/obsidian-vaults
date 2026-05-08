@@ -1,17 +1,22 @@
 ---
 type: log
 status: active
-updated: 2026-04-20
+updated: 2026-05-08
 ---
 
 # Log
 
-## [2026-04-16] structure | Root scaffold for coding vault
+## [2026-05-08] frontend | Shared UI pattern and token rules
 
-- Added `AGENTS.md` to define the coding vault as an instruction-oriented skill library rather than a source-ingest wiki.
-- Added `index.md` as the root navigation map for `frontend`, `backend`, and `common`.
-- Added `backend/INDEX.md` and `common/INDEX.md` so those branches have explicit entry points like `frontend/INDEX.md`.
-- Next sensible step: normalize metadata and formatting across `SKILL.md` and `references/` files, then reduce duplicated cross-skill guidance.
+- Standardized repeated FE UI patterns with shared components: `PageContainer`, `CenteredPageLayout`, `SectionHeader`, `SurfaceBox`, `StatValue`, and `IconText`.
+- Removed `var(--chakra-colors-...)` from TSX component usage guidance, except Clerk appearance strings moved to centralized config.
+- Added mandatory extraction thresholds and semantic token mapping references.
+
+## [2026-04-20] docs | QMD rollout guide
+
+- Added `qmd-setup.md` with commands for clean rebuild, collection creation, context setup, embeddings, and verification on another machine.
+- Linked the new guide from `index.md` so the vault now contains its own `QMD` deployment instructions.
+- Next sensible step: if the collection layout or context texts change later, update the setup guide and keep it aligned with the actual local `QMD` baseline.
 
 ## [2026-04-16] structure | QMD-ready normalization layer
 
@@ -46,8 +51,9 @@ updated: 2026-04-20
 - Rewired affected skill maps to the new canonical references.
 - Next sensible step: third pass on lower-level redundancy, especially whether some remaining `core-principles` pages in `accessibility`, `testing`, `ui`, and `i18n` should be renamed or further narrowed.
 
-## [2026-04-20] docs | QMD rollout guide
+## [2026-04-16] structure | Root scaffold for coding vault
 
-- Added `qmd-setup.md` with commands for clean rebuild, collection creation, context setup, embeddings, and verification on another machine.
-- Linked the new guide from `index.md` so the vault now contains its own `QMD` deployment instructions.
-- Next sensible step: if the collection layout or context texts change later, update the setup guide and keep it aligned with the actual local `QMD` baseline.
+- Added `AGENTS.md` to define the coding vault as an instruction-oriented skill library rather than a source-ingest wiki.
+- Added `index.md` as the root navigation map for `frontend`, `backend`, and `common`.
+- Added `backend/INDEX.md` and `common/INDEX.md` so those branches have explicit entry points like `frontend/INDEX.md`.
+- Next sensible step: normalize metadata and formatting across `SKILL.md` and `references/` files, then reduce duplicated cross-skill guidance.

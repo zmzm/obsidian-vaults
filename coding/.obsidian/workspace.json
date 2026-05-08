@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "frontend/INDEX.md",
+                "file": "log.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INDEX"
+              "title": "log"
             }
           }
         ]
@@ -185,8 +185,17 @@
   },
   "active": "8df476a6eb558878",
   "lastOpenFiles": [
-    "qmd-setup.md",
+    "AGENTS.md",
     "backend-cleanup-audit.md",
+    "cleanup-audit.md",
+    "RULES.md",
+    "log.md",
+    "frontend/coding/references/style-extraction-thresholds.md",
+    "frontend/chakra-ui/references/anti-patterns.md",
+    "frontend/chakra-ui/references/semantic-token-mapping.md",
+    "frontend/ui/references/pattern-catalog.md",
+    "frontend/INDEX.md",
+    "qmd-setup.md",
     "backend/INDEX.md",
     "backend/security/references/environment-config.md",
     "frontend/coding/references/hook-file-conventions.md",
@@ -199,19 +208,11 @@
     "backend/api/references/query-parameters.md",
     "backend/api/references/nested-resources.md",
     "backend/api/SKILL.md",
-    "AGENTS.md",
-    "cleanup-audit.md",
     "index.md",
-    "log.md",
-    "RULES.md",
     "Untitled.base",
     "templates/SKILL.template.md",
     "templates/REFERENCE.template.md",
-    "templates/INDEX.template.md",
     "templates",
-    "common/INDEX.md",
-    "2026-04-03.md",
-    "Untitled.canvas",
-    "Welcome.md"
+    "Untitled.canvas"
   ]
 }

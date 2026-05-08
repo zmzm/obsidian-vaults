@@ -46,8 +46,10 @@ Always start here, then follow references as needed:
 - Theme Config → `references/chakra-theme-config.md`
 - Theme Setup → `references/chakra-theme-setup.md`
 - Theme Tokens → `references/chakra-theme-tokens.md`
+- Semantic Token Mapping → `references/semantic-token-mapping.md`
 - Theme Recipes → `references/chakra-theme-recipes.md`
 - Recipes Provider → `references/chakra-theme-recipes-provider.md`
+- Anti-Patterns → `references/anti-patterns.md`
 
 ## Fast decision hints
 
@@ -57,6 +59,10 @@ Always start here, then follow references as needed:
 
 ## Local rules
 
+- `<required>` Required: Use semantic tokens; avoid raw gray/red/blue pairs with manual `_dark` overrides
+- `<required>` Required: Do not use `var(--chakra-colors-...)` in `.tsx` component props
+- `<required>` Required: Prefer wrapper color plus `currentColor` for icon coloring
+- `<required>` Required: Keep token mapping aligned with `references/semantic-token-mapping.md`
 - `<default>` Default: Prefer documented patterns over ad-hoc solutions
 - `<default>` Default: Avoid listed anti-patterns unless explicitly justified
 - `<heuristic>` Heuristic: If multiple references apply, compare them explicitly

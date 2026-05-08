@@ -44,6 +44,7 @@ Always start here, then follow references as needed:
 
 - Anti-patterns → `references/anti-patterns.md`
 - Patterns → `references/patterns.md`
+- Style Extraction Thresholds → `references/style-extraction-thresholds.md`
 - Component structure → `references/component-structure.md`
 - Hook file conventions → `references/hook-file-conventions.md`
 - Test placement → `references/test-placement.md`
@@ -58,6 +59,9 @@ Always start here, then follow references as needed:
 
 ## Local rules
 
+- `<required>` Required: If extraction into a shared component is not justified, move repeated prop sets to `*.styles.ts`
+- `<required>` Required: `.hook.ts` files should not become style containers; keep style variants in `styles.ts`
+- `<required>` Required: New UI patterns must include at least one usage example in references
 - `<default>` Default: Prefer documented patterns over ad-hoc solutions
 - `<default>` Default: Avoid listed anti-patterns unless explicitly justified
 - `<heuristic>` Heuristic: If multiple patterns apply, compare them explicitly

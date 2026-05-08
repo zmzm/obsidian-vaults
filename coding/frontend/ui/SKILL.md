@@ -51,6 +51,7 @@ Always start here, then follow references as needed:
 - Forms → `references/forms.md`
 - Responsive Design → `references/responsive.md`
 - Patterns → `references/patterns.md`
+- Pattern Catalog → `references/pattern-catalog.md`
 - Styling → `references/styling.md`
 - Anti-Patterns → `references/anti-patterns.md`
 
@@ -62,6 +63,9 @@ Always start here, then follow references as needed:
 
 ## Local rules
 
+- `<required>` Required: Use shared pattern components for repeated UI blocks: `PageContainer`, `CenteredPageLayout`, `SectionHeader`, `SurfaceBox`, `StatValue`, and `IconText`
+- `<required>` Required: Repeated style-heavy JSX across 3+ places must be extracted
+- `<required>` Required: Do not introduce new repeated `Box/Flex` style clusters when an equivalent shared pattern exists
 - `<default>` Default: Prefer documented patterns over ad-hoc solutions
 - `<default>` Default: Avoid listed anti-patterns unless explicitly justified
 - `<heuristic>` Heuristic: If multiple references apply, compare them explicitly

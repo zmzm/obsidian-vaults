@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM Map.md",
-                "mode": "preview",
+                "file": "Systems/Agent Tool Use.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LLM Map"
+              "title": "Agent Tool Use"
             }
           }
         ]
@@ -185,34 +185,36 @@
   },
   "active": "1e807db9d59ce4a7",
   "lastOpenFiles": [
-    "LLM, NLP и Трансформеры.md",
+    "Systems/Agents.md",
     "LLM Map.md",
+    "LLM, NLP и Трансформеры.md",
+    "Systems/Agent Failure Modes.md",
+    "Systems/Vector Database.md",
+    "Systems/RAG.md",
+    "Systems/RAG Failure Modes.md",
+    "Systems/Agent Tool Use.md",
+    "Systems",
+    "Prompting/System Prompt.md",
+    "Prompting/Sampling Parameters.md",
+    "Prompting/Prompt as Contract.md",
+    "Prompting/Prompt Failure Modes.md",
+    "Prompting/Prompt Engineering.md",
+    "Prompting/Long Context Prompting.md",
+    "Prompting",
     "Как LLM «думают» и почему они ошибаются.md",
-    "Concepts/Embeddings.md",
-    "Concepts/LLM Capabilities.md",
-    "Concepts/Positional Encoding.md",
-    "Concepts/Feed Forward Layer.md",
-    "NLP.md",
-    "Core/Transformer.md",
-    "LLM.md",
-    "Core/NLP (Natural Language Processing).md",
-    "Core/LLM (Large Language Model).md",
-    "Reasoning/LLM Thinking.md",
-    "Concepts/Context Window.md",
+    "RAG.md",
     "Concepts/Pattern Conflict.md",
-    "Reasoning/Hallucinations.md",
-    "Concepts/No Ground Truth.md",
+    "Core/LLM (Large Language Model).md",
+    "Core/Transformer.md",
     "Concepts/Attention.md",
-    "Reasoning/Chain-of-Thought.md",
-    "Concepts/Scaling.md",
-    "Concepts/Training Data Patterns.md",
-    "Concepts/Emergent Behavior.md",
-    "Concepts/Tokenization.md",
+    "Reasoning/LLM Thinking.md",
     "Reasoning/Next Token Prediction.md",
+    "Concepts/Training Data Patterns.md",
+    "Concepts/Scaling.md",
+    "Concepts/Feed Forward Layer.md",
     "Untitled",
     "Reasoning",
     "Concepts",
-    "Core",
-    "Welcome.md"
+    "Core"
   ]
 }

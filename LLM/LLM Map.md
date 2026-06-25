@@ -40,11 +40,25 @@
 
 ---
 
-## 🧪 Systems (future)
+## 🧭 Prompting
+
+- [[Prompt Engineering]]
+- [[Prompt as Contract]]
+- [[System Prompt]]
+- [[Long Context Prompting]]
+- [[Sampling Parameters]]
+- [[Prompt Failure Modes]]
+
+---
+
+## 🧪 Systems
 
 - [[RAG]]
 - [[Vector Database]]
+- [[RAG Failure Modes]]
 - [[Agents]]
+- [[Agent Tool Use]]
+- [[Agent Failure Modes]]
 
 ---
 

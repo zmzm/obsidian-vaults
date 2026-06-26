@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-22
+updated: 2026-06-26
 tags:
   - tanstack
   - query
@@ -32,6 +32,7 @@ TanStack Query is the tool hub for client/server data synchronization, query abs
 
 ## Related Pages
 
+- [[TanStack]]
 - [[../concepts/Signals|Signals]]
 - [[../topics/React Rendering|React Rendering]]
 - [[TanStack DB]]

@@ -31,6 +31,7 @@ TWIR #233 is a compiler-and-tooling issue with useful signals on the Next.js com
 ## Related Pages
 
 - [[../concepts/React Compiler|React Compiler]]
+- [[../tools/Astro|Astro]]
 - [[../tools/Next.js|Next.js]]
 
 ## Raw Source

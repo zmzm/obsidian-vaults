@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-30
+updated: 2026-06-26
 tags:
   - react
   - rsc
@@ -31,10 +31,14 @@ Server Components are a React architecture model where part of the component tre
 - It now also includes stronger evidence on protocol-level security risk and an explicit alternative model where RSC behaves more like cacheable streamed data.
 - TWIR #279 adds a lower-level rendering source for how Suspense boundaries let streamed server UI arrive out of order while preserving final placement.
 - Earlier archive coverage adds RSC bundler boundaries plus an explicit comparison between server functions and Server Components.
+- TWIR #280 through #287 deepen the post-Next.js view of RSC: protocol-level framing, TanStack-specific usage, Flight security incidents, bundler integration, and Waku-style render slicing all point to RSC as a broader framework substrate.
+- TWIR #197 through #213 add older support for Waku server actions, TanStack Start server functions, `react-server`, RSC DevTools visibility, RSC testing, and React 19's stable server-oriented direction.
+- Astro comparisons are useful here when they clarify the boundary between island architecture and React Server Components, but Astro-specific framework guidance belongs on the Astro tool page.
 
 ## Related Pages
 
 - [[../tools/Next.js|Next.js]]
+- [[../tools/Astro|Astro]]
 - [[../tools/React Router|React Router]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../topics/SSR Performance|SSR Performance]]
@@ -47,6 +51,18 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/TWIR 273|TWIR 273]]
 - [[../sources/TWIR 274|TWIR 274]]
 - [[../sources/TWIR 277|TWIR 277]]
+- [[../sources/TWIR 197|TWIR 197]]
+- [[../sources/TWIR 198|TWIR 198]]
+- [[../sources/TWIR 203|TWIR 203]]
+- [[../sources/TWIR 209|TWIR 209]]
+- [[../sources/TWIR 212|TWIR 212]]
+- [[../sources/TWIR 213|TWIR 213]]
+- [[../sources/TWIR 280|TWIR 280]]
+- [[../sources/TWIR 282|TWIR 282]]
+- [[../sources/TWIR 283|TWIR 283]]
+- [[../sources/TWIR 285|TWIR 285]]
+- [[../sources/TWIR 287|TWIR 287]]
+- [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
@@ -59,6 +75,7 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../case-studies/Next.js App Router Exit|Next.js App Router Exit]]
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
+- [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
 - [[../case-studies/Building Bulletproof React Components|Building Bulletproof React Components]]
 - [[../case-studies/Error Rendering with RSC|Error Rendering with RSC]]
 
@@ -76,7 +93,18 @@ Server Components are a React architecture model where part of the component tre
 - [[../../raw/twir/273/2026-03-18-TWIR-273|TWIR #273]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/277/2026-04-15-TWIR-277|TWIR #277]]
+- [[../../raw/twir/197/2024-08-21-TWIR-197|TWIR #197]]
+- [[../../raw/twir/198/2024-08-28-TWIR-198|TWIR #198]]
+- [[../../raw/twir/203/2024-10-01-TWIR-203|TWIR #203]]
+- [[../../raw/twir/209/2024-11-13-TWIR-209|TWIR #209]]
+- [[../../raw/twir/212/2024-12-04-TWIR-212|TWIR #212]]
+- [[../../raw/twir/213/2024-12-11-TWIR-213|TWIR #213]]
 - [[../../raw/twir/279/2026-04-29-TWIR-279|TWIR #279]]
+- [[../../raw/twir/280/2026-05-06-TWIR-280|TWIR #280]]
+- [[../../raw/twir/282/2026-05-20-TWIR-282|TWIR #282]]
+- [[../../raw/twir/283/2026-05-27-TWIR-283|TWIR #283]]
+- [[../../raw/twir/285/2026-06-10-TWIR-285|TWIR #285]]
+- [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/React2DoS|React2DoS]]
@@ -87,6 +115,7 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
+- [[../sources/RSC as Protocol|RSC as Protocol]]
 
 ## Open Questions
 

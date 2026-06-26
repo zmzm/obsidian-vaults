@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-22
+updated: 2026-06-26
 tags:
   - data
   - sync
@@ -32,6 +32,7 @@ Client-First Data Sync is the pattern page for treating client data as an active
 
 ## Related Pages
 
+- [[../tools/TanStack|TanStack]]
 - [[../tools/TanStack Query|TanStack Query]]
 - [[../tools/TanStack DB|TanStack DB]]
 - [[../tools/TanStack Start|TanStack Start]]

@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-21
+updated: 2026-06-26
 tags:
   - react
   - effects
@@ -29,6 +29,7 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - The current source base already includes practical evidence on memory leaks at scale and direct comparison material around `useEffect` versus newer async/rendering primitives.
 - That is enough to justify a dedicated pattern node instead of leaving effect discipline buried inside broader rendering discussions.
 - The newer archive also adds more explicit decision-tree guidance and proof that teams increasingly enforce effect discipline with lint rules instead of only review feedback.
+- TWIR #285 adds the disposable cleanup RFC as a directional signal that effect cleanup may move toward structured resource disposal while preserving the core rule that effects synchronize external systems.
 
 ## Related Pages
 
@@ -37,6 +38,7 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - [[../concepts/React useEffectEvent|React useEffectEvent]]
 - [[../syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]]
 - [[../sources/Custom ESLint Rules|Custom ESLint Rules]]
+- [[../sources/TWIR 285|TWIR 285]]
 - [[../case-studies/GitHub Diff Performance|GitHub Diff Performance]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
 
@@ -45,6 +47,7 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - [[../../raw/twir/271/articles/13 - Frontend Memory Leaks A 500-Repository Static Analysis|Frontend Memory Leaks A 500-Repository Static Analysis]]
 - [[../../raw/twir/273/articles/04 - Why we banned React's useEffect|Why we banned React's useEffect]]
 - [[../../raw/twir/276/articles/05 - You really, really, really don't need an effect! I swear!|You really, really, really don't need an effect! I swear!]]
+- [[../../raw/twir/285/2026-06-10-TWIR-285|TWIR #285]]
 - [[../sources/Custom ESLint Rules|Custom ESLint Rules]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
 

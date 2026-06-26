@@ -1,10 +1,39 @@
 ---
 type: log
-updated: 2026-04-30
+updated: 2026-06-26
 status: active
 ---
 
 # Log
+
+## [2026-06-26] promotion | Add Astro framework hub
+
+- Promoted `Astro` from the repeated unpaged candidate list into a framework/tool hub.
+- Routed the hub around islands architecture, Content Layer, Server Islands, Astro 5/6 platform signals, and content-heavy comparisons against Next.js.
+- Backlinked Astro from Next.js, SSR Performance, Server Components, portability synthesis, and the strongest Astro-bearing TWIR digests.
+
+## [2026-06-26] promotion | Add TanStack ecosystem hub
+
+- Promoted the first repeated unpaged candidate, `TanStack`, into an ecosystem-level tool page.
+- Routed the new hub to TanStack Query, TanStack Start, TanStack DB, typed routing, client-first sync, Next.js comparison, and TanStack case-study evidence.
+- Backlinked the existing TanStack-specific pages and case studies so future ingest can classify ecosystem-level signals without overloading product-specific hubs.
+
+## [2026-06-26] ingest | Backfill TWIR 190 through 213
+
+- Added digest source pages for the older raw TWIR issues #190, #191, #193-#199, and #202-#213.
+- Promoted normalized source pages for the repeated React Suspense prewarming thread and the Next.js 15 request/cache-boundary transition.
+- Updated the index with older raw issue links and new issue-digest groups for `190-199` and `202-213`.
+- Rewired React Rendering, Next.js, Caching in App Router, Server Components, React Compiler, TanStack Start, React Router, and SSR Performance around the old-archive signals.
+- Next sensible step: run a lint pass for duplicate links and decide whether individual old articles such as Sanity React Compiler adoption, OpenNext portability, or RSC error handling deserve standalone case-study/source pages.
+
+## [2026-06-26] ingest | Promote TWIR 280 through 287 into wiki graph
+
+- Added issue digest source pages for TWIR #280 through #287 from the new raw TWIR batch.
+- Promoted article-level source pages for RSC as protocol, TanStack Start endpoint boundaries, and React Compiler toolchain adoption.
+- Added case studies for TanStack supply-chain hardening, Linear's StyleX migration, TanStack Table's memory refactor, and a successful Next.js App Router slow-response migration.
+- Updated the index with raw issue links and a new `280-287` issue-digest group.
+- Rewired Server Components, React Compiler, TanStack Start, Next.js, React Router, React Rendering, SSR Performance, Resilient Components, and Effects pages around the strongest new signals.
+- Next sensible step: run a lint pass for backlink density and decide whether Flight RCE/DoS material deserves a consolidated security source page beyond the existing React2DoS coverage.
 
 ## [2026-04-30] ingest | Backfill TWIR 215 through 218
 

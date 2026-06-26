@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-30
+updated: 2026-06-26
 tags:
   - nextjs
   - caching
@@ -32,6 +32,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - It now also includes a strong release anchor for explicit cache design and a stronger source on Partial Prerendering mechanics.
 - Newer issue coverage also adds a concrete precompute workaround for separating request context from cacheable render paths.
 - TWIR #216 adds the earlier first-party composable-caching source where `use cache` is framed as a compiler-visible boundary, not only a runtime helper.
+- TWIR #202 through #206 add the older Next.js 15 transition where async request APIs, `connection()`, cache invalidation naming, segment cache, and React cache made request/cache boundaries more explicit.
 
 ## Related Pages
 
@@ -41,6 +42,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../topics/SSR Performance|SSR Performance]]
 - [[../sources/TWIR 255|TWIR 255]]
 - [[../sources/TWIR 257|TWIR 257]]
+- [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
@@ -57,9 +59,14 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
 - [[../../raw/twir/257/2025-11-05-TWIR-257|TWIR #257]]
 - [[../../raw/twir/268/2026-02-11-TWIR-268|TWIR #268]]
+- [[../../raw/twir/202/2024-09-25-TWIR-202|TWIR #202]]
+- [[../../raw/twir/203/2024-10-01-TWIR-203|TWIR #203]]
+- [[../../raw/twir/205/2024-10-16-TWIR-205|TWIR #205]]
+- [[../../raw/twir/206/2024-10-23-TWIR-206|TWIR #206]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js at Enterprise Level|Next.js at Enterprise Level]]

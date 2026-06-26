@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-30
+updated: 2026-06-26
 tags:
   - server-components
   - nextjs
@@ -24,6 +24,7 @@ The archive increasingly suggests that Server Components are best understood as 
 - Forket demonstrates that even framework-light or custom environments can adopt the model if they are willing to own bundling, boundaries, and serialization.
 - TanStack's newer framing pushes furthest: RSCs become streamed data that can be fetched and cached on explicit application terms.
 - Earlier source material also makes the surrounding implementation cost visible: bundlers must own client references and manifests, while server functions offer a different client-driven RPC-style alternative.
+- TWIR #280 sharpens the model further by separating RSC protocol capability from tree ownership: frameworks can choose server-owned trees, client-owned trees, or hybrids.
 
 ## What Still Tends to Belong to Frameworks
 
@@ -57,6 +58,7 @@ The real question is not whether RSC can exist beyond Next.js. It clearly can. T
 - [[../sources/TWIR 248|TWIR 248]]
 - [[../sources/TWIR 251|TWIR 251]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
@@ -71,6 +73,7 @@ The real question is not whether RSC can exist beyond Next.js. It clearly can. T
 - [[../../raw/twir/248/articles/05 - React Server Components support without a framework|React Server Components support without a framework]]
 - [[../../raw/twir/251/2025-09-24-TWIR-251|TWIR #251]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
+- [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 

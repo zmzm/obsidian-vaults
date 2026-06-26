@@ -11,12 +11,13 @@ tags:
 
 # TWIR 272
 
-TWIR #272 is a useful routing source for state internals, React Compiler tradeoffs, and framework-level Server Components discussion around TanStack Start.
+TWIR #272 is a useful routing source for state internals, React Compiler tradeoffs, Astro 6 platform direction, and framework-level Server Components discussion around TanStack Start.
 
 ## Summary
 
 - The issue contains a strong state internals explainer.
 - It includes a useful compiler-model comparison for React Compiler and fine-grained alternatives.
+- Astro 6 adds useful platform signals around Content Layer, runtime parity, CSP, Cloudflare integration, Rust compiler work, and route caching.
 - It also surfaces more Server Components discussion around TanStack Start.
 
 ## Why This Source Matters
@@ -31,6 +32,7 @@ TWIR #272 is a useful routing source for state internals, React Compiler tradeof
 ## Related Pages
 
 - [[../concepts/React Compiler|React Compiler]]
+- [[../tools/Astro|Astro]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../concepts/Server Components|Server Components]]
 

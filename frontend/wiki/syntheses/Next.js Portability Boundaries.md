@@ -28,6 +28,7 @@ The current source base suggests that Next.js is moving toward a more portable p
 - A framework can expose an adapter API and still remain operationally biased toward the environment it is developed in most heavily.
 - Features that look framework-level on paper can become hosting-level problems in practice when initial HTML, streaming behavior, or cacheability differ by platform.
 - This is why some migration stories in the archive are not only about developer preference; they are also about teams deciding they no longer want to own these portability gaps.
+- Astro matters as a comparison point because its adapter, content, and islands model can fit content-heavy self-hosted workloads with less client/runtime surface than a full App Router stack.
 
 ## Main Tradeoff
 
@@ -45,6 +46,7 @@ The interesting question is not whether Next.js can run beyond Vercel. It clearl
 ## Related Pages
 
 - [[../tools/Next.js|Next.js]]
+- [[../tools/Astro|Astro]]
 - [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../sources/Next.js Deployment Adapters|Next.js Deployment Adapters]]
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]

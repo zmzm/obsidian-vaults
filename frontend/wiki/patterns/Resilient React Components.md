@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-30
+updated: 2026-06-26
 tags:
   - react
   - component-design
@@ -29,6 +29,7 @@ Resilient React Components is the pattern page for designing component APIs that
 - The current source base already includes a strong authoring guide for robust React components, an embedded-host integration story, and practical error-model differences in server-driven React.
 - TWIR #215 adds a dropdown API source where composition, trigger behavior, state control, and accessibility are part of resilience for UI primitives.
 - That is enough to justify a dedicated pattern page rather than routing everything through `Next.js` or `Server Components`.
+- TWIR #287 adds a styling-system migration where better component resilience came partly from stricter styling contracts and build-time style resolution.
 
 ## Related Pages
 
@@ -41,6 +42,7 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
 - [[../case-studies/Error Rendering with RSC|Error Rendering with RSC]]
 - [[../case-studies/React ProseMirror Performance|React ProseMirror Performance]]
+- [[../case-studies/Linear StyleX Migration|Linear StyleX Migration]]
 - [[../sources/Next.js catchError|Next.js catchError]]
 - [[../sources/React Component API Game|React Component API Game]]
 - [[../sources/Dropdown Component API|Dropdown Component API]]
@@ -54,6 +56,7 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../../raw/twir/273/articles/10 - Can’t Maintain - React Component API Game|Can’t Maintain - React Component API Game]]
 - [[../../raw/twir/271/articles/10 - Error rendering with RSC|Error rendering with RSC]]
 - [[../../raw/twir/275/articles/09 - Making React ProseMirror really, really fast|Making React ProseMirror really, really fast]]
+- [[../case-studies/Linear StyleX Migration|Linear StyleX Migration]]
 
 ## Open Questions
 

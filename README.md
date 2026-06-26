@@ -34,3 +34,5 @@ A second LLM-maintained wiki covering backend, frontend, and general coding prac
 - Each vault is self-contained: its own `AGENTS.md`, `index.md`, `log.md`.
 - Raw layers store immutable sources; wiki layers hold agent-curated knowledge.
 - All vaults follow the ingest → normalize → synthesize → lint cycle described in `LLM-WIKI.md`.
+- TWIR ingest helpers live in `scripts/`; agents should run `python3 scripts/twir_status.py` before and after TWIR ingest, then use `twir_promotion_candidates.py` to flag repeated themes for editorial review.
+- User-facing workflow is intentionally simple: ask the agent for `ingest` or `lint`; the agent runs the scripts and performs the wiki updates/checks.

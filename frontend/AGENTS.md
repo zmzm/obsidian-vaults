@@ -124,6 +124,8 @@ Keep material as raw-only when it:
 
 ## Ingest Rules
 
+User-facing shortcut: when the user says "ingest", "do ingest", "process new raw articles", or similar, do not ask them to run commands. The agent should run the TWIR status workflow itself, process missing items, update the wiki, run final checks, and report the result.
+
 When the user asks to process a new source:
 
 1. Determine where it belongs inside `raw/`.
@@ -141,6 +143,41 @@ By default, one source should lead not only to a source page but also to updates
 
 When a source is interesting but does not cleanly fit an existing concept or tool hub, prefer preserving it as a `case-study` instead of dropping it.
 
+### TWIR Batch Ingest Workflow
+
+When the user asks for TWIR ingest, "do the ingest", "process new raw articles", or similar:
+
+1. Start by running the coverage check:
+
+```bash
+python3 scripts/twir_status.py
+```
+
+2. Use the report to identify raw TWIR issues that do not yet have `wiki/sources/TWIR N.md` digest pages.
+3. For each missing issue, read the raw issue MOC and its high-signal article notes before editing.
+4. Create or update normalized issue digest pages in `wiki/sources/`.
+   - `scripts/create_twir_digest.py --issue N` may be used to create a draft.
+   - Generated drafts must be reviewed and tightened before they count as fully ingested.
+5. Promote only durable repeated or high-value material into:
+   - existing concept/tool/pattern/topic pages;
+   - new `case-study` pages for concrete migrations, incidents, optimizations, or engineering decisions;
+   - new `source` pages for important individual sources or repeated source clusters;
+   - `synthesis` pages only when multiple sources support a reusable argument.
+6. Update `index.md` and append `log.md`.
+7. End by running:
+
+```bash
+python3 scripts/twir_status.py
+python3 scripts/twir_promotion_candidates.py --min-issues 4 --limit 40
+```
+
+8. Report:
+   - what raw issues were newly processed;
+   - whether any raw issues remain without digest pages;
+   - which promotion candidates were flagged for future editorial work.
+
+Do not treat the promotion-candidate report as an instruction to create pages automatically. It is a triage aid for agent/editor judgment.
+
 ## Query Rules
 
 When the user asks a question about this vault:
@@ -152,6 +189,8 @@ When the user asks a question about this vault:
 
 ## Lint Rules
 
+User-facing shortcut: when the user says "lint", "check the vault", "audit wiki quality", or similar, do not ask them to run commands. The agent should run the lint script itself, inspect the reported issues, fix mechanical issues when appropriate, then do the editorial checks listed below.
+
 When checking wiki quality, look for:
 - orphan pages;
 - weak or missing backlinks;
@@ -159,6 +198,14 @@ When checking wiki quality, look for:
 - repeated mentions without a dedicated page;
 - outdated or overly vague seed pages;
 - duplication across nearby topics.
+
+Start mechanical lint checks with:
+
+```bash
+python3 scripts/wiki_lint.py
+```
+
+Use the script output as a checklist, not as a replacement for editorial review. The script can catch missing frontmatter, invalid page type/status, unresolved wikilinks, duplicate page names, and low-backlink pages. The agent still needs to judge contradictions, outdated claims, weak syntheses, and whether repeated mentions deserve a durable page.
 
 ## Index and Log Updates
 

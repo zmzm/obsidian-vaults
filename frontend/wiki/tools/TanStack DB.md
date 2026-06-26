@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-04-21
+updated: 2026-06-26
 tags:
   - tanstack-db
   - tanstack
@@ -31,6 +31,7 @@ TanStack DB is the tool hub for normalized client-side data, live-query style up
 
 ## Related Pages
 
+- [[TanStack]]
 - [[TanStack Query]]
 - [[TanStack Start]]
 - [[../patterns/Client-First Data Sync|Client-First Data Sync]]

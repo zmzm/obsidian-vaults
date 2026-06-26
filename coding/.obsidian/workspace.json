@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "log.md",
+                "file": "AGENTS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "log"
+              "title": "AGENTS"
             }
           }
         ]
@@ -185,11 +185,12 @@
   },
   "active": "8df476a6eb558878",
   "lastOpenFiles": [
-    "AGENTS.md",
-    "backend-cleanup-audit.md",
+    "index.md",
     "cleanup-audit.md",
-    "RULES.md",
+    "backend-cleanup-audit.md",
+    "AGENTS.md",
     "log.md",
+    "RULES.md",
     "frontend/coding/references/style-extraction-thresholds.md",
     "frontend/chakra-ui/references/anti-patterns.md",
     "frontend/chakra-ui/references/semantic-token-mapping.md",
@@ -208,7 +209,6 @@
     "backend/api/references/query-parameters.md",
     "backend/api/references/nested-resources.md",
     "backend/api/SKILL.md",
-    "index.md",
     "Untitled.base",
     "templates/SKILL.template.md",
     "templates/REFERENCE.template.md",

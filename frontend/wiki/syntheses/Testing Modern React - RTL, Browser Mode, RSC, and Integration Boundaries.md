@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-16
+updated: 2026-07-27
 tags:
   - react
   - testing
@@ -24,12 +24,14 @@ Modern React testing is moving toward more realistic environments and more expli
 - RTL shifted the center of gravity toward user-visible behavior and DOM semantics.
 - Browser-mode component testing pushes this further by running components in a real browser rather than relying only on jsdom approximations.
 - Async React and Server Components add boundaries where component tests can no longer cheaply stand in for end-to-end confidence.
+- AI-assisted React work adds another pressure point: tests that only prove visible behavior can miss accessibility, maintainability, and framework-specific quality regressions.
 
 ## Where Each Layer Fits
 
 - RTL is strongest when the goal is user-facing behavior and accessible interaction semantics.
 - Browser-mode component testing is strongest when timing, layout, browser APIs, or integration with real rendering behavior matter.
 - Integration and e2e testing remain necessary when route loaders, actions, RSC boundaries, and server-driven composition are part of the real behavior under test.
+- Agent-generated or agent-modified code needs semantic checks, accessibility checks, and React-specific static/runtime rules in addition to ordinary behavioral assertions.
 
 ## Main Tension
 
@@ -62,6 +64,8 @@ This is why the branch now points toward mixed strategies:
 - [[../sources/React Router Integration Points|React Router Integration Points]]
 - [[../sources/Testing Async React RSC Components|Testing Async React RSC Components]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+- [[../sources/ReactBench|ReactBench]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
 
 ## Sources
 
@@ -71,13 +75,17 @@ This is why the branch now points toward mixed strategies:
 - [[../sources/React Router Integration Points|React Router Integration Points]]
 - [[../sources/Testing Async React RSC Components|Testing Async React RSC Components]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+- [[../sources/ReactBench|ReactBench]]
+- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
 - [[../../raw/twir/258/articles/09 - Everything you need to know about act() in React tests|Everything you need to know about act() in React tests]]
 - [[../../raw/twir/259/articles/10 - Testing async React RSC components|Testing async React RSC components]]
 - [[../../raw/twir/261/articles/12 - Vitest Browser Mode - The Future of Frontend Testing|Vitest Browser Mode - The Future of Frontend Testing]]
 - [[../../raw/twir/265/articles/13 - Front-end testing at Preply shifting left towards component testing|Front-end testing at Preply: shifting left towards component testing]]
 - [[../../raw/twir/274/articles/08 - Test IDs are an a11y smell|Test IDs are an a11y smell]]
+- [[../../raw/twir/291/articles/05 - ReactBench - Evaluates frontier coding agents on production React work|ReactBench - Evaluates frontier coding agents on production React work]]
 
 ## Open Questions
 
 - How much browser-mode component testing will replace jsdom-centered workflows over time.
 - Whether RSC-heavy applications will push more teams toward route-level integration tests instead of component-level confidence.
+- Which React-specific quality gates are durable enough to standardize for agent-assisted code review.

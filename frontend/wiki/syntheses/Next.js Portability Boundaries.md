@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-21
+updated: 2026-07-27
 tags:
   - nextjs
   - deployment
@@ -22,6 +22,7 @@ The current source base suggests that Next.js is moving toward a more portable p
 - Hosting providers have had to reverse-engineer undocumented behavior and runtime contracts to support production-grade Next.js outside Vercel.
 - The newer adapters work is a real improvement because it turns portability into an explicit framework surface rather than a private compatibility project.
 - Even with better adapters, real deployment friction still appears in edge cases that matter to apps: SEO-sensitive metadata streaming, Node-vs-Web stream conversion, and host-specific performance costs.
+- The standalone Kubernetes runtime case adds a lower-level portability dimension: even when a host can run Next.js, Node.js process topology, socket distribution, and worker orchestration can dominate SSR latency.
 
 ## Where Portability Still Bites
 
@@ -29,6 +30,7 @@ The current source base suggests that Next.js is moving toward a more portable p
 - Features that look framework-level on paper can become hosting-level problems in practice when initial HTML, streaming behavior, or cacheability differ by platform.
 - This is why some migration stories in the archive are not only about developer preference; they are also about teams deciding they no longer want to own these portability gaps.
 - Astro matters as a comparison point because its adapter, content, and islands model can fit content-heavy self-hosted workloads with less client/runtime surface than a full App Router stack.
+- Next.js 16.3 and Cache Components also make cache/navigation behavior part of portability validation, because route-transition responsiveness depends on framework/runtime cooperation.
 
 ## Main Tradeoff
 
@@ -50,7 +52,10 @@ The interesting question is not whether Next.js can run beyond Vercel. It clearl
 - [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../sources/Next.js Deployment Adapters|Next.js Deployment Adapters]]
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
+- [[Frontend Security Boundaries in Server-First React]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 - [[../case-studies/Next.js Middleware Bypass|Next.js Middleware Bypass]]
 - [[Frameworks as Constraints in the AI Era]]
@@ -67,10 +72,14 @@ The interesting question is not whether Next.js can run beyond Vercel. It clearl
 - [[../../raw/twir/254/articles/10 - Unpacking Cloudflare Workers CPU Performance Benchmarks|Unpacking Cloudflare Workers CPU Performance Benchmarks]]
 - [[../sources/Next.js Deployment Adapters|Next.js Deployment Adapters]]
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
+- [[Frontend Security Boundaries in Server-First React]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
 ## Open Questions
 
 - Whether the adapter model will narrow real behavioral gaps or mainly standardize the integration burden.
 - Which remaining portability problems are specific to Next.js versus structural to any deeply integrated React framework.
+- How much self-hosted Next.js performance work belongs at the framework-adapter layer versus the Node.js/runtime-orchestration layer.

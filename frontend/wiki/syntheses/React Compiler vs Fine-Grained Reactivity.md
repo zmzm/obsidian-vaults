@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-14
+updated: 2026-07-27
 tags:
   - react-compiler
   - signals
@@ -22,6 +22,8 @@ React Compiler looks like an optimization layer that preserves React's current r
 - A way to automate optimizations that React developers previously expressed manually.
 - A compiler-assisted improvement to authoring style and runtime efficiency without abandoning core React semantics.
 - A strategy that keeps React recognizable while making more code compiler-friendly.
+- A growing toolchain story across Rust compiler work, diagnostics, bundlers, and framework integrations.
+- A production adoption path that still depends on code purity, mutable-reference discipline, library compatibility, and escape hatches.
 
 In the current vault, React Compiler looks evolutionary rather than revolutionary.
 
@@ -30,6 +32,7 @@ In the current vault, React Compiler looks evolutionary rather than revolutionar
 - A model where updates target dependencies more directly.
 - A runtime built around reactive graphs rather than broad component-tree rerender behavior.
 - A different mental model for how UI updates propagate and where costs are paid.
+- Recent TanStack Table V9 material shows this style of fine-grained state as a practical library-internal strategy, not only a framework-level alternative.
 
 In the current vault, signals-style systems look like an architectural alternative, not just a more aggressive optimizer.
 
@@ -45,12 +48,14 @@ That distinction matters because the two approaches can produce similar surface-
 - Compatibility with existing React semantics and ecosystem expectations.
 - Incremental adoption potential through compilers and toolchains.
 - Better fit for teams that want improved performance without changing the mental model of React too radically.
+- Stronger fit for brownfield React applications when linting, diagnostics, and opt-outs can make adoption observable.
 
 ## Where Fine-Grained Reactivity Looks Stronger
 
 - More explicit dependency-level updates.
 - A cleaner conceptual story for avoiding broad rerender work.
 - Stronger alignment with runtime models that treat reactivity as graph propagation rather than tree scheduling.
+- Better fit for library internals or data-dense UI where update granularity matters more than preserving React's component-level invalidation shape.
 
 ## Practical Heuristic
 
@@ -61,7 +66,7 @@ That distinction matters because the two approaches can produce similar surface-
 
 - The vault has meaningful comparative material for the conceptual distinction.
 - The vault has a stronger implementation signal for React Compiler than for any one specific fine-grained framework.
-- That means the synthesis is strongest on model boundaries, not on detailed head-to-head benchmark claims.
+- New TanStack material improves the evidence for fine-grained reactivity as an internal architecture choice, but the synthesis is still strongest on model boundaries, not head-to-head benchmark claims.
 
 ## Related Pages
 
@@ -70,6 +75,9 @@ That distinction matters because the two approaches can produce similar surface-
 - [[../topics/React Rendering|React Rendering]]
 - [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
 - [[../sources/React Compiler Rust Port|React Compiler Rust Port]]
+- [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
+- [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
+- [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
 
 ## Sources
 
@@ -78,10 +86,15 @@ That distinction matters because the two approaches can produce similar surface-
 - [[../topics/React Rendering|React Rendering]]
 - [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
 - [[../sources/React Compiler Rust Port|React Compiler Rust Port]]
+- [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
+- [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
+- [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
 - [[../../raw/twir/272/2026-03-11-TWIR-272|TWIR #272]]
 - [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
+- [[../../raw/twir/291/articles/07 - Inside TanStack Table V9 Reactivity|Inside TanStack Table V9 Reactivity]]
 
 ## Open Questions
 
 - Whether React Compiler will remain mostly an optimization layer or gradually pull more architecture decisions into compile time.
 - How much fine-grained reactivity's conceptual clarity survives in large real-world applications and tooling ecosystems.
+- Whether React libraries increasingly adopt fine-grained internals while exposing familiar React APIs.

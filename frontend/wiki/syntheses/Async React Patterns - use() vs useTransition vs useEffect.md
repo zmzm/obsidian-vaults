@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-04-14
+updated: 2026-07-27
 tags:
   - react
   - async
@@ -24,6 +24,7 @@ This synthesis compares three patterns that are often mixed together in React di
 - Reading promises and context during render.
 - Composing with Suspense and Error Boundaries.
 - Replacing effect-driven loading boilerplate in cases where data can participate directly in render.
+- Newer React docs coverage reinforces that `use()` is an API reference point now, but its practical value still depends on Suspense and framework data boundaries.
 
 In the current vault, `use()` looks like the clearest signal of React moving async coordination into the render model itself.
 
@@ -61,6 +62,7 @@ These tools operate at different layers, which is why using them as interchangea
 - The vault has good support for `use()`.
 - The vault has good practical guidance for `useTransition`.
 - The vault has only weak direct support for a full `useEffect` comparison, because the most relevant item in raw material is not properly extracted.
+- TWIR #288 and #290 add fresh documentation support for `use()` and Suspense boundary activation, but they do not change the core distinction.
 
 So this synthesis is strongest as a clarification of boundaries between `use()` and `useTransition`, with `useEffect` included mostly as the common source of confusion they are often compared against.
 
@@ -73,6 +75,8 @@ So this synthesis is strongest as a clarification of boundaries between `use()` 
 - [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
 - [[../sources/React use Hook|React use Hook]]
 - [[../sources/React useTransition|React useTransition]]
+- [[../sources/TWIR 288|TWIR 288]]
+- [[../sources/TWIR 290|TWIR 290]]
 - [[../case-studies/Async React Design Components|Async React Design Components]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
 
@@ -84,6 +88,8 @@ So this synthesis is strongest as a clarification of boundaries between `use()` 
 - [[../sources/React useTransition|React useTransition]]
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
+- [[../../raw/twir/288/articles/05 - React Docs - use() API Reference|React Docs - use() API Reference]]
+- [[../../raw/twir/290/articles/03 - React Docs - What activates a Suspense boundary|React Docs - What activates a Suspense boundary]]
 - [[../../raw/twir/273/articles/04 - Why we banned React's useEffect|Why we banned React's useEffect]]
 
 ## Open Questions

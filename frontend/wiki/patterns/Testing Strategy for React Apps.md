@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-04-30
+updated: 2026-07-27
 tags:
   - react
   - testing
@@ -31,6 +31,7 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - The older archive now also adds route-middleware testing as a distinct example of integration-oriented frontend verification.
 - TWIR #278 and #279 reinforce accessibility as a semantic UI contract that should be enforced through primitives, linting, component tests, and review, especially when AI tools generate code.
 - TWIR #216 adds Slack's Playwright/Axe workflow as a concrete example of operational accessibility testing with filtering and fixtures.
+- TWIR #291 adds ReactBench as an AI-agent evaluation source where passing behavioral tests is insufficient without React-specific, accessibility, and maintainability checks.
 
 ## Related Pages
 
@@ -46,6 +47,7 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
 - [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
 - [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
+- [[../sources/ReactBench|ReactBench]]
 - [[../syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]]
 
 ## Sources
@@ -58,9 +60,10 @@ Testing Strategy for React Apps is the pattern page for choosing the right mix o
 - [[../../raw/twir/265/articles/13 - Front-end testing at Preply shifting left towards component testing|Front-end testing at Preply: shifting left towards component testing]]
 - [[../../raw/twir/274/articles/08 - Test IDs are an a11y smell|Test IDs are an a11y smell]]
 - [[../../raw/twir/278/articles/05 - AI-Generated UI Is Inaccessible by Default|AI-Generated UI Is Inaccessible by Default]]
-- [[../../raw/twir/279/articles/05 - Accessibility in React Common Mistakes and How to Fix Them|Accessibility in React: Common Mistakes and How to Fix Them]]
+- [[../../raw/twir/279/2026-04-29-TWIR-279|TWIR #279]]
 - [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
 - [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
+- [[../sources/ReactBench|ReactBench]]
 - [[../case-studies/Enzyme to RTL Migration|Enzyme to RTL Migration]]
 
 ## Open Questions

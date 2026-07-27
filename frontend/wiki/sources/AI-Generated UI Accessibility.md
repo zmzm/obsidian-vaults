@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-30
+updated: 2026-07-27
 tags:
   - accessibility
   - ai
@@ -42,4 +42,4 @@ This source captures a recurring failure mode in AI-assisted React work: generat
 ## Raw Sources
 
 - [[../../raw/twir/278/articles/05 - AI-Generated UI Is Inaccessible by Default|AI-Generated UI Is Inaccessible by Default]]
-- [[../../raw/twir/279/articles/05 - Accessibility in React Common Mistakes and How to Fix Them|Accessibility in React: Common Mistakes and How to Fix Them]]
+- [[../../raw/twir/279/2026-04-29-TWIR-279|TWIR #279]]

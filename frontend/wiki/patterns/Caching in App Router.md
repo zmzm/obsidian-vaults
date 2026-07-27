@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - nextjs
   - caching
@@ -33,6 +33,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - Newer issue coverage also adds a concrete precompute workaround for separating request context from cacheable render paths.
 - TWIR #216 adds the earlier first-party composable-caching source where `use cache` is framed as a compiler-visible boundary, not only a runtime helper.
 - TWIR #202 through #206 add the older Next.js 15 transition where async request APIs, `connection()`, cache invalidation naming, segment cache, and React cache made request/cache boundaries more explicit.
+- TWIR #288 and #290 connect explicit cache boundaries to user-perceived navigation speed: Instant Navigations and Cache Components make cacheability part of route-transition design.
 
 ## Related Pages
 
@@ -44,6 +45,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/TWIR 257|TWIR 257]]
 - [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js 16|Next.js 16]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 - [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
@@ -52,6 +54,8 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/Next.js 16.2|Next.js 16.2]]
 - [[../sources/TWIR 274|TWIR 274]]
 - [[../sources/TWIR 276|TWIR 276]]
+- [[../sources/TWIR 288|TWIR 288]]
+- [[../sources/TWIR 290|TWIR 290]]
 
 ## Sources
 
@@ -65,6 +69,8 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../../raw/twir/206/2024-10-23-TWIR-206|TWIR #206]]
 - [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
 - [[../../raw/twir/276/2026-04-08-TWIR-276|TWIR #276]]
+- [[../../raw/twir/288/2026-07-01-TWIR-288|TWIR #288]]
+- [[../../raw/twir/290/2026-07-15-TWIR-290|TWIR #290]]
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
@@ -73,6 +79,7 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 
 ## Open Questions
 

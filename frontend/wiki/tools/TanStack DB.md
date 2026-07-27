@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - tanstack-db
   - tanstack
@@ -47,7 +47,7 @@ TanStack DB is the tool hub for normalized client-side data, live-query style up
 
 - [[../../raw/twir/234/articles/01 - TanStack DB|TanStack DB]]
 - [[../../raw/twir/245/articles/01 - Stop Re-Rendering — TanStack DB, the Embedded Client Database for TanStack Query|Stop Re-Rendering — TanStack DB, the Embedded Client Database for TanStack Query]]
-- [[../../raw/twir/249/articles/01 - Beyond the Cache - A Deep Dive Into TanStack DB|Beyond the Cache - A Deep Dive Into TanStack DB]]
+- [[../../raw/twir/249/articles/01 - An Interactive Guide to TanStack DB|An Interactive Guide to TanStack DB]]
 - [[../../raw/twir/258/2025-11-12-TWIR-258|TWIR #258]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 

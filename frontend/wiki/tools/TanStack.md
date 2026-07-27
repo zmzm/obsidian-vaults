@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - tanstack
   - react
@@ -30,6 +30,7 @@ TanStack is the ecosystem hub for TanStack's React-adjacent tools: Query, Router
 - `TanStack Start` anchors the full-stack framework branch: middleware, server functions, SSR throughput, RSC as streams, migration drivers, and public endpoint boundaries.
 - `TanStack DB` anchors the client-first sync branch, where Query-driven applications adopt normalized collections, live queries, and lower-rerender update models.
 - `TanStack Table` currently appears strongest as a performance case study about object allocation shape and memory scaling.
+- TWIR #291 adds a second Table V9 signal around fine-grained reactivity and also makes TanStack Form a future candidate, but neither needs a standalone tool page yet.
 - The TanStack npm compromise gives the ecosystem branch an operations and supply-chain dimension, not only an API-design dimension.
 
 ## Related Pages
@@ -45,6 +46,7 @@ TanStack is the ecosystem hub for TanStack's React-adjacent tools: Query, Router
 - [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
 - [[../case-studies/TanStack Supply Chain Hardening|TanStack Supply Chain Hardening]]
 - [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
+- [[../sources/TWIR 291|TWIR 291]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 - [[../case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]]
 - [[../sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]]
@@ -73,6 +75,7 @@ TanStack is the ecosystem hub for TanStack's React-adjacent tools: Query, Router
 - [[../../raw/twir/284/2026-06-03-TWIR-284|TWIR #284]]
 - [[../../raw/twir/286/2026-06-17-TWIR-286|TWIR #286]]
 - [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
+- [[../../raw/twir/291/2026-07-22-TWIR-291|TWIR #291]]
 - [[../sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]

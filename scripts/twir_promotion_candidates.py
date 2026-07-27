@@ -9,13 +9,20 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from vault_utils import (
+    FRONTEND,
+    WIKI,
+    WIKI_SOURCES,
+    canonical_key,
+    dump_json,
+    parse_frontmatter,
+    raw_issues,
+    read_text,
+    title_from_target,
+    wiki_digest_paths,
+    wikilinks,
+)
 
-ROOT = Path(__file__).resolve().parents[1]
-FRONTEND = ROOT / "frontend"
-RAW_TWIR = FRONTEND / "raw" / "twir"
-WIKI_SOURCES = FRONTEND / "wiki" / "sources"
-
-WIKILINK_RE = re.compile(r"\[\[(?P<target>[^\]|#]+)(?:#[^\]|]+)?(?:\|[^\]]+)?\]\]")
 
 STOP_TAGS = {
     "ai",
@@ -34,7 +41,43 @@ STOP_TAGS = {
     "typescript",
 }
 
+NOISE_THEMES = {
+    "Apollo",
+    "Aria",
+    "Audio",
+    "Babel",
+    "Bottomsheet",
+    "Bottomtabs",
+    "Docusaurus",
+    "Eas",
+    "Edge To Edge",
+    "Enriched",
+    "Executorch",
+    "Flashlist",
+    "Flow",
+    "Fumadocs",
+    "Gesturehandler",
+    "Hermes",
+    "Keyboardcontroller",
+    "Legendlist",
+    "Lynx",
+    "Maestro",
+    "Metro",
+    "Newarch",
+    "Radon",
+    "Reanimated",
+    "Remotion",
+    "Screens",
+    "Skia",
+    "Temporal",
+    "Voltra",
+    "Webgpu",
+    "Windows",
+    "Worklets",
+}
+
 ALIASES = {
+    "activity": "React Activity",
     "compiler": "React Compiler",
     "reactcompiler": "React Compiler",
     "react-compiler": "React Compiler",
@@ -49,6 +92,7 @@ ALIASES = {
     "tanstack-start": "TanStack Start",
     "nextjs": "Next.js",
     "next-js": "Next.js",
+    "next": "Next.js",
     "servercomponents": "Server Components",
     "server-components": "Server Components",
     "serverfunctions": "Server Functions",
@@ -63,6 +107,59 @@ ALIASES = {
     "testing": "Testing",
     "accessibility": "Accessibility",
     "routing": "Routing",
+    "viewtransition": "React View Transitions",
+    "view-transition": "React View Transitions",
+    "baseui": "Base UI",
+    "reactaria": "React Aria",
+    "react-aria": "React Aria",
+    "shadcn": "shadcn",
+    "shadcnui": "shadcn",
+    "nuqs": "nuqs",
+}
+
+COVERED_BY = {
+    "Security": "Frontend Security Boundaries in Server-First React",
+    "Nuqs": "Typed Routing and URL State",
+    "nuqs": "Typed Routing and URL State",
+    "Viewtransition": "React View Transitions",
+    "View Transition": "React View Transitions",
+    "Activity": "React Activity",
+    "Eslint": "Custom ESLint Rules",
+    "Oxlint": "React Compiler Toolchain Adoption",
+    "Rolldown": "React Compiler Toolchain Adoption",
+    "Rspack": "React Compiler Toolchain Adoption",
+    "Bun": "React Compiler Toolchain Adoption",
+    "StyleX": "Linear StyleX Migration",
+    "Vitest": "Vitest Browser Mode",
+    "Navigation": "Next.js 16.3",
+    "React Aria": "Resilient React Components",
+    "shadcn": "Resilient React Components",
+    "Base UI": "Resilient React Components",
+}
+
+RELEVANCE_KEYWORDS = {
+    "React",
+    "Next.js",
+    "TanStack",
+    "Router",
+    "Compiler",
+    "Server",
+    "Testing",
+    "Security",
+    "Caching",
+    "SSR",
+    "Hydration",
+    "Accessibility",
+    "Storybook",
+    "Astro",
+    "Vite",
+    "Bun",
+    "Rspack",
+    "Rolldown",
+    "StyleX",
+    "Base UI",
+    "shadcn",
+    "nuqs",
 }
 
 
@@ -70,52 +167,6 @@ ALIASES = {
 class ThemeHit:
     issues: set[int] = field(default_factory=set)
     origins: set[str] = field(default_factory=set)
-
-
-def read_text(path: Path) -> str:
-    return path.read_text(encoding="utf-8")
-
-
-def raw_issue_path(issue_dir: Path) -> Path | None:
-    matches = sorted(issue_dir.glob("*TWIR-*.md"))
-    return matches[0] if matches else None
-
-
-def raw_issue_paths() -> dict[int, Path]:
-    issues: dict[int, Path] = {}
-    for child in RAW_TWIR.iterdir():
-        if not child.is_dir() or not child.name.isdigit():
-            continue
-        issue_file = raw_issue_path(child)
-        if issue_file:
-            issues[int(child.name)] = issue_file
-    return dict(sorted(issues.items()))
-
-
-def extract_frontmatter(text: str) -> str:
-    if not text.startswith("---\n"):
-        return ""
-    end = text.find("\n---", 4)
-    return text[4:end] if end != -1 else ""
-
-
-def extract_list_field(frontmatter: str, key: str) -> list[str]:
-    # YAML subset parser for the simple frontmatter used in this vault.
-    block = re.search(rf"^{re.escape(key)}:\n(?P<body>(?:  - .+\n)+)", frontmatter, re.MULTILINE)
-    if block:
-        return [
-            line.removeprefix("  - ").strip().strip('"')
-            for line in block.group("body").splitlines()
-            if line.strip()
-        ]
-    inline = re.search(rf"^{re.escape(key)}:\s*\[(?P<body>[^\]]*)\]", frontmatter, re.MULTILINE)
-    if inline:
-        return [part.strip().strip('"') for part in inline.group("body").split(",") if part.strip()]
-    return []
-
-
-def canonical_key(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", value.lower())
 
 
 def normalize_theme(value: str, *, preserve_label: bool = False) -> str | None:
@@ -142,12 +193,11 @@ def wiki_digest_links(issue: int) -> set[str]:
     path = WIKI_SOURCES / f"TWIR {issue}.md"
     if not path.exists():
         return set()
-    text = read_text(path)
     links: set[str] = set()
-    for match in WIKILINK_RE.finditer(text):
-        target = match.group("target").strip()
+    for target, _label in wikilinks(read_text(path)):
+        target = target.strip()
         if target.startswith("../"):
-            target = target.split("/")[-1]
+            target = title_from_target(target)
         if target.startswith("../../raw/"):
             continue
         if target.startswith("TWIR "):
@@ -158,13 +208,13 @@ def wiki_digest_links(issue: int) -> set[str]:
 
 def scan() -> dict[str, ThemeHit]:
     hits: dict[str, ThemeHit] = defaultdict(ThemeHit)
-    for issue, path in raw_issue_paths().items():
-        text = read_text(path)
-        frontmatter = extract_frontmatter(text)
-        raw_values = [
-            *extract_list_field(frontmatter, "topics"),
-            *extract_list_field(frontmatter, "tags"),
-        ]
+    for issue, raw_issue in raw_issues().items():
+        frontmatter = parse_frontmatter(read_text(raw_issue.path))
+        raw_values = []
+        for key in ["topics", "tags"]:
+            value = frontmatter.get(key, [])
+            if isinstance(value, list):
+                raw_values.extend(str(item) for item in value)
         for raw_value in raw_values:
             theme = normalize_theme(raw_value)
             if theme:
@@ -180,9 +230,31 @@ def scan() -> dict[str, ThemeHit]:
 
 def existing_wiki_pages() -> dict[str, str]:
     pages: dict[str, str] = {}
-    for path in (FRONTEND / "wiki").rglob("*.md"):
+    for path in WIKI.rglob("*.md"):
         pages[canonical_key(path.stem)] = path.stem
     return pages
+
+
+def coverage_for(theme: str, pages: dict[str, str]) -> str | None:
+    if canonical_key(theme) in pages:
+        return pages[canonical_key(theme)]
+    mapped = COVERED_BY.get(theme)
+    if mapped and canonical_key(mapped) in pages:
+        return pages[canonical_key(mapped)]
+    return mapped
+
+
+def relevance_score(theme: str, hit: ThemeHit, pages: dict[str, str]) -> int:
+    score = len(hit.issues) * 2
+    if "wiki" in hit.origins:
+        score += 8
+    if coverage_for(theme, pages):
+        score -= 12
+    if theme in NOISE_THEMES:
+        score -= 20
+    if any(keyword.lower() in theme.lower() for keyword in RELEVANCE_KEYWORDS):
+        score += 8
+    return score
 
 
 def format_issues(issues: set[int], limit: int) -> str:
@@ -192,39 +264,81 @@ def format_issues(issues: set[int], limit: int) -> str:
     return ", ".join(str(issue) for issue in shown) + suffix
 
 
+def candidate_rows(args) -> list[dict[str, object]]:
+    hits = scan()
+    pages = existing_wiki_pages()
+    rows = []
+    for theme, hit in hits.items():
+        if len(hit.issues) < args.min_issues:
+            continue
+        covered_by = coverage_for(theme, pages)
+        exact_page = pages.get(canonical_key(theme))
+        if args.only_unpaged and exact_page:
+            continue
+        if args.hide_covered and covered_by:
+            continue
+        if args.hide_noise and theme in NOISE_THEMES:
+            continue
+        score = relevance_score(theme, hit, pages)
+        if score < args.min_score:
+            continue
+        rows.append(
+            {
+                "theme": theme,
+                "issues": sorted(hit.issues),
+                "issue_count": len(hit.issues),
+                "origins": sorted(hit.origins),
+                "exact_page": exact_page,
+                "covered_by": covered_by,
+                "noise": theme in NOISE_THEMES,
+                "score": score,
+            }
+        )
+    rows.sort(key=lambda row: (-int(row["score"]), -int(row["issue_count"]), str(row["theme"]).lower()))
+    return rows
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--min-issues", type=int, default=3, help="minimum distinct issues for a theme")
     parser.add_argument("--limit", type=int, default=40, help="maximum themes to print")
     parser.add_argument("--issue-limit", type=int, default=16, help="maximum issue numbers shown per theme")
-    parser.add_argument(
-        "--only-unpaged",
-        action="store_true",
-        help="show only themes without an exact matching wiki page title",
-    )
+    parser.add_argument("--only-unpaged", action="store_true", help="show only themes without an exact matching wiki page title")
+    parser.add_argument("--hide-covered", action="store_true", help="hide themes covered by broader pages")
+    parser.add_argument("--hide-noise", action="store_true", help="hide low-relevance recurring raw themes")
+    parser.add_argument("--min-score", type=int, default=-999, help="minimum relevance score")
+    parser.add_argument("--json", action="store_true", help="print candidates as JSON")
     args = parser.parse_args()
 
-    hits = scan()
-    pages = existing_wiki_pages()
-    candidates = [
-        (theme, hit)
-        for theme, hit in hits.items()
-        if len(hit.issues) >= args.min_issues
-        and (not args.only_unpaged or canonical_key(theme) not in pages)
-    ]
-    candidates.sort(key=lambda item: (-len(item[1].issues), item[0].lower()))
+    rows = candidate_rows(args)
+    if args.json:
+        dump_json({"candidates": rows[: args.limit], "total": len(rows)})
+        return 0
 
     print("TWIR promotion candidates")
     print("=========================")
     print(f"minimum issues: {args.min_issues}")
-    print(f"themes shown:   {min(len(candidates), args.limit)} of {len(candidates)}")
+    print(f"themes shown:   {min(len(rows), args.limit)} of {len(rows)}")
     print()
 
-    for theme, hit in candidates[: args.limit]:
-        page_state = "existing page" if canonical_key(theme) in pages else "no exact page"
-        origins = "/".join(sorted(hit.origins))
-        print(f"- {theme} ({len(hit.issues)} issues, {origins}, {page_state})")
-        print(f"  issues: {format_issues(hit.issues, args.issue_limit)}")
+    for row in rows[: args.limit]:
+        exact = row["exact_page"]
+        covered = row["covered_by"]
+        if exact:
+            page_state = f"existing page: {exact}"
+        elif covered:
+            page_state = f"covered by: {covered}"
+        else:
+            page_state = "no page"
+        flags = []
+        if row["noise"]:
+            flags.append("noise")
+        flag_text = f", {', '.join(flags)}" if flags else ""
+        print(
+            f"- {row['theme']} ({row['issue_count']} issues, {'/'.join(row['origins'])}, "
+            f"score {row['score']}, {page_state}{flag_text})"
+        )
+        print(f"  issues: {format_issues(set(row['issues']), args.issue_limit)}")
 
     return 0
 

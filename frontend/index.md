@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-06-26
+updated: 2026-07-27
 status: active
 ---
 
@@ -58,6 +58,10 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[raw/twir/285/2026-06-10-TWIR-285|TWIR #285]] — source issue and related article notes.
 - [[raw/twir/286/2026-06-17-TWIR-286|TWIR #286]] — source issue and related article notes.
 - [[raw/twir/287/2026-06-24-TWIR-287|TWIR #287]] — source issue and related article notes.
+- [[raw/twir/288/2026-07-01-TWIR-288|TWIR #288]] — source issue and related article notes.
+- [[raw/twir/289/2026-07-08-TWIR-289|TWIR #289]] — source issue and related article notes.
+- [[raw/twir/290/2026-07-15-TWIR-290|TWIR #290]] — source issue and related article notes.
+- [[raw/twir/291/2026-07-22-TWIR-291|TWIR #291]] — source issue and related article notes.
 
 ## Concepts
 
@@ -105,6 +109,7 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/case-studies/Next.js App Router Exit|Next.js App Router Exit]] — a real migration story away from App Router after sustained production use.
 - [[wiki/case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]] — a production migration where App Router reduced slow responses on a server-heavy page.
 - [[wiki/case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]] — runtime-level portability case around stream adapters, buffering, and host-specific SSR behavior.
+- [[wiki/case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]] — self-hosted SSR runtime case around Node.js workers, Kubernetes load distribution, and socket-level overhead.
 - [[wiki/case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]] — host-environment integration lessons from running Next.js inside ChatGPT.
 - [[wiki/case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]] — why framework conventions become more valuable, not less, in AI-assisted engineering.
 - [[wiki/case-studies/Railway Off Next.js|Railway Off Next.js]] — a production migration story where a client-heavy product moved from Next.js toward a Vite- and TanStack-based stack.
@@ -149,10 +154,11 @@ This section is grouped by role so the index stays navigable without losing dire
 - `260-269`: [[wiki/sources/TWIR 260|TWIR 260]], [[wiki/sources/TWIR 261|TWIR 261]], [[wiki/sources/TWIR 262|TWIR 262]], [[wiki/sources/TWIR 263|TWIR 263]], [[wiki/sources/TWIR 264|TWIR 264]], [[wiki/sources/TWIR 265|TWIR 265]], [[wiki/sources/TWIR 266|TWIR 266]], [[wiki/sources/TWIR 267|TWIR 267]], [[wiki/sources/TWIR 268|TWIR 268]], [[wiki/sources/TWIR 269|TWIR 269]]
 - `270-279`: [[wiki/sources/TWIR 270|TWIR 270]], [[wiki/sources/TWIR 271|TWIR 271]], [[wiki/sources/TWIR 272|TWIR 272]], [[wiki/sources/TWIR 273|TWIR 273]], [[wiki/sources/TWIR 274|TWIR 274]], [[wiki/sources/TWIR 275|TWIR 275]], [[wiki/sources/TWIR 276|TWIR 276]], [[wiki/sources/TWIR 277|TWIR 277]], [[wiki/sources/TWIR 278|TWIR 278]], [[wiki/sources/TWIR 279|TWIR 279]]
 - `280-287`: [[wiki/sources/TWIR 280|TWIR 280]], [[wiki/sources/TWIR 281|TWIR 281]], [[wiki/sources/TWIR 282|TWIR 282]], [[wiki/sources/TWIR 283|TWIR 283]], [[wiki/sources/TWIR 284|TWIR 284]], [[wiki/sources/TWIR 285|TWIR 285]], [[wiki/sources/TWIR 286|TWIR 286]], [[wiki/sources/TWIR 287|TWIR 287]]
+- `288-291`: [[wiki/sources/TWIR 288|TWIR 288]], [[wiki/sources/TWIR 289|TWIR 289]], [[wiki/sources/TWIR 290|TWIR 290]], [[wiki/sources/TWIR 291|TWIR 291]]
 
 ### Frameworks And Routing
 
-- `Next.js`: [[wiki/sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]], [[wiki/sources/Next.js Composable Caching|Next.js Composable Caching]], [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
+- `Next.js`: [[wiki/sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]], [[wiki/sources/Next.js Composable Caching|Next.js Composable Caching]], [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js 16.3|Next.js 16.3]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - `React Router / URL contracts`: [[wiki/sources/React Router Middleware|React Router Middleware]], [[wiki/sources/React Router Callsite Revalidation|React Router Callsite Revalidation]], [[wiki/sources/React Router Integration Points|React Router Integration Points]], [[wiki/sources/React Router Type Safety|React Router Type Safety]], [[wiki/sources/URL State Safety|URL State Safety]]
 - `TanStack Start / RSC stacks`: [[wiki/sources/TanStack Start Middleware|TanStack Start Middleware]], [[wiki/sources/TanStack Start Endpoint Boundaries|TanStack Start Endpoint Boundaries]], [[wiki/sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]], [[wiki/sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]], [[wiki/sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]], [[wiki/sources/TanStack Start Content Apps|TanStack Start Content Apps]], [[wiki/sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]], [[wiki/sources/RSC as Protocol|RSC as Protocol]], [[wiki/sources/Custom React Server Components Framework|Custom React Server Components Framework]], [[wiki/sources/RSC Bundle Boundaries|RSC Bundle Boundaries]], [[wiki/sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 
@@ -168,17 +174,19 @@ This section is grouped by role so the index stays navigable without losing dire
 - [[wiki/sources/React Key Prop|React Key Prop]] — practical reconciliation guidance around keys and component identity.
 - [[wiki/sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]] — practical comparison of CSR, SSR, and RSC with measurable performance framing.
 - [[wiki/sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]] — comparison between React Compiler and more compiler-first reactive models.
+- [[wiki/sources/React Compiler Production Memoization|React Compiler Production Memoization]] — production-adoption signal around compiler memoization, purity, mutable refs, linting, and opt-outs.
 - [[wiki/sources/React Compiler Rust Port|React Compiler Rust Port]] — implementation-level signal for the React Compiler direction.
 - [[wiki/sources/React Compiler Adoption Maturity|React Compiler Adoption Maturity]] — migration and ecosystem-readiness signal for React Compiler adoption.
 - [[wiki/sources/React Compiler at Wakelet|React Compiler at Wakelet]] — production adoption signal with measured UX gains and migration caveats.
 - [[wiki/sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]] — compiler diagnostics and build-tool integration across Oxlint, Rolldown, SWC, Rspack, Next.js, and Bun.
 - [[wiki/sources/React Out-of-Order Streaming|React Out-of-Order Streaming]] — React-level explanation of Suspense-driven server streaming mechanics.
 - [[wiki/sources/React Scan|React Scan]] — lightweight tooling signal for detecting unnecessary React rerenders.
+- [[wiki/sources/Hydration Mismatch Performance|Hydration Mismatch Performance]] — SSR correctness signal where hydration divergence can cause remounts and hurt LCP.
 
 ### Data, Testing, And Safety
 
 - `Client data and query models`: [[wiki/sources/Creating Query Abstractions|Creating Query Abstractions]], [[wiki/sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]], [[wiki/sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
-- `Testing`: [[wiki/sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]], [[wiki/sources/Storybook Component Testing|Storybook Component Testing]], [[wiki/sources/Vitest Browser Mode|Vitest Browser Mode]], [[wiki/sources/Testing Async React RSC Components|Testing Async React RSC Components]]
+- `Testing`: [[wiki/sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]], [[wiki/sources/Storybook Component Testing|Storybook Component Testing]], [[wiki/sources/Vitest Browser Mode|Vitest Browser Mode]], [[wiki/sources/Testing Async React RSC Components|Testing Async React RSC Components]], [[wiki/sources/ReactBench|ReactBench]]
 - `Safety and policy`: [[wiki/sources/Custom ESLint Rules|Custom ESLint Rules]], [[wiki/sources/React Trusted Types Integration|React Trusted Types Integration]], [[wiki/sources/React2DoS|React2DoS]], [[wiki/sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]], [[wiki/sources/Styled Components XSS Risk|Styled Components XSS Risk]]
 - `Authoring`: [[wiki/sources/Dropdown Component API|Dropdown Component API]], [[wiki/sources/Progressive React Forms|Progressive React Forms]], [[wiki/sources/React Component API Game|React Component API Game]]
 
@@ -189,6 +197,7 @@ This section is grouped by role so the index stays navigable without losing dire
 - [[wiki/syntheses/React Compiler vs Fine-Grained Reactivity|React Compiler vs Fine-Grained Reactivity]] — comparison between compiler-assisted React optimization and dependency-graph runtime models.
 - [[wiki/syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]] — testing synthesis across RTL, browser-realistic component testing, and server/client integration boundaries.
 - [[wiki/syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]] — why framework conventions become more valuable as human-and-agent coordination infrastructure.
+- [[wiki/syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]] — synthesis of server-function, RSC transport, middleware/runtime, and supply-chain trust boundaries.
 - [[wiki/syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]] — synthesis for reusable component APIs under SSR, async rendering, host constraints, and performance pressure.
 - [[wiki/syntheses/Next.js Portability Boundaries|Next.js Portability Boundaries]] — synthesis of where adapter-level portability ends and hosting-specific Next.js friction still begins.
 - [[wiki/syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]] — synthesis of how RSC escapes the original Next.js-only mental model across routers, bundlers, and custom stacks.

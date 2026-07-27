@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - ssr
   - performance
@@ -33,6 +33,8 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - TWIR #287 adds a counterbalancing App Router case where server-first data fetching, React cache deduplication, and streaming configuration reduced slow responses on a high-traffic page.
 - TWIR #194, #198, #202, #204, #206, #212, and #213 add older SSR/PPR evidence around Partial Prerendering, SSR performance comparisons, Cloudflare Workers PPR, serverless concurrency, Next.js 15 caching, Deno deployment, and SSR cost framing.
 - Astro contributes the static-generation and islands side of the branch, especially where server work is shifted toward build-time, content pipelines, route caching, or selective hydration.
+- TWIR #288 and #289 add hydration mismatch as a performance signal: SSR correctness can affect LCP when React remounts mismatched subtrees.
+- The standalone Next.js/Kubernetes runtime case adds process-model evidence: SSR latency can depend on Node.js worker distribution, IPC overhead, and kernel socket behavior.
 
 ## Related Pages
 
@@ -56,11 +58,15 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
 - [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/React Out-of-Order Streaming|React Out-of-Order Streaming]]
+- [[../sources/Hydration Mismatch Performance|Hydration Mismatch Performance]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../sources/TWIR 288|TWIR 288]]
+- [[../sources/TWIR 289|TWIR 289]]
 - [[../sources/TWIR 273|TWIR 273]]
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
@@ -85,7 +91,9 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/RSC Performance Tradeoffs|RSC Performance Tradeoffs]]
 - [[../sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]]
+- [[../sources/Hydration Mismatch Performance|Hydration Mismatch Performance]]
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
 
 ## Open Questions

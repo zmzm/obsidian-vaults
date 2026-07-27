@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - react
   - framework
@@ -31,6 +31,8 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - The page should therefore stay centered on framework surface area and route outward to portability, security, and fit-specific branches when those questions become primary.
 - Early archive coverage now adds both sides of the framework-fit story: composable caching as a first-party platform direction, and ComfyDeploy as a client-heavy dashboard case where Next.js was not the right fit.
 - TWIR #281 and #287 keep the branch balanced between security maintenance and fit-specific performance outcomes: broad framework security releases matter, but App Router can also be a successful latency-reduction move in server-heavy contexts.
+- TWIR #288 through #291 extend the current branch into Next.js 16.3 instant navigation, explicit Cache Components, WebSocket surface discussion, and a more predictable security-release cadence.
+- The standalone Kubernetes runtime case study adds a lower-level self-hosting signal: process topology, socket distribution, and Node.js worker orchestration can materially affect SSR latency.
 - TWIR #202 through #207 add the older Next.js 15 transition: async request APIs, cache behavior, server-function security, OpenNext portability, and RC-to-stable migration pressure.
 - The Astro branch should be used for content-heavy/static-first comparisons so this page does not absorb every framework-fit discussion.
 
@@ -49,9 +51,11 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../patterns/Typed Routing and URL State|Typed Routing and URL State]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
 - [[../syntheses/Next.js Portability Boundaries|Next.js Portability Boundaries]]
+- [[../syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 - [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 - [[../sources/Next.js Deployment Adapters|Next.js Deployment Adapters]]
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
 - [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
@@ -67,11 +71,16 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
 - [[../case-studies/Next.js Middleware Bypass|Next.js Middleware Bypass]]
 - [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
 - [[../case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]]
 - [[../sources/TWIR 281|TWIR 281]]
 - [[../sources/TWIR 286|TWIR 286]]
 - [[../sources/TWIR 287|TWIR 287]]
+- [[../sources/TWIR 288|TWIR 288]]
+- [[../sources/TWIR 289|TWIR 289]]
+- [[../sources/TWIR 290|TWIR 290]]
+- [[../sources/TWIR 291|TWIR 291]]
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
@@ -102,9 +111,14 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../../raw/twir/281/2026-05-13-TWIR-281|TWIR #281]]
 - [[../../raw/twir/286/2026-06-17-TWIR-286|TWIR #286]]
 - [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
+- [[../../raw/twir/288/2026-07-01-TWIR-288|TWIR #288]]
+- [[../../raw/twir/289/2026-07-08-TWIR-289|TWIR #289]]
+- [[../../raw/twir/290/2026-07-15-TWIR-290|TWIR #290]]
+- [[../../raw/twir/291/2026-07-22-TWIR-291|TWIR #291]]
 - [[../sources/Next.js 16|Next.js 16]]
 - [[../sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
+- [[../sources/Next.js 16.3|Next.js 16.3]]
 - [[../sources/Next.js Deployment Adapters|Next.js Deployment Adapters]]
 - [[../sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]]
 - [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
@@ -115,10 +129,12 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../sources/Next.js Composable Caching|Next.js Composable Caching]]
 - [[../sources/Next.js Server Actions Security|Next.js Server Actions Security]]
+- [[../syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 - [[../sources/Next.js use cache with next-intl|Next.js use cache with next-intl]]
 - [[../sources/Next.js catchError|Next.js catchError]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
+- [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
 
 ## Open Questions
 

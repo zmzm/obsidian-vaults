@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - react
   - compiler
@@ -30,6 +30,7 @@ React Compiler is a direction in the React ecosystem where part of the optimizat
 - TWIR #279 shifts the branch from early implementation signal toward adoption maturity: brownfield compatibility, unsupported patterns, opt-outs, and toolchain integration now matter as much as raw optimization.
 - TWIR #217 adds a production adoption signal from Wakelet, where measured UX improvements came with compatibility and code-quality caveats.
 - TWIR #285 through #287 turn the Rust compiler from a PR-level signal into a broader toolchain adoption branch across Oxlint, Rolldown, SWC, Rspack, Next.js Turbopack, and Bun.
+- TWIR #288 and #289 add a useful correction: React Compiler is spreading through toolchains, but production adoption still depends on purity, mutable-reference discipline, library compatibility, linting, and opt-outs.
 - TWIR #191, #195, #208, #209, and #213 add older compiler context: introductory explanations, OutlineJsx, Sanity Studio adoption, and real-code impact analysis.
 
 ## Related Pages
@@ -51,7 +52,10 @@ React Compiler is a direction in the React ecosystem where part of the optimizat
 - [[../sources/TWIR 285|TWIR 285]]
 - [[../sources/TWIR 286|TWIR 286]]
 - [[../sources/TWIR 287|TWIR 287]]
+- [[../sources/TWIR 288|TWIR 288]]
+- [[../sources/TWIR 289|TWIR 289]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
+- [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
 - [[../case-studies/React Compiler Silent Failures|React Compiler Silent Failures]]
 
 ## Sources
@@ -70,11 +74,14 @@ React Compiler is a direction in the React ecosystem where part of the optimizat
 - [[../../raw/twir/285/2026-06-10-TWIR-285|TWIR #285]]
 - [[../../raw/twir/286/2026-06-17-TWIR-286|TWIR #286]]
 - [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
+- [[../../raw/twir/288/2026-07-01-TWIR-288|TWIR #288]]
+- [[../../raw/twir/289/2026-07-08-TWIR-289|TWIR #289]]
 - [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
 - [[../sources/React Compiler Rust Port|React Compiler Rust Port]]
 - [[../sources/React Compiler Adoption Maturity|React Compiler Adoption Maturity]]
 - [[../sources/React Compiler at Wakelet|React Compiler at Wakelet]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
+- [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
 
 ## Open Questions
 

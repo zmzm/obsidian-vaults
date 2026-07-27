@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - react
   - rsc
@@ -34,6 +34,7 @@ Server Components are a React architecture model where part of the component tre
 - TWIR #280 through #287 deepen the post-Next.js view of RSC: protocol-level framing, TanStack-specific usage, Flight security incidents, bundler integration, and Waku-style render slicing all point to RSC as a broader framework substrate.
 - TWIR #197 through #213 add older support for Waku server actions, TanStack Start server functions, `react-server`, RSC DevTools visibility, RSC testing, and React 19's stable server-oriented direction.
 - Astro comparisons are useful here when they clarify the boundary between island architecture and React Server Components, but Astro-specific framework guidance belongs on the Astro tool page.
+- The security synthesis now treats RSC and Server Functions as protocol/request boundaries, not just rendering or data-fetching primitives.
 
 ## Related Pages
 
@@ -65,8 +66,10 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
+- [[../syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/React2DoS|React2DoS]]
+- [[../sources/Next.js Server Actions Security|Next.js Server Actions Security]]
 - [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
@@ -108,6 +111,7 @@ Server Components are a React architecture model where part of the component tre
 - [[../sources/Custom React Server Components Framework|Custom React Server Components Framework]]
 - [[../sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]]
 - [[../sources/React2DoS|React2DoS]]
+- [[../sources/Next.js Server Actions Security|Next.js Server Actions Security]]
 - [[../sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]]
 - [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]

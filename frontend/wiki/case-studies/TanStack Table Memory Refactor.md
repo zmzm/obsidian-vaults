@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - tanstack
   - performance
@@ -18,6 +18,7 @@ This case study preserves the TanStack Table V9 memory refactor as a concrete ex
 - TanStack Table V8 allocated many row, column, cell, and header objects with duplicated methods and closures.
 - Large tables amplified that per-instance overhead until browser memory became the limiting factor.
 - V9 moved shared behavior onto prototypes so repeated instances carried mostly unique data.
+- Later V9 reactivity work adds fine-grained atom-based feature state, showing that the same redesign direction also targets unnecessary rerenders and cross-framework adapter boundaries.
 
 ## What Helped
 
@@ -41,8 +42,11 @@ This case study preserves the TanStack Table V9 memory refactor as a concrete ex
 - [[../topics/React Rendering|React Rendering]]
 - [[Virtual Scrolling at Massive Scale]]
 - [[../sources/TWIR 287|TWIR 287]]
+- [[../sources/TWIR 291|TWIR 291]]
 
 ## Raw Source
 
 - [[../../raw/twir/287/articles/04 - How an Underrated Refactor Saved 90% Memory Usage|TWIR item note]]
 - [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
+- [[../../raw/twir/291/articles/07 - Inside TanStack Table V9 Reactivity|Inside TanStack Table V9 Reactivity]]
+- [[../../raw/twir/291/2026-07-22-TWIR-291|TWIR #291]]

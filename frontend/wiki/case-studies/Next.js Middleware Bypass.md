@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-21
+updated: 2026-07-27
 tags:
   - nextjs
   - security
@@ -39,6 +39,7 @@ This case study captures the Next.js middleware bypass incident as a concrete ex
 - [[../tools/Next.js|Next.js]]
 - [[../concepts/Server Components|Server Components]]
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
+- [[../syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 - [[../sources/TWIR 227|TWIR 227]]
 - [[../sources/TWIR 229|TWIR 229]]
 

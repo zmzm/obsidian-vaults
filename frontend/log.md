@@ -1,10 +1,25 @@
 ---
 type: log
-updated: 2026-06-26
+updated: 2026-07-27
 status: active
 ---
 
 # Log
+
+## [2026-07-27] synthesis | Add frontend security boundaries synthesis
+
+- Promoted the repeated security candidate into `Frontend Security Boundaries in Server-First React`.
+- Connected React2DoS, Next.js Server Actions security, middleware bypass, TanStack supply-chain hardening, and July 2026 security material into one trust-boundary model.
+- Backlinked the new synthesis from Server Components, Next.js, framework constraints, portability, and security-related case/source pages.
+
+## [2026-07-27] ingest | Promote TWIR 288 through 291 into wiki graph
+
+- Added reviewed issue digest source pages for TWIR #288, #289, #290, and #291.
+- Promoted source pages for Next.js 16.3 navigation/cache direction, React Compiler production memoization risk, hydration mismatch performance, and ReactBench.
+- Promoted the standalone `Accelerate Next.js in Kubernetes` raw article into a Next.js Kubernetes runtime performance case study.
+- Rewired Next.js, App Router caching, React Compiler, SSR performance, testing strategy, TanStack, security, and AI/framework synthesis pages around the strongest new signals.
+- Refreshed stale synthesis pages for testing, Next.js portability, React Compiler versus fine-grained reactivity, async React patterns, and Next.js versus TanStack Start.
+- Left thin announcement, podcast, and one-off library items at the issue-digest/raw layer until repeated sources justify durable pages.
 
 ## [2026-06-26] promotion | Add Astro framework hub
 

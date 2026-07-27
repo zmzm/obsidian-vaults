@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-06-26
+updated: 2026-07-27
 tags:
   - tanstack
   - security
@@ -46,6 +46,7 @@ This case study preserves the TanStack npm compromise as a concrete example of f
 - [[../tools/TanStack|TanStack]]
 - [[../tools/TanStack Start|TanStack Start]]
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
+- [[../syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 - [[../sources/TWIR 281|TWIR 281]]
 
 ## Raw Source

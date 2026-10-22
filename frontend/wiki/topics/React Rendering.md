@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - react
   - rendering
@@ -35,6 +35,8 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - TWIR #218 adds React Scan as a small tooling signal for surfacing unnecessary rerenders during development.
 - TWIR #283 and #287 add product-performance evidence around server-first component architecture, local-first perceived latency, styling contracts, and allocation-shape improvements for very large tables.
 - TWIR #190, #196, #205, #209, and #210 add the older Suspense sibling-prerendering and prewarming thread that explains why render scheduling can create or avoid data waterfalls.
+
+- The Recraft experiment shows why resource discovery hidden behind Suspense can dominate first-use latency even when transferred bytes barely change; inspect the waterfall alongside component timing.
 
 ## Related Pages
 
@@ -80,6 +82,11 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../case-studies/Linear StyleX Migration|Linear StyleX Migration]]
 - [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
 
+- [[../tools/React DevTools|React DevTools]]
+- [[../case-studies/Recraft WASM Resource Scheduling|Recraft WASM Resource Scheduling]]
+
+- [[../sources/TanStack Router Navigation Lifetimes|TanStack Router Navigation Lifetimes]]
+
 ## Sources
 
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
@@ -107,6 +114,8 @@ React Rendering is the overview topic for how React updates UI, how rendering mo
 - [[../sources/React Out-of-Order Streaming|React Out-of-Order Streaming]]
 - [[../sources/React Scan|React Scan]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
+
+- [[../../raw/twir/301/articles/08 - How we made a 9 MB WebAssembly module feel faster without removing a single byte|08 - How we made a 9 MB WebAssembly module feel faster without removing a single byte]]
 
 ## Open Questions
 

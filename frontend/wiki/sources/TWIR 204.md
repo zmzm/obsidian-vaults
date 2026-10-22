@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -35,6 +35,9 @@ TWIR #204 is an older issue around Meta's React usage, Next.js 15 canary breakin
 - [[../sources/Progressive React Forms|Progressive React Forms]]
 - [[../concepts/Server Components|Server Components]]
 - [[../topics/SSR Performance|SSR Performance]]
+
+- [[../tools/Vite|Vite]]
+- [[Vite Runtime Environments|Vite Runtime Environments]]
 
 ## Raw Source
 

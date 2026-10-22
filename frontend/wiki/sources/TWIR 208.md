@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -39,3 +39,9 @@ TWIR #208 is an older issue around React Compiler next steps, the OutlineJsx com
 ## Raw Source
 
 - [[../../raw/twir/208/2024-11-06-TWIR-208|2024-11-06-TWIR-208]]
+
+## Recovered Source Snapshots
+
+Retrieved on 2026-10-22. These are later source snapshots; original intake failures remain preserved. A pending snapshot is available for review and does not validate earlier summaries. See [[../../system/Source Evidence|Source Evidence]].
+
+- [[../../raw/twir/208/recovered/14 - Preact - Simplifying Islands Architecture|14 - Preact - Simplifying Islands Architecture]] — editorial review: reviewed.

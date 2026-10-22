@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-21
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -33,6 +33,8 @@ TWIR #258 is a broad digest issue covering TanStack ecosystem expansion, React e
 - [[../tools/TanStack Query|TanStack Query]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
+
+- [[../tools/Nitro|Nitro]]
 
 ## Raw Source
 

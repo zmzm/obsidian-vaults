@@ -1,7 +1,7 @@
 ---
 type: topic
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - ssr
   - performance
@@ -35,6 +35,8 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - Astro contributes the static-generation and islands side of the branch, especially where server work is shifted toward build-time, content pipelines, route caching, or selective hydration.
 - TWIR #288 and #289 add hydration mismatch as a performance signal: SSR correctness can affect LCP when React remounts mismatched subtrees.
 - The standalone Next.js/Kubernetes runtime case adds process-model evidence: SSR latency can depend on Node.js worker distribution, IPC overhead, and kernel socket behavior.
+
+- Primer separates server style-collection savings from client initialization, while Recraft separates resource discovery from byte count. Measure the phase and user-visible outcome an optimization actually changes.
 
 ## Related Pages
 
@@ -70,6 +72,13 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 
+- [[../case-studies/GitHub Primer CSS Modules Migration|GitHub Primer CSS Modules Migration]]
+- [[../case-studies/Recraft WASM Resource Scheduling|Recraft WASM Resource Scheduling]]
+
+- [[../tools/Preact|Preact]]
+- [[../case-studies/Static Blog with Preact Islands|Static Blog with Preact Islands]]
+- [[../sources/Vite Runtime Environments|Vite Runtime Environments]]
+
 ## Sources
 
 - [[../../raw/twir/255/2025-10-22-TWIR-255|TWIR #255]]
@@ -95,6 +104,9 @@ SSR Performance is the topic hub for server-side rendering throughput, latency, 
 - [[../case-studies/Next.js Host Runtime Friction|Next.js Host Runtime Friction]]
 - [[../case-studies/Next.js Kubernetes Runtime Performance|Next.js Kubernetes Runtime Performance]]
 - [[../case-studies/Next.js App Router Slow Responses|Next.js App Router Slow Responses]]
+
+- [[../../raw/twir/299/articles/05 - GitHub - Improving site performance by shipping more CSS|05 - GitHub - Improving site performance by shipping more CSS]]
+- [[../../raw/twir/301/articles/08 - How we made a 9 MB WebAssembly module feel faster without removing a single byte|08 - How we made a 9 MB WebAssembly module feel faster without removing a single byte]]
 
 ## Open Questions
 

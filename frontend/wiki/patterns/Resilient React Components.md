@@ -1,7 +1,9 @@
 ---
 type: pattern
+evidence: mixed
+evidence_reviewed: 2026-10-22
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - react
   - component-design
@@ -18,6 +20,9 @@ Resilient React Components is the pattern page for designing component APIs that
 - Reusable components fail in production when they assume a single rendering environment or a narrow composition model.
 - Browser-only assumptions, fragile child manipulation, and hidden environment dependencies often break first.
 - Good resilience comes from API and boundary design, not only from defensive conditionals.
+
+- Choose accessibility roles from behavior: Base UI command filtering uses a dialog/search/menu design because selecting an action differs from completing a field value.
+- The recovered browser() reference establishes the use(browser()) mechanism under a server Suspense boundary and requires a Client Component in an RSC tree. Older summaries disagree about stability; the fetched reference supports behavior, while the consuming package version still needs verification.
 
 ## Practical Significance
 
@@ -47,6 +52,9 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../sources/React Component API Game|React Component API Game]]
 - [[../sources/Dropdown Component API|Dropdown Component API]]
 
+- [[Design System Styling Contracts|Design System Styling Contracts]]
+- [[../case-studies/Base UI Filterable Menu Semantics|Base UI Filterable Menu Semantics]]
+
 ## Sources
 
 - [[../../raw/twir/255/articles/10 - Running Next.js inside ChatGPT A deep dive into native app integration|Running Next.js inside ChatGPT]]
@@ -57,6 +65,12 @@ Resilient React Components is the pattern page for designing component APIs that
 - [[../../raw/twir/271/articles/10 - Error rendering with RSC|Error rendering with RSC]]
 - [[../../raw/twir/275/articles/09 - Making React ProseMirror really, really fast|Making React ProseMirror really, really fast]]
 - [[../case-studies/Linear StyleX Migration|Linear StyleX Migration]]
+
+- [[../../raw/twir/302/articles/07 - Building a filterable menu that works for everyone|07 - Building a filterable menu that works for everyone]]
+- [[../../raw/twir/300/articles/07 - React's New browser API Rendering Components Only in the Browser|07 - React's New browser API Rendering Components Only in the Browser]]
+- [[../../raw/twir/295/articles/05 - React Types PR - Types for React 19.3|05 - React Types PR - Types for React 19.3]] — summary-only conflicting type-status claim.
+
+- [[../../raw/twir/295/recovered/06 - React DOM Docs - New use(browser(reason)) API|06 - React DOM Docs - New use(browser(reason)) API]]
 
 ## Open Questions
 

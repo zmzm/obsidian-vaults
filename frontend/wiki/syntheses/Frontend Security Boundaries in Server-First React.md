@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - security
   - react
@@ -81,8 +81,19 @@ Server-first React moves more frontend code into request-handling, serialization
 - [[../../raw/twir/291/articles/02 - React - Denial of Service in Server Functions|React - Denial of Service in Server Functions]]
 - [[../../raw/twir/291/articles/03 - Next.js - July 2026 Security Release|Next.js - July 2026 Security Release]]
 
+- [[../../raw/twir/298/articles/04 - Next.js 16.3.6 – Security Update|04 - Next.js 16.3.6 – Security Update]]
+- [[../../raw/twir/299/articles/04 - Next.js September Security - 16.3.8 and 15.5.27|04 - Next.js September Security - 16.3.8 and 15.5.27]]
+- [[../../raw/twir/300/articles/05 - TanStack Start security update CVE-2026-102989|05 - TanStack Start security update CVE-2026-102989]]
+- [[../../raw/twir/302/articles/02 - React vulnerability - Unauthenticated Remote Code Execution in React Server Components|02 - React vulnerability - Unauthenticated Remote Code Execution in React Server Components]]
+
 ## Open Questions
 
 - Which security checks should become mechanical lint/test rules for server-action and RSC-heavy applications.
 - How much framework security risk should be modeled at the application layer versus delegated to framework release cadence.
 - Whether the vault needs a separate supply-chain pattern if more npm/CI incidents accumulate.
+
+## Captured Advisory Evidence
+
+- TWIR 298–302 add historical advisories covering ImageResponse dependencies, image/cache handling, TanStack server-function responses, and RSC payload processing. These are distinct surfaces; action authorization alone does not cover all of them.
+- The October upcoming-update item is an announcement rather than a final advisory. This ingest does not establish an up-to-date affected-version or patched-version matrix.
+- Use the captured advisories as evidence for boundary classification and consult their current first-party originals before operational upgrade decisions.

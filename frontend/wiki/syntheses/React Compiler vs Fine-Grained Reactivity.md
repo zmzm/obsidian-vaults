@@ -1,100 +1,54 @@
 ---
 type: synthesis
 status: active
-updated: 2026-07-27
-tags:
-  - react-compiler
-  - signals
-  - reactivity
-  - comparison
+evidence: mixed
+evidence_reviewed: 2026-10-22
+updated: 2026-10-22
+tags: [react-compiler, signals, reactivity, comparison]
 ---
 
 # React Compiler vs Fine-Grained Reactivity
 
-This synthesis compares React Compiler with fine-grained reactivity models such as signals-oriented systems, based on the current source set in the vault.
+This comparison separates compiler-generated reuse from dependency-level subscriptions while allowing both to coexist inside a React application.
 
 ## Short Thesis
 
-React Compiler looks like an optimization layer that preserves React's current runtime model. Fine-grained reactivity looks like a different runtime model entirely, where updates propagate through dependency graphs rather than through a component-tree scheduling model.
+Compiler optimization and fine-grained subscriptions answer different questions: which computations can be reused, and which consumers should be notified. A library can combine them; they are not necessarily exclusive framework choices.
 
-## What React Compiler Appears To Be
+## What the Evidence Supports
 
-- A way to automate optimizations that React developers previously expressed manually.
-- A compiler-assisted improvement to authoring style and runtime efficiency without abandoning core React semantics.
-- A strategy that keeps React recognizable while making more code compiler-friendly.
-- A growing toolchain story across Rust compiler work, diagnostics, bundlers, and framework integrations.
-- A production adoption path that still depends on code purity, mutable-reference discipline, library compatibility, and escape hatches.
+- The extracted compiler adoption account shows build integration, diagnostic/version alignment, and workload-specific build improvements. Faster compilation is separate from faster UI interactions.
+- The extracted context example distinguishes broad consumer invalidation from expensive child work. Narrow derived props and compiler or memo reuse can reduce downstream work without introducing a context-selector API.
+- The MobX integration PR illustrates a compatibility seam: automatic observer wrapping and compiler opt-outs are proposed so dependency tracking retains ownership. Proposal status does not establish every integration’s current behavior.
+- Fine-grained subscriptions in a React library can limit notifications while React still owns rendering and scheduling. A signals implementation inside a library is not evidence that the whole app changed runtime models.
 
-In the current vault, React Compiler looks evolutionary rather than revolutionary.
+## Practical Significance
 
-## What Fine-Grained Reactivity Appears To Be
+- Measure notification count, expensive component work, commits, and user-perceived latency separately before selecting an optimization.
+- For an existing React application, check purity, bailouts, third-party tracking, and compiler/toolchain versions before attributing missed optimization to React’s entire runtime.
+- For external stores, evaluate subscription granularity together with concurrency and consistency behavior; fewer rerenders alone do not establish correctness.
 
-- A model where updates target dependencies more directly.
-- A runtime built around reactive graphs rather than broad component-tree rerender behavior.
-- A different mental model for how UI updates propagate and where costs are paid.
-- Recent TanStack Table V9 material shows this style of fine-grained state as a practical library-internal strategy, not only a framework-level alternative.
+## Evidence Limits
 
-In the current vault, signals-style systems look like an architectural alternative, not just a more aggressive optimizer.
-
-## Main Difference
-
-- React Compiler changes how React code is optimized.
-- Fine-grained reactivity changes how the UI runtime fundamentally behaves.
-
-That distinction matters because the two approaches can produce similar surface-level performance claims while operating under very different constraints.
-
-## Where React Compiler Looks Stronger
-
-- Compatibility with existing React semantics and ecosystem expectations.
-- Incremental adoption potential through compilers and toolchains.
-- Better fit for teams that want improved performance without changing the mental model of React too radically.
-- Stronger fit for brownfield React applications when linting, diagnostics, and opt-outs can make adoption observable.
-
-## Where Fine-Grained Reactivity Looks Stronger
-
-- More explicit dependency-level updates.
-- A cleaner conceptual story for avoiding broad rerender work.
-- Stronger alignment with runtime models that treat reactivity as graph propagation rather than tree scheduling.
-- Better fit for library internals or data-dense UI where update granularity matters more than preserving React's component-level invalidation shape.
-
-## Practical Heuristic
-
-- Prefer the React Compiler framing when the goal is to improve React authoring and optimization while staying inside the React ecosystem.
-- Prefer the fine-grained reactivity framing when the real question is whether React's component-tree runtime model is itself the wrong abstraction for a given class of UI problems.
-
-## Current Evidence Quality
-
-- The vault has meaningful comparative material for the conceptual distinction.
-- The vault has a stronger implementation signal for React Compiler than for any one specific fine-grained framework.
-- New TanStack material improves the evidence for fine-grained reactivity as an internal architecture choice, but the synthesis is still strongest on model boundaries, not head-to-head benchmark claims.
+The archive has stronger compiler implementation and adoption evidence than controlled comparisons with any single signals runtime. Conceptual simplicity and performance superiority cannot be ranked from these sources alone.
 
 ## Related Pages
 
 - [[../concepts/React Compiler|React Compiler]]
 - [[../concepts/Signals|Signals]]
 - [[../topics/React Rendering|React Rendering]]
-- [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
-- [[../sources/React Compiler Rust Port|React Compiler Rust Port]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
 - [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
 - [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
 
 ## Sources
 
-- [[../concepts/React Compiler|React Compiler]]
-- [[../concepts/Signals|Signals]]
-- [[../topics/React Rendering|React Rendering]]
-- [[../sources/Compiler-Driven UI Boundaries|Compiler-Driven UI Boundaries]]
-- [[../sources/React Compiler Rust Port|React Compiler Rust Port]]
-- [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
-- [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
-- [[../case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]]
-- [[../../raw/twir/272/2026-03-11-TWIR-272|TWIR #272]]
-- [[../../raw/twir/275/2026-04-01-TWIR-275|TWIR #275]]
-- [[../../raw/twir/291/articles/07 - Inside TanStack Table V9 Reactivity|Inside TanStack Table V9 Reactivity]]
+- [[../../raw/twir/296/articles/06 - React Now Rusted All The Way Out|06 - React Now Rusted All The Way Out]]
+- [[../../raw/twir/300/articles/06 - Making React Context Cheap with React Compiler|06 - Making React Context Cheap with React Compiler]]
+- [[../../raw/twir/301/articles/03 - MobX PR - MobX React plugin|03 - MobX PR - MobX React plugin]]
+- [[../../raw/twir/291/articles/07 - Inside TanStack Table V9 Reactivity|07 - Inside TanStack Table V9 Reactivity]] — retained supporting reactivity reference; verify extraction before detailed implementation claims.
 
 ## Open Questions
 
-- Whether React Compiler will remain mostly an optimization layer or gradually pull more architecture decisions into compile time.
-- How much fine-grained reactivity's conceptual clarity survives in large real-world applications and tooling ecosystems.
-- Whether React libraries increasingly adopt fine-grained internals while exposing familiar React APIs.
+- How much measured work comes from subscriptions, component execution, DOM commit, or unrelated computation?
+- Which tracking libraries safely combine their ownership rules with compiler-generated reuse?

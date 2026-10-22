@@ -1,40 +1,37 @@
 ---
 type: source
 status: active
-updated: 2026-04-16
-tags:
-  - react
-  - transitions
-  - rendering
-  - source
+evidence: mixed
+evidence_reviewed: 2026-10-22
+updated: 2026-10-22
+tags: [react, transitions, actions, source]
 ---
 
 # React useTransition
 
-This source gives practical guidance on where `useTransition` actually fits in React performance work.
+This source page preserves earlier performance guidance while correcting its overly narrow description using the current React reference.
 
 ## Summary
 
-- `useTransition` is intended for expensive synchronous UI updates, not network requests.
-- It produces both an immediate render and a deferred render.
-- `useDeferredValue` and debouncing remain better fits for other classes of problems.
+The current reference includes async Actions and pending UI in transitions. Custom request ordering remains application-owned, and updates after await currently need another transition wrapper. The older article’s synchronous-only framing should not be treated as a complete API contract.
 
 ## Why This Source Matters
 
-- It strengthens the `React Rendering` topic with an explicit usage boundary for transitions.
-- It helps prevent a common category error where transitions are used as a generic async primitive.
-
-## Caveats
-
-- This is practical guidance, not a formal React specification.
+Separates update priority and Action coordination from fetching policy, mutation sequencing, and expensive synchronous computation.
 
 ## Related Pages
 
 - [[../topics/React Rendering|React Rendering]]
 - [[../concepts/React use()|React use()]]
-- [[../sources/TWIR 270|TWIR 270]]
+- [[../patterns/Optimistic Mutation Coordination|Optimistic Mutation Coordination]]
+- [[../syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]]
 
-## Raw Sources
+## Sources
 
-- [[../../raw/twir/270/articles/10 - React’s useTransition The hook you’re probably using wrong|TWIR item note]]
-- [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
+- [[../../raw/articles/React useTransition Reference - 2026-10-22|React useTransition Reference - 2026-10-22]]
+- [React useTransition reference](https://react.dev/reference/react/useTransition)
+- [[../../raw/twir/270/articles/10 - React’s useTransition The hook you’re probably using wrong|10 - React’s useTransition The hook you’re probably using wrong]] — historical article; its narrow framing is superseded for general API guidance.
+
+## Open Questions
+
+- Which async flows need higher-level framework ordering rather than a custom transition?

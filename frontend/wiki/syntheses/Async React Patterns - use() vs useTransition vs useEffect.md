@@ -1,98 +1,65 @@
 ---
 type: synthesis
 status: active
-updated: 2026-07-27
-tags:
-  - react
-  - async
-  - use-hook
-  - usetransition
-  - useeffect
-  - comparison
+evidence: full-text
+evidence_reviewed: 2026-10-22
+updated: 2026-10-22
+tags: [react, async, actions, transitions, effects]
 ---
 
 # Async React Patterns - use() vs useTransition vs useEffect
 
-This synthesis compares three patterns that are often mixed together in React discussions: `use()`, `useTransition`, and `useEffect`.
+These React APIs operate at different boundaries: render-time reads, non-blocking updates and Actions, and synchronization with external systems.
 
 ## Short Thesis
 
-`use()` is best understood as a render-time async read primitive. `useTransition` is best understood as a scheduling primitive for expensive synchronous UI updates. `useEffect` is not primarily an async rendering primitive at all, even though it has often been used that way in application code.
+Use use() to consume a render-time resource, transitions to coordinate non-blocking updates and Action pending state, and effects to synchronize external systems after commit. Mutation ordering and optimistic presentation require their own explicit contracts.
 
-## What `use()` Is For
+## Render-time Reads
 
-- Reading promises and context during render.
-- Composing with Suspense and Error Boundaries.
-- Replacing effect-driven loading boilerplate in cases where data can participate directly in render.
-- Newer React docs coverage reinforces that `use()` is an API reference point now, but its practical value still depends on Suspense and framework data boundaries.
+use() consumes promises or context during render. Promise reads can participate in Suspense and error boundaries; resource ownership and stable promise identity still need a framework or data-layer contract.
 
-In the current vault, `use()` looks like the clearest signal of React moving async coordination into the render model itself.
+## Transitions and Async Actions
 
-## What `useTransition` Is For
+Current React documentation includes async Actions in startTransition. A transition coordinates non-blocking updates and pending UI; it is not limited to synchronous render optimization. The Action callback starts immediately, so arbitrary synchronous computation inside it still blocks. State updates after await currently need another transition wrapper. Custom async work may finish out of order; transition priority does not establish request ordering.
 
-- Deferring expensive synchronous UI updates.
-- Keeping the interface responsive while lower-priority rendering work continues.
-- Solving scheduling and responsiveness problems, not data fetching problems.
+## Effects and Lifecycle
 
-The current source base is especially clear that `useTransition` should not be treated as a generic async or network primitive.
+Effects synchronize committed UI with external systems. The extracted Activity failure case shows why render-time allocation cannot depend on a later effect for cleanup: a hidden subtree may render without its effects mounting. This supplies stronger direct evidence than the older unextracted anti-effect essay.
 
-## What `useEffect` Is For
+## Mutation Coordination
 
-- Synchronizing with systems outside React after render.
-- Bridging React state and lifecycle with imperative APIs, subscriptions, timers, or DOM integration.
+useActionState queues calls through its dispatcher and supplies the previous result. useOptimistic shows temporary state during an Action. Apply changes to confirmed state when they execute; request order alone cannot repair payloads computed from a stale snapshot. A local queue is not a cross-user conflict protocol.
 
-In practice, many teams historically used `useEffect` for data loading and async orchestration. The current vault points toward that pattern becoming less central, but the supporting evidence here is still thinner than for `use()` and `useTransition`.
+## Practical Significance
 
-## Main Distinction
-
-- `use()` changes how data can be consumed during render.
-- `useTransition` changes how rendering work is prioritized.
-- `useEffect` runs after render and is about side effects, not render-time async composition.
-
-These tools operate at different layers, which is why using them as interchangeable "async React tools" creates confusion.
-
-## Practical Heuristic
-
-- Use `use()` when async values should participate directly in render and Suspense-style composition is appropriate.
-- Use `useTransition` when the real problem is expensive synchronous rendering work that should become lower priority.
-- Use `useEffect` when you need to synchronize React with external systems after commit.
+- First identify whether the problem concerns reading data, responsiveness, external synchronization, mutation order, or confirmation of optimistic state.
+- Validate overlapping interactions and failures. UI returning to a confirmed base is not a server transaction rollback.
+- Keep controlled text inputs urgent and separate expensive derived rendering where needed.
 
 ## Current Evidence Quality
 
-- The vault has good support for `use()`.
-- The vault has good practical guidance for `useTransition`.
-- The vault has only weak direct support for a full `useEffect` comparison, because the most relevant item in raw material is not properly extracted.
-- TWIR #288 and #290 add fresh documentation support for `use()` and Suspense boundary activation, but they do not change the core distinction.
-
-So this synthesis is strongest as a clarification of boundaries between `use()` and `useTransition`, with `useEffect` included mostly as the common source of confusion they are often compared against.
+The correction uses the three current first-party React API references, the extracted Activity case, and the recovered Huddle mutation example. The latter snapshot is truncated, so only its reviewed sidebar example supports this page; it is not evidence for the complete later Flow implementation.
 
 ## Related Pages
 
 - [[../concepts/React use()|React use()]]
-- [[../topics/React Rendering|React Rendering]]
-- [[../concepts/Server Components|Server Components]]
-- [[../patterns/Caching in App Router|Caching in App Router]]
-- [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
-- [[../sources/React use Hook|React use Hook]]
 - [[../sources/React useTransition|React useTransition]]
-- [[../sources/TWIR 288|TWIR 288]]
-- [[../sources/TWIR 290|TWIR 290]]
-- [[../case-studies/Async React Design Components|Async React Design Components]]
-- [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
+- [[../concepts/React Activity|React Activity]]
+- [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
+- [[../patterns/Optimistic Mutation Coordination|Optimistic Mutation Coordination]]
+- [[../patterns/Client-First Data Sync|Client-First Data Sync]]
+- [[../topics/React Rendering|React Rendering]]
 
 ## Sources
 
-- [[../concepts/React use()|React use()]]
-- [[../topics/React Rendering|React Rendering]]
-- [[../sources/React use Hook|React use Hook]]
 - [[../sources/React useTransition|React useTransition]]
-- [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
-- [[../../raw/twir/274/2026-03-25-TWIR-274|TWIR #274]]
-- [[../../raw/twir/288/articles/05 - React Docs - use() API Reference|React Docs - use() API Reference]]
-- [[../../raw/twir/290/articles/03 - React Docs - What activates a Suspense boundary|React Docs - What activates a Suspense boundary]]
-- [[../../raw/twir/273/articles/04 - Why we banned React's useEffect|Why we banned React's useEffect]]
+- [[../../raw/twir/298/articles/06 - React Activity When A Render No Longer Guarantees an Effect|06 - React Activity When A Render No Longer Guarantees an Effect]]
+- [[../../raw/twir/294/recovered/15 - Coordinating Optimistic Updates in Next.js|15 - Coordinating Optimistic Updates in Next.js]]
+- [[../../raw/articles/React useActionState Reference - 2026-10-22|React useActionState Reference - 2026-10-22]]
+- [[../../raw/articles/React useOptimistic Reference - 2026-10-22|React useOptimistic Reference - 2026-10-22]]
 
 ## Open Questions
 
-- Whether a stronger direct source base for `useEffect` patterns should later justify a dedicated comparison or concept page.
-- How much of the shift away from effect-driven async flows will remain stable across framework ecosystems.
+- Which state should share one mutation queue and which writes can proceed independently?
+- How do framework or data-library contracts add cancellation, freshness, and conflict handling beyond React’s local APIs?

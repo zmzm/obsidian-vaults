@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - react
   - framework
@@ -85,6 +85,11 @@ Next.js is one of the main framework hubs in this vault. This page should collec
 - [[../syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 - [[../case-studies/ComfyDeploy Off Next.js|ComfyDeploy Off Next.js]]
+
+- [[../sources/Next.js 16.4|Next.js 16.4]]
+- [[../case-studies/v0 Partial Prefetching|v0 Partial Prefetching]]
+
+- [[../case-studies/Lovable Incremental Framework Migration|Lovable Incremental Framework Migration]]
 
 ## Sources
 

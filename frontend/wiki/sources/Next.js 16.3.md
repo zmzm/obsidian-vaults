@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - nextjs
   - caching
@@ -19,6 +19,8 @@ This source captures the Next.js 16.3 direction around instant navigations, expl
 - The release direction combines reusable route shells, streaming, explicit caching, and test/dev tooling for detecting slow navigation paths.
 - Turbopack improvements and AI-oriented diagnostics keep framework ergonomics tied to both build performance and agent workflows.
 - Cache Components in the adjacent Next.js 16 material continue the same shift: caching is something developers mark intentionally rather than something inferred implicitly everywhere.
+
+- TWIR 293 and 294 add release and v0 navigation summaries, but their article bodies are also missing. The extracted 16.4 release and v0 case now provide the stronger follow-on evidence.
 
 ## Why This Source Matters
 
@@ -42,9 +44,15 @@ This source captures the Next.js 16.3 direction around instant navigations, expl
 - [[TWIR 288]]
 - [[TWIR 290]]
 
+- [[Next.js 16.4|Next.js 16.4]]
+- [[../case-studies/v0 Partial Prefetching|v0 Partial Prefetching]]
+
 ## Raw Sources
 
 - [[../../raw/twir/288/articles/01 - Next.js 16.3 Preview - Instant Navigations|Next.js 16.3 Preview - Instant Navigations]]
 - [[../../raw/twir/288/articles/03 - Next.js 16.3 AI Improvements|Next.js 16.3 AI Improvements]]
 - [[../../raw/twir/288/articles/04 - Turbopack What's New in Next.js 16.3|Turbopack What's New in Next.js 16.3]]
 - [[../../raw/twir/290/articles/06 - Cache Components in Next.js 16|Cache Components in Next.js 16]]
+
+- [[../../raw/twir/293/articles/01 - Next.js 16.3 - Instant Navigations and 90% less RAM in dev|01 - Next.js 16.3 - Instant Navigations and 90% less RAM in dev]] — summary-only.
+- [[../../raw/twir/294/articles/11 - Making Navigations Instant in v0 (Next.js 16.3 Case Study)|11 - Making Navigations Instant in v0 (Next.js 16.3 Case Study)]] — summary-only.

@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -36,6 +36,8 @@ TWIR #211 is an older issue around React Router 7, React state-preserving moves,
 - [[../tools/Next.js|Next.js]]
 - [[../concepts/React Identity and Reconciliation|React Identity and Reconciliation]]
 - [[../patterns/Caching in App Router|Caching in App Router]]
+
+- [[../tools/Nitro|Nitro]]
 
 ## Raw Source
 

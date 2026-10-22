@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - react-router
   - routing
@@ -34,6 +34,8 @@ React Router is the routing and data-loading tool hub for this vault, especially
 - TWIR #281 and #284 add two security-adjacent reminders: route state can model UI like dialogs, but route guards and framework routing should not be mistaken for endpoint authorization.
 - TWIR #191, #197, #198, #199, #211, and #213 add older routing evolution: lazy route discovery, TanStack Router production lessons, `routes.ts`, Remix route conventions, React Router 7, and modern tutorial patterns.
 
+- The extracted Remix v2 migration account adds a concrete validation technique: compare generated route structure when changing route conventions. The separate Remix hub now distinguishes that upgrade lineage from Remix 3’s different UI design.
+
 ## Related Pages
 
 - [[Next.js]]
@@ -61,6 +63,10 @@ React Router is the routing and data-loading tool hub for this vault, especially
 - [[../sources/TanStack Start Endpoint Boundaries|TanStack Start Endpoint Boundaries]]
 - [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
 
+- [[Vite|Vite]]
+- [[Remix|Remix]]
+- [[../case-studies/Remix v2 to React Router Route Parity|Remix v2 to React Router Route Parity]]
+
 ## Sources
 
 - [[../../raw/twir/270/2026-02-25-TWIR-270|TWIR #270]]
@@ -79,6 +85,8 @@ React Router is the routing and data-loading tool hub for this vault, especially
 - [[../sources/React Router Integration Points|React Router Integration Points]]
 - [[../sources/React Router Type Safety|React Router Type Safety]]
 - [[../sources/TanStack Start Endpoint Boundaries|TanStack Start Endpoint Boundaries]]
+
+- [[../../raw/twir/270/articles/06 - Kent C. Dodds - Migrating Remix v2 to React Router v7 with Cursor|06 - Kent C. Dodds - Migrating Remix v2 to React Router v7 with Cursor]]
 
 ## Open Questions
 

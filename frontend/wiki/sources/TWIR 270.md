@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-22
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -34,6 +34,10 @@ TWIR #270 is a strong routing source for query abstractions, React Router integr
 - [[../tools/TanStack Query|TanStack Query]]
 - [[../tools/React Router|React Router]]
 - [[../topics/React Rendering|React Rendering]]
+
+- [[../tools/Remix|Remix]]
+- [[Vite Runtime Environments|Vite Runtime Environments]]
+- [[../case-studies/Remix v2 to React Router Route Parity|Remix v2 to React Router Route Parity]]
 
 ## Raw Source
 

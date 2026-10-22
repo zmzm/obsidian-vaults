@@ -1,7 +1,9 @@
 ---
 type: pattern
+evidence: mixed
+evidence_reviewed: 2026-10-22
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - data
   - sync
@@ -19,6 +21,8 @@ Client-First Data Sync is the pattern page for treating client data as an active
 - Query caches help with fetch orchestration, but data-heavy applications often need normalized local data, live queries, and optimistic writes that remain coherent across multiple views.
 - The hardest part is not storing data locally; it is deciding when a richer client data model genuinely reduces complexity instead of merely relocating it.
 
+- Keep update propagation, optimistic presentation, and durable ordering/conflict resolution distinct. A fast local update does not establish a multi-user synchronization protocol.
+
 ## Practical Significance
 
 - This pattern gives the vault a dedicated place for sync-engine thinking, TanStack DB's client-database model, and the tradeoff against plain query-cache architectures.
@@ -29,6 +33,8 @@ Client-First Data Sync is the pattern page for treating client data as an active
 - The archive now contains both general sync-engine arguments and several increasingly specific TanStack DB signals.
 - Those signals line up around the same idea: loading spinners, invalidation choreography, and manual optimistic update logic are often symptoms of a thin client-data model.
 - That is enough to justify a dedicated pattern page instead of leaving the subject split between TanStack Query, TanStack DB, and isolated local-first articles.
+
+- Recovered TWIR 292 and 294 articles now distinguish propagation, local mutation queues, optimistic presentation, and cross-user ordering. The state-management essay is an author’s terminology argument; a local Action queue is not a complete synchronization protocol.
 
 ## Related Pages
 
@@ -45,6 +51,8 @@ Client-First Data Sync is the pattern page for treating client data as an active
 - [[../sources/TWIR 249|TWIR 249]]
 - [[../sources/TWIR 258|TWIR 258]]
 
+- [[Optimistic Mutation Coordination|Optimistic Mutation Coordination]]
+
 ## Sources
 
 - [[../../raw/twir/219/articles/02 - DexieJs Reactive local state in React|DexieJs Reactive local state in React]]
@@ -54,6 +62,13 @@ Client-First Data Sync is the pattern page for treating client data as an active
 - [[../../raw/twir/249/articles/01 - An Interactive Guide to TanStack DB|An Interactive Guide to TanStack DB]]
 - [[../../raw/twir/258/articles/01 - TanStack DB 0.5 — Query-Driven Sync|TanStack DB 0.5 — Query-Driven Sync]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
+
+- [[../../raw/twir/292/articles/09 - The Absolute State of Management|09 - The Absolute State of Management]] — summary-only.
+- [[../../raw/twir/293/articles/04 - Next.js 16 useOptimistic Fixing Rapid-Click Race Conditions & Auto-Rollbacks|04 - Next.js 16 useOptimistic Fixing Rapid-Click Race Conditions & Auto-Rollbacks]] — summary-only.
+- [[../../raw/twir/294/articles/15 - Coordinating Optimistic Updates in Next.js|15 - Coordinating Optimistic Updates in Next.js]] — summary-only.
+
+- [[../../raw/twir/292/recovered/09 - The Absolute State of Management|09 - The Absolute State of Management]]
+- [[../../raw/twir/294/recovered/15 - Coordinating Optimistic Updates in Next.js|15 - Coordinating Optimistic Updates in Next.js]]
 
 ## Open Questions
 

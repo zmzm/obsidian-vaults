@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - react
   - effects
@@ -18,6 +18,9 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - Effects should exist to synchronize React with systems outside render, not to compensate for missing render-time data primitives.
 - Cleanup is part of correctness, not only a performance concern.
 - Small local mistakes in effect handling can accumulate into systemic reliability issues across large applications.
+
+- The Activity failure case makes a concrete lifecycle constraint visible: a hidden subtree can render without mounting effects, so render must not allocate resources that depend on later effect cleanup.
+- For legacy stores, pair subscription setup/teardown in one lifecycle owner and re-read state on resumption; useSyncExternalStore is the dedicated React integration contract.
 
 ## Practical Significance
 
@@ -42,6 +45,8 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - [[../case-studies/GitHub Diff Performance|GitHub Diff Performance]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
 
+- [[../concepts/React Activity|React Activity]]
+
 ## Sources
 
 - [[../../raw/twir/271/articles/13 - Frontend Memory Leaks A 500-Repository Static Analysis|Frontend Memory Leaks A 500-Repository Static Analysis]]
@@ -50,6 +55,8 @@ Effects and Cleanup Discipline is the pattern page for how React code should syn
 - [[../../raw/twir/285/2026-06-10-TWIR-285|TWIR #285]]
 - [[../sources/Custom ESLint Rules|Custom ESLint Rules]]
 - [[../case-studies/Frontend Memory Leaks at Scale|Frontend Memory Leaks at Scale]]
+
+- [[../../raw/twir/298/articles/06 - React Activity When A Render No Longer Guarantees an Effect|06 - React Activity When A Render No Longer Guarantees an Effect]]
 
 ## Open Questions
 

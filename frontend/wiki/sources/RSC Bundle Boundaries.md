@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-30
+updated: 2026-10-22
 tags:
   - react
   - server-components
@@ -36,6 +36,9 @@ This source captures the bundler-facing side of React Server Components and Serv
 - [[../syntheses/Server Components Beyond Next.js|Server Components Beyond Next.js]]
 - [[../tools/Next.js|Next.js]]
 - [[TWIR 216]]
+
+- [[../tools/Vite|Vite]]
+- [[Vite Runtime Environments|Vite Runtime Environments]]
 
 ## Raw Sources
 

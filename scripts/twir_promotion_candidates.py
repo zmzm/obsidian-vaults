@@ -77,6 +77,9 @@ NOISE_THEMES = {
 }
 
 ALIASES = {
+    "devtools": "React DevTools",
+    "reactdevtools": "React DevTools",
+    "react-devtools": "React DevTools",
     "activity": "React Activity",
     "compiler": "React Compiler",
     "reactcompiler": "React Compiler",
@@ -196,10 +199,11 @@ def wiki_digest_links(issue: int) -> set[str]:
     links: set[str] = set()
     for target, _label in wikilinks(read_text(path)):
         target = target.strip()
+        # Filter source-layer references before reducing paths to page titles.
+        if any(part == "raw" for part in Path(target).parts):
+            continue
         if target.startswith("../"):
             target = title_from_target(target)
-        if target.startswith("../../raw/"):
-            continue
         if target.startswith("TWIR "):
             continue
         links.add(target)

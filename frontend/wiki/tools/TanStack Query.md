@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - tanstack
   - query
@@ -41,6 +41,9 @@ TanStack Query is the tool hub for client/server data synchronization, query abs
 - [[../sources/TanStack Query prefer-query-options|TanStack Query prefer-query-options]]
 - [[../sources/Creating Query Abstractions|Creating Query Abstractions]]
 - [[../sources/TanStack DB Query-Driven Sync|TanStack DB Query-Driven Sync]]
+
+- [[../sources/TanStack Router Navigation Lifetimes|TanStack Router Navigation Lifetimes]]
+- [[../patterns/Optimistic Mutation Coordination|Optimistic Mutation Coordination]]
 
 ## Sources
 

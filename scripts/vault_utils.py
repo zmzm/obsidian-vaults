@@ -240,4 +240,5 @@ def title_from_target(target: str) -> str:
     target = target.strip()
     if "/" in target:
         target = target.split("/")[-1]
-    return Path(target).stem
+    # Dots are part of domain titles such as Next.js, not arbitrary suffixes.
+    return target.removesuffix(".md")

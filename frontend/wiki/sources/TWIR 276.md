@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-21
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -39,6 +39,9 @@ TWIR #276 is a strong routing digest for cache-aware Next.js patterns, framework
 - [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
+
+- [[../tools/Vite|Vite]]
+- [[../tools/Nitro|Nitro]]
 
 ## Raw Source
 

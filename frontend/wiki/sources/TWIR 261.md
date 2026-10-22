@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-21
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -33,6 +33,8 @@ TWIR #261 is a digest issue dominated by a critical React Server Components secu
 - [[../concepts/Server Components|Server Components]]
 - [[../patterns/Resilient React Components|Resilient React Components]]
 - [[../tools/Next.js|Next.js]]
+
+- [[../tools/Vite|Vite]]
 
 ## Raw Source
 

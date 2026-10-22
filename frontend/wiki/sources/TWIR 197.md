@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -39,3 +39,9 @@ TWIR #197 is an older issue around Waku Server Actions, TanStack Router producti
 ## Raw Source
 
 - [[../../raw/twir/197/2024-08-21-TWIR-197|2024-08-21-TWIR-197]]
+
+## Recovered Source Snapshots
+
+Retrieved on 2026-10-22. These are later source snapshots; original intake failures remain preserved. A pending snapshot is available for review and does not validate earlier summaries. See [[../../system/Source Evidence|Source Evidence]].
+
+- [[../../raw/twir/197/recovered/09 - Preact - Prerendering with Preset Vite|09 - Preact - Prerendering with Preset Vite]] — editorial review: reviewed.

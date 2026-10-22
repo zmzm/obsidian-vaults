@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - nextjs
   - deployment
@@ -63,6 +63,9 @@ The interesting question is not whether Next.js can run beyond Vercel. It clearl
 - [[../sources/TWIR 229|TWIR 229]]
 - [[../sources/TWIR 240|TWIR 240]]
 - [[../sources/TWIR 254|TWIR 254]]
+
+- [[../tools/Nitro|Nitro]]
+- [[../sources/Vite Runtime Environments|Vite Runtime Environments]]
 
 ## Sources
 

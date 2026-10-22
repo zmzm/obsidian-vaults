@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-07-27
+updated: 2026-10-22
 status: active
 ---
 
@@ -63,6 +63,18 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[raw/twir/290/2026-07-15-TWIR-290|TWIR #290]] — source issue and related article notes.
 - [[raw/twir/291/2026-07-22-TWIR-291|TWIR #291]] — source issue and related article notes.
 
+- [[raw/twir/292/2026-07-29-TWIR-292|2026-07-29-TWIR-292]] — source issue and related article notes.
+- [[raw/twir/293/2026-08-05-TWIR-293|2026-08-05-TWIR-293]] — source issue and related article notes.
+- [[raw/twir/294/2026-08-19-TWIR-294|2026-08-19-TWIR-294]] — source issue and related article notes.
+- [[raw/twir/295/2026-09-02-TWIR-295|2026-09-02-TWIR-295]] — source issue and related article notes.
+- [[raw/twir/296/2026-09-09-TWIR-296|2026-09-09-TWIR-296]] — source issue and related article notes.
+- [[raw/twir/297/2026-09-16-TWIR-297|2026-09-16-TWIR-297]] — source issue and related article notes.
+- [[raw/twir/298/2026-09-23-TWIR-298|2026-09-23-TWIR-298]] — source issue and related article notes.
+- [[raw/twir/299/2026-09-30-TWIR-299|2026-09-30-TWIR-299]] — source issue and related article notes.
+- [[raw/twir/300/2026-10-07-TWIR-300|2026-10-07-TWIR-300]] — source issue and related article notes.
+- [[raw/twir/301/2026-10-14-TWIR-301|2026-10-14-TWIR-301]] — source issue and related article notes.
+- [[raw/twir/302/2026-10-21-TWIR-302|2026-10-21-TWIR-302]] — source issue and related article notes.
+
 ## Concepts
 
 - [[wiki/concepts/React Compiler|React Compiler]] — the React compiler effort and its impact on component authoring.
@@ -86,6 +98,15 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/tools/TanStack Start|TanStack Start]] — explicit full-stack React framework hub for middleware, SSR, and comparison with Next.js.
 - [[wiki/tools/TanStack Query|TanStack Query]] — hub for data-fetching, query conventions, and server-state practices.
 
+- [[wiki/tools/React DevTools|React DevTools]] — component, Suspense, and agent-facing runtime inspection.
+- [[wiki/tools/StyleX|StyleX]] — build-time styling and explicit composition contracts.
+- [[wiki/tools/Panda CSS|Panda CSS]] — styling extraction, source transforms, and design-system tooling.
+
+- [[wiki/tools/Vite|Vite]] — toolchain plugins, build output, and runtime environments.
+- [[wiki/tools/Nitro|Nitro]] — server configuration and deployment integration.
+- [[wiki/tools/Remix|Remix]] — Remix lineage, route-based architecture, and the separate Remix 3 design.
+- [[wiki/tools/Preact|Preact]] — prerendering, islands, and resumed hydration grounded in recovered guides.
+
 ## Patterns
 
 - [[wiki/patterns/Caching in App Router|Caching in App Router]] — cacheability, request-time APIs, and rendering boundaries in Next.js App Router.
@@ -96,6 +117,10 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/patterns/Testing Strategy for React Apps|Testing Strategy for React Apps]] — choosing the right mix of component, integration, and end-to-end testing in React.
 - [[wiki/patterns/Typed Routing and URL State|Typed Routing and URL State]] — validated route params, typed links, and schema-aware URL state as one routing contract.
 - [[wiki/patterns/Type-Driven Frontend Safety|Type-Driven Frontend Safety]] — using types, generated contracts, and enforced APIs to reduce runtime bugs.
+
+- [[wiki/patterns/Design System Styling Contracts|Design System Styling Contracts]] — variants, escape hatches, and incremental styling migration.
+
+- [[wiki/patterns/Optimistic Mutation Coordination|Optimistic Mutation Coordination]] — confirmed state, local queues, and temporary optimistic presentation.
 
 ## Topics
 
@@ -117,6 +142,10 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/case-studies/Next.js Middleware Bypass|Next.js Middleware Bypass]] — a security incident showing how framework internals, deployment topology, and communication affect real production risk.
 - [[wiki/case-studies/TanStack Supply Chain Hardening|TanStack Supply Chain Hardening]] — CI trust-boundary lessons from the TanStack npm compromise.
 
+- [[wiki/case-studies/Static Blog with Preact Islands|Static Blog with Preact Islands]] — static HTML, deferred interactivity, output parity, and maintenance ownership.
+
+- [[wiki/case-studies/Lovable Incremental Framework Migration|Lovable Incremental Framework Migration]] — shared-code adapters, deterministic rollout, and performance tradeoffs.
+
 ### React Architecture And Performance
 
 - [[wiki/case-studies/Async React Design Components|Async React Design Components]] — using async React primitives inside reusable component APIs.
@@ -132,11 +161,19 @@ This file is the map of the vault. Start here, then drill into specific pages.
 - [[wiki/case-studies/Linear StyleX Migration|Linear StyleX Migration]] — styling-runtime migration toward build-time styles and stricter component styling contracts.
 - [[wiki/case-studies/TanStack Table Memory Refactor|TanStack Table Memory Refactor]] — memory-scaling refactor using shared prototypes for large table object graphs.
 
+- [[wiki/case-studies/GitHub Primer CSS Modules Migration|GitHub Primer CSS Modules Migration]] — feature flags, visual equivalence, and consumer compatibility.
+- [[wiki/case-studies/Recraft WASM Resource Scheduling|Recraft WASM Resource Scheduling]] — earlier resource discovery with measured first-canvas improvements.
+- [[wiki/case-studies/v0 Partial Prefetching|v0 Partial Prefetching]] — navigation availability assertions and cache/prefetch refactoring.
+
 ### Testing, Migration, And Type Safety
 
 - [[wiki/case-studies/Enzyme to RTL Migration|Enzyme to RTL Migration]] — large-scale test migration strategy and lessons.
 - [[wiki/case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]] — AI-assisted migration that only worked once codemods, guides, and validation gates constrained the workflow.
 - [[wiki/case-studies/Safer Frontend without React.FC|Safer Frontend without React.FC]] — a codebase-wide type-safety migration away from `React.FC`.
+
+- [[wiki/case-studies/Base UI Filterable Menu Semantics|Base UI Filterable Menu Semantics]] — accessible command filtering based on interaction expectations.
+
+- [[wiki/case-studies/Remix v2 to React Router Route Parity|Remix v2 to React Router Route Parity]] — structural route comparison as migration feedback.
 
 ## Sources
 
@@ -156,11 +193,18 @@ This section is grouped by role so the index stays navigable without losing dire
 - `280-287`: [[wiki/sources/TWIR 280|TWIR 280]], [[wiki/sources/TWIR 281|TWIR 281]], [[wiki/sources/TWIR 282|TWIR 282]], [[wiki/sources/TWIR 283|TWIR 283]], [[wiki/sources/TWIR 284|TWIR 284]], [[wiki/sources/TWIR 285|TWIR 285]], [[wiki/sources/TWIR 286|TWIR 286]], [[wiki/sources/TWIR 287|TWIR 287]]
 - `288-291`: [[wiki/sources/TWIR 288|TWIR 288]], [[wiki/sources/TWIR 289|TWIR 289]], [[wiki/sources/TWIR 290|TWIR 290]], [[wiki/sources/TWIR 291|TWIR 291]]
 
+- `292-299`: [[wiki/sources/TWIR 292|TWIR 292]], [[wiki/sources/TWIR 293|TWIR 293]], [[wiki/sources/TWIR 294|TWIR 294]], [[wiki/sources/TWIR 295|TWIR 295]], [[wiki/sources/TWIR 296|TWIR 296]], [[wiki/sources/TWIR 297|TWIR 297]], [[wiki/sources/TWIR 298|TWIR 298]], [[wiki/sources/TWIR 299|TWIR 299]]
+- `300-302`: [[wiki/sources/TWIR 300|TWIR 300]], [[wiki/sources/TWIR 301|TWIR 301]], [[wiki/sources/TWIR 302|TWIR 302]]
+
 ### Frameworks And Routing
 
-- `Next.js`: [[wiki/sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]], [[wiki/sources/Next.js Composable Caching|Next.js Composable Caching]], [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js 16.3|Next.js 16.3]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
+- `Next.js`: [[wiki/sources/Next.js 15 Request Boundaries|Next.js 15 Request Boundaries]], [[wiki/sources/Next.js Composable Caching|Next.js Composable Caching]], [[wiki/sources/Next.js 16|Next.js 16]], [[wiki/sources/Next.js 16.2|Next.js 16.2]], [[wiki/sources/Next.js 16.3|Next.js 16.3]], [[wiki/sources/Next.js 16.4|Next.js 16.4]], [[wiki/sources/Next.js Deployment Adapters|Next.js Deployment Adapters]], [[wiki/sources/Next.js Metadata Streaming Portability|Next.js Metadata Streaming Portability]], [[wiki/sources/Next.js Node.js Streams for RSC|Next.js Node.js Streams for RSC]], [[wiki/sources/Next.js Server Actions Security|Next.js Server Actions Security]], [[wiki/sources/Next.js at Enterprise Level|Next.js at Enterprise Level]], [[wiki/sources/Next.js Agentic Future|Next.js Agentic Future]], [[wiki/sources/Next.js Skills|Next.js Skills]], [[wiki/sources/Next.js catchError|Next.js catchError]], [[wiki/sources/Next.js use cache with next-intl|Next.js use cache with next-intl]], [[wiki/sources/The Precompute Pattern|The Precompute Pattern]], [[wiki/sources/Partial Prerendering Architecture|Partial Prerendering Architecture]]
 - `React Router / URL contracts`: [[wiki/sources/React Router Middleware|React Router Middleware]], [[wiki/sources/React Router Callsite Revalidation|React Router Callsite Revalidation]], [[wiki/sources/React Router Integration Points|React Router Integration Points]], [[wiki/sources/React Router Type Safety|React Router Type Safety]], [[wiki/sources/URL State Safety|URL State Safety]]
 - `TanStack Start / RSC stacks`: [[wiki/sources/TanStack Start Middleware|TanStack Start Middleware]], [[wiki/sources/TanStack Start Endpoint Boundaries|TanStack Start Endpoint Boundaries]], [[wiki/sources/TanStack Start Migration Drivers|TanStack Start Migration Drivers]], [[wiki/sources/TanStack Start Single-Flight Mutations|TanStack Start Single-Flight Mutations]], [[wiki/sources/TanStack Start SSR Throughput|TanStack Start SSR Throughput]], [[wiki/sources/TanStack Start Content Apps|TanStack Start Content Apps]], [[wiki/sources/TanStack RSC as Data Streams|TanStack RSC as Data Streams]], [[wiki/sources/RSC as Protocol|RSC as Protocol]], [[wiki/sources/Custom React Server Components Framework|Custom React Server Components Framework]], [[wiki/sources/RSC Bundle Boundaries|RSC Bundle Boundaries]], [[wiki/sources/Server Functions vs Server Components|Server Functions vs Server Components]]
+
+- [[wiki/sources/Vite Runtime Environments|Vite Runtime Environments]] — Astro and vinext adoption evidence for development/runtime boundaries.
+
+- [[wiki/sources/TanStack Router Navigation Lifetimes|TanStack Router Navigation Lifetimes]] — separate ownership of loading, publication, outcome selection, and UI commitment.
 
 ### React Runtime And Rendering
 
@@ -192,11 +236,11 @@ This section is grouped by role so the index stays navigable without losing dire
 
 ## Syntheses
 
-- [[wiki/syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]] — first framework comparison synthesis based on the current source base.
+- [[wiki/syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]] — workload, runtime, integration ownership, and migration tradeoffs.
 - [[wiki/syntheses/Async React Patterns - use() vs useTransition vs useEffect|Async React Patterns - use() vs useTransition vs useEffect]] — comparison of render-time async reads, scheduling, and post-render effects.
 - [[wiki/syntheses/React Compiler vs Fine-Grained Reactivity|React Compiler vs Fine-Grained Reactivity]] — comparison between compiler-assisted React optimization and dependency-graph runtime models.
 - [[wiki/syntheses/Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries|Testing Modern React - RTL, Browser Mode, RSC, and Integration Boundaries]] — testing synthesis across RTL, browser-realistic component testing, and server/client integration boundaries.
-- [[wiki/syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]] — why framework conventions become more valuable as human-and-agent coordination infrastructure.
+- [[wiki/syntheses/Frameworks as Constraints in the AI Era|Frameworks as Constraints in the AI Era]] — shared contracts and verifiable outcomes across frameworks and custom tooling.
 - [[wiki/syntheses/Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]] — synthesis of server-function, RSC transport, middleware/runtime, and supply-chain trust boundaries.
 - [[wiki/syntheses/Designing React Components for Real Environments|Designing React Components for Real Environments]] — synthesis for reusable component APIs under SSR, async rendering, host constraints, and performance pressure.
 - [[wiki/syntheses/Next.js Portability Boundaries|Next.js Portability Boundaries]] — synthesis of where adapter-level portability ends and hosting-specific Next.js friction still begins.
@@ -206,3 +250,5 @@ This section is grouped by role so the index stays navigable without losing dire
 
 - [[AGENTS]] — agent operating rules for this vault.
 - [[log]] — record of notable updates.
+
+- [[system/Source Evidence|Source Evidence]] — evidence fields, recovery workflow, and editorial review boundaries.

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-30
+updated: 2026-10-22
 tags:
   - react
   - view-transitions
@@ -30,6 +30,9 @@ React View Transitions is the concept page for declarative UI-tree animations co
 - That is enough to justify a dedicated concept page instead of leaving the topic diffused across issue summaries and generic rendering discussions.
 - TWIR #217 adds an early explanation of the experimental React API and why it depends on async rendering boundaries such as transitions and Suspense.
 
+- The captured first-party React 19.3 release article in TWIR 296 reports ViewTransition and Fragment Refs as stable, replacing the earlier experiment-only framing for that release.
+- Transition-marked updates, Suspense reveals, and deferred values coordinate animation; urgent updates do not automatically animate. The image reference adds image-readiness and preload coordination.
+
 ## Related Pages
 
 - [[React Activity]]
@@ -51,6 +54,9 @@ React View Transitions is the concept page for declarative UI-tree animations co
 - [[../../raw/twir/239/articles/03 - Bringing React's ViewTransition to vanilla JS|Bringing React's ViewTransition to vanilla JS]]
 - [[../../raw/twir/253/articles/02 - ViewTransition|ViewTransition]]
 - [[../../raw/twir/254/2025-10-15-TWIR-254|TWIR #254]]
+
+- [[../../raw/twir/296/articles/01 - React 19.3|01 - React 19.3]]
+- [[../../raw/twir/298/articles/01 - React docs – New img API ref page|01 - React docs – New img API ref page]]
 
 ## Open Questions
 

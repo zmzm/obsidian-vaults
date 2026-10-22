@@ -303,3 +303,33 @@ status: active
 - Audited pages that were reachable from `index.md` but still weakly embedded in thematic pages.
 - Reconnected weaker article-level nodes across query authoring, routing, rendering, security, and AI/framework branches.
 - Kept this pass focused on durable article-level wiring instead of inflating the already large issue-digest layer.
+
+
+## [2026-10-22] ingest | Review TWIR 292–302 and connect durable frontend branches
+
+- Reviewed 11 issue MOCs and 105 article notes; created reviewed digest pages for TWIR 292–302 with explicit extraction and proposal-status caveats.
+- Created React DevTools, StyleX, Panda CSS, Design System Styling Contracts, Next.js 16.4, and four concrete case studies: GitHub Primer CSS Modules Migration, Recraft WASM Resource Scheduling, v0 Partial Prefetching, and Base UI Filterable Menu Semantics.
+- Updated compiler, Activity/effect lifecycle, View Transitions, Trusted Types, cache/navigation, TanStack Start, component confidence, sync, styling, rendering/performance, framework/agent, and security branches. Added index links and thematic backlinks; extended the existing Linear case rather than duplicate it.
+- Preserved all raw sources. Of the 105 notes, 51 lack extracted full text; TWIR 292–295 alone account for 44 missing bodies caused by the recorded lxml_html_clean dependency failure. Later failures include access blocks and unavailable content. Missing extraction remains an explicit follow-up, not a claim that the original articles were fully read.
+- Deduplicated Oxlint item 2 in TWIR 294 and image-doc item 2 in TWIR 298 editorially without deleting raw files. Kept browser() stability conflicts, RFCs, and PRs explicit; upcoming security announcements are not final patch guidance.
+- Next editorial pass: recover high-value missing extractions (especially Lovable migration, navigation lifetimes, and optimistic-write coordination), then reassess standalone promotion. Use the promotion report to triage Vite, Nitro, Remix, and Preact; repeated tags alone do not justify pages.
+
+
+## [2026-10-22] promotion | Review Vite, Nitro, Remix, and Preact candidates
+
+- Promoted Vite, Nitro, and Remix into focused active tool hubs. Added a deliberately small Preact seed hub: its prerendering and async-hydration notes still lack full extraction.
+- Created Vite Runtime Environments from extracted Astro and vinext accounts. Preserved Remix v2 to React Router Route Parity and Static Blog with Preact Islands as concrete engineering cases.
+- Connected existing framework, rendering, portability, compiler, confidence, migration, and TWIR digest pages to the new branches; updated the index without duplicating existing Railway or framework/agent arguments.
+- Used Railway’s extracted Nitro server-layer detail and the Vercel changelog to ground Nitro beyond raw tag counts. Distinguished Remix v2 continuation from the separate Remix 3 design; historical plans do not establish current APIs or implementation dependencies.
+- Preserved raw sources and prior ingest changes. Follow-up: recover the missing Preact guides and Nitro deployment material; assess TC39 and Deno only if concrete frontend questions justify dedicated pages. Repeated tags remain triage signals rather than automatic promotion.
+
+
+## [2026-10-22] quality | Repair extraction and reanalyze evidence boundaries
+
+- Recovered 42 of 50 missing article bodies in TWIR 292–302, plus three older Preact guides, into new immutable source snapshots. Eight recent URLs still yielded insufficient content; two retrieved landing excerpts were explicitly marked insufficient. Other successful fetches remain pending until reviewed. Original raw notes and earlier log entries are preserved.
+- Added recovery inventory/retry tooling, a separate source-review registry, optional page evidence coverage, evidence reporting, and lint validation. Page status remains a maturity signal, not a verification claim; unassessed pages stay visible without speculative relabeling.
+- Fixed DevTools aliases and filtered raw links before candidate-title normalization. Preserved dots in page titles such as Next.js. Regression checks cover these defects and recovery preservation/failure behavior.
+- Rewrote the framework/agent, Next.js-versus-TanStack, compiler/reactivity, and async-API syntheses. Corrected the synchronous-only useTransition framing against current first-party references and separated local queue ordering, optimistic presentation, and distributed conflict policy.
+- Added Lovable Incremental Framework Migration, TanStack Router Navigation Lifetimes, and Optimistic Mutation Coordination. Strengthened Preact with recovered guides, and updated deployment, styling, browser-boundary, component-confidence, index, and digest connections.
+- The separate react-news-bot workflow repair declares lxml_html_clean, documents installing into the selected interpreter, and fixes UTF-8 decoding when servers omit a charset. This pass validates the worker in an isolated environment; no running bot or container is restarted or redeployed.
+- Next editorial work: review remaining recovered snapshots and the eight insufficient fetches. Reassess browser() release availability using the application's exact package versions; recovery dates do not imply that later article edits were present in the original issue.

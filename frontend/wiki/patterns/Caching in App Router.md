@@ -1,7 +1,7 @@
 ---
 type: pattern
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - nextjs
   - caching
@@ -18,6 +18,9 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - App Router caching is not just a performance detail; it shapes component boundaries and data access patterns.
 - `use cache` works best when render paths avoid request-time dependencies.
 - Features such as i18n, error handling, and dynamic request context can create friction with cacheable rendering paths.
+
+- The captured 16.4 model joins Cache Components with Partial Prefetching: prepare reusable destination UI before the click and leave genuinely request-time work behind appropriate boundaries.
+- Test what is ready before navigation-only content can arrive. Immediate availability, freshness, cache invalidation, and cache spend remain separate properties.
 
 ## Practical Significance
 
@@ -57,6 +60,9 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/TWIR 288|TWIR 288]]
 - [[../sources/TWIR 290|TWIR 290]]
 
+- [[../sources/Next.js 16.4|Next.js 16.4]]
+- [[../case-studies/v0 Partial Prefetching|v0 Partial Prefetching]]
+
 ## Sources
 
 - [[../../raw/twir/216/2025-01-08-TWIR-216|TWIR #216]]
@@ -80,6 +86,9 @@ Caching in App Router is the pattern page for how cacheability, request-time API
 - [[../sources/The Precompute Pattern|The Precompute Pattern]]
 - [[../sources/Next.js 16.2|Next.js 16.2]]
 - [[../sources/Next.js 16.3|Next.js 16.3]]
+
+- [[../../raw/twir/300/articles/01 - Next.js 16.4|01 - Next.js 16.4]]
+- [[../../raw/twir/302/articles/06 - Improving navigation experience in v0 with Next.js 16.4|06 - Improving navigation experience in v0 with Next.js 16.4]]
 
 ## Open Questions
 

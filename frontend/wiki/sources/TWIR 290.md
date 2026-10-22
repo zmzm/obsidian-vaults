@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -44,6 +44,14 @@ TWIR #290 is a digest around React team working groups, Suspense boundary activa
 - [[Next.js 16.3]]
 - [[Next.js Server Actions Security]]
 
+- [[../tools/Preact|Preact]]
+
 ## Raw Source
 
 - [[../../raw/twir/290/2026-07-15-TWIR-290|2026-07-15-TWIR-290]]
+
+## Recovered Source Snapshots
+
+Retrieved on 2026-10-22. These are later source snapshots; original intake failures remain preserved. A pending snapshot is available for review and does not validate earlier summaries. See [[../../system/Source Evidence|Source Evidence]].
+
+- [[../../raw/twir/290/recovered/10 - Async hydration in Preact|10 - Async hydration in Preact]] — editorial review: reviewed.

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-04-21
+updated: 2026-10-22
 tags:
   - react
   - activity
@@ -18,6 +18,9 @@ React Activity is a rendering concept for keeping UI subtrees alive while changi
 - Activity is not just "show or hide a subtree"; it changes how hidden work is kept around and resumed.
 - It is useful where unmounting would throw away valuable local state, but fully active rendering would waste work.
 - The concept becomes especially interesting when combined with Suspenseful data, route transitions, and state restoration across navigation.
+
+- Hidden Activity preserves state and DOM while cleaning up effects; hidden children can still render without effects mounting.
+- A subscription created during render cannot rely on a future effect to clean it up. Own setup and cleanup together, or use the external-store subscription contract.
 
 ## Practical Significance
 
@@ -42,6 +45,9 @@ React Activity is a rendering concept for keeping UI subtrees alive while changi
 - [[../sources/TWIR 252|TWIR 252]]
 - [[../sources/TWIR 254|TWIR 254]]
 
+- [[../patterns/Effects and Cleanup Discipline|Effects and Cleanup Discipline]]
+- [[../tools/React DevTools|React DevTools]]
+
 ## Sources
 
 - [[../../raw/twir/230/articles/03 - Next.js PR - Experimental bfcache - Restore state with Activity|Next.js PR - Experimental bfcache - Restore state with Activity]]
@@ -49,6 +55,8 @@ React Activity is a rendering concept for keeping UI subtrees alive while changi
 - [[../../raw/twir/250/2025-09-17-TWIR-250|TWIR #250]]
 - [[../../raw/twir/252/articles/01 - React 19.2|React 19.2]]
 - [[../../raw/twir/254/2025-10-15-TWIR-254|TWIR #254]]
+
+- [[../../raw/twir/298/articles/06 - React Activity When A Render No Longer Guarantees an Effect|06 - React Activity When A Render No Longer Guarantees an Effect]]
 
 ## Open Questions
 

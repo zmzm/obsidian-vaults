@@ -1,0 +1,70 @@
+{
+  "reviewed": "2026-10-22",
+  "reviews": {
+    "frontend/raw/twir/197/recovered/09 - Preact - Prerendering with Preset Vite.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed prerender entry, crawling, client/server guards, and integration limitations."
+    },
+    "frontend/raw/twir/208/recovered/14 - Preact - Simplifying Islands Architecture.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed independent hydration roots, serialized props, manifest, and asset ownership."
+    },
+    "frontend/raw/twir/290/recovered/10 - Async hydration in Preact.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed resumed hydration, DOM ranges, streaming, and source-specific useId limitations."
+    },
+    "frontend/raw/twir/292/recovered/09 - The Absolute State of Management.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed as a terminology argument; do not universalize the vector-clock criterion."
+    },
+    "frontend/raw/twir/294/recovered/10 - How Lovable.dev Migrated from Next.js to TanStack Start.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed migration strategy, dogfooding rationale, bundling costs, and latency distribution tradeoffs."
+    },
+    "frontend/raw/twir/294/recovered/13 - Inside a TanStack Router Navigation.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed loading leases, publication authority, lane reduction, and commit receipts."
+    },
+    "frontend/raw/twir/294/recovered/15 - Coordinating Optimistic Updates in Next.js.md": {
+      "status": "partial",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed Huddle mutation example; extraction is truncated before the complete later Flow discussion."
+    },
+    "frontend/raw/twir/295/recovered/06 - React DOM Docs - New use(browser(reason)) API.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed primary browser() behavior and boundaries, without inferring release availability from old summaries."
+    },
+    "frontend/raw/twir/295/recovered/07 - How to Deploy a TanStack Start app to Vercel.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed host compilation, environment scoping, and deployment verification."
+    },
+    "frontend/raw/twir/301/recovered/07 - className Considered Harmful.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed actual practices separately from illustrative inventories and proposed renaming."
+    },
+    "frontend/raw/twir/302/recovered/08 - Pure UI in the Agentic Era.md": {
+      "status": "reviewed",
+      "reviewed": "2026-10-22",
+      "note": "Reviewed explicit state coverage argument; examples are contrived rather than measured experiments."
+    },
+    "frontend/raw/twir/292/recovered/01 - Octane \u2013 React's programming model, compiled.md": {
+      "status": "insufficient",
+      "reviewed": "2026-10-22",
+      "note": "The retrieved page is a short landing excerpt, not enough to validate detailed compiler semantics."
+    },
+    "frontend/raw/twir/295/recovered/01 - StyleX.md": {
+      "status": "insufficient",
+      "reviewed": "2026-10-22",
+      "note": "The retrieved homepage is too thin to validate detailed styling claims."
+    }
+  }
+}

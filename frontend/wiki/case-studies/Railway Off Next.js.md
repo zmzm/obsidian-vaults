@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-04-21
+updated: 2026-10-22
 tags:
   - nextjs
   - migration
@@ -24,6 +24,8 @@ This case study preserves a production migration from Next.js to a Vite- and Tan
 - Routing and layouts moved toward TanStack-style primitives with more explicit control and generated route safety.
 - Deployment behavior stayed stable while build speed, dev-loop speed, and asset-level caching improved significantly.
 
+- Nitro became the server layer, consolidating redirects, security headers, and caching rules. This keeps the server/deployment seam visible alongside the route and component migration.
+
 ## Why It Matters
 
 - This is stronger comparison evidence than a generic "frameworks are different" essay because it is tied to production constraints and migration work.
@@ -42,6 +44,9 @@ This case study preserves a production migration from Next.js to a Vite- and Tan
 - [[../syntheses/Next.js vs TanStack Start|Next.js vs TanStack Start]]
 - [[../syntheses/Next.js Portability Boundaries|Next.js Portability Boundaries]]
 - [[../sources/TWIR 276|TWIR 276]]
+
+- [[../tools/Vite|Vite]]
+- [[../tools/Nitro|Nitro]]
 
 ## Raw Source
 

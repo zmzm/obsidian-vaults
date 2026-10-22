@@ -1,7 +1,7 @@
 ---
 type: case-study
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - react
   - stylex
@@ -41,7 +41,13 @@ This case study captures Linear's migration from styled-components to StyleX as 
 - [[../patterns/Resilient React Components|Resilient React Components]]
 - [[../sources/TWIR 287|TWIR 287]]
 
+- [[../tools/StyleX|StyleX]]
+- [[../patterns/Design System Styling Contracts|Design System Styling Contracts]]
+- [[GitHub Primer CSS Modules Migration|GitHub Primer CSS Modules Migration]]
+
 ## Raw Source
 
 - [[../../raw/twir/287/articles/03 - Moving Linear from styled‑components to StyleX|TWIR item note]]
 - [[../../raw/twir/287/2026-06-24-TWIR-287|TWIR #287]]
+
+- [[../../raw/twir/295/articles/02 - Styling Linear for the future with StyleX|02 - Styling Linear for the future with StyleX]] — summary-only follow-up; the earlier case remains the main grounding.

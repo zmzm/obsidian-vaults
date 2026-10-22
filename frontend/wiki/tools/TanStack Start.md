@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - tanstack-start
   - framework
@@ -17,6 +17,8 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - TanStack Start is primarily a hub for explicit routing, server functions, middleware, and data-flow control.
 - Its strongest signal in this vault is not generic "anti-Next.js" sentiment but a coherent set of explicit full-stack primitives.
 - The framework story is strongest where SSR performance, type-safe routing, and clear integration boundaries matter.
+
+- Server/deployment integration is a distinct responsibility: Railway’s Nitro layer owns redirects, headers, and cache configuration, while the Vercel changelog illustrates a host integration path. These captured accounts do not establish a single mandatory deployment setup for every Start release.
 
 ## Practical Significance
 
@@ -34,6 +36,9 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - TWIR #282 and #284 add TanStack-specific RSC usage, Rsbuild support, Lovable adoption, and the important security rule that server functions are public endpoint boundaries requiring their own auth checks.
 - TWIR #280 and #281 add two governance edges around TanStack: RSC can be framed as a client/server tree-ownership protocol, while CI and package-publishing workflows are part of the framework ecosystem's trust surface.
 - TWIR #197, #198, #210, and #211 add older framework-maturity signals: server functions, official beta, adapter strategy, and TanStack Router production/data-loading practice.
+
+- The captured first-party 1.0 announcement in TWIR 301 declares the framework stable and commits to its API surface. Stability is distinct from suitability for a specific host or application.
+- The captured security update in TWIR 300 illustrates that server-function response handling is a separate boundary from application authorization; deployed artifacts need to include the fix. Consult the current advisory for affected ranges.
 
 ## Related Pages
 
@@ -68,6 +73,12 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - [[../case-studies/Railway Off Next.js|Railway Off Next.js]]
 - [[../case-studies/TanStack Supply Chain Hardening|TanStack Supply Chain Hardening]]
 
+- [[Vite|Vite]]
+- [[Nitro|Nitro]]
+
+- [[../case-studies/Lovable Incremental Framework Migration|Lovable Incremental Framework Migration]]
+- [[../sources/TanStack Router Navigation Lifetimes|TanStack Router Navigation Lifetimes]]
+
 ## Sources
 
 - [[../../raw/twir/256/2025-10-29-TWIR-256|TWIR #256]]
@@ -93,6 +104,12 @@ TanStack Start is the framework hub for explicit server/client boundaries, full-
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
 - [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/TanStack Start Endpoint Boundaries|TanStack Start Endpoint Boundaries]]
+
+- [[../../raw/twir/301/articles/01 - TanStack Start 1.0|01 - TanStack Start 1.0]]
+- [[../../raw/twir/300/articles/05 - TanStack Start security update CVE-2026-102989|05 - TanStack Start security update CVE-2026-102989]]
+
+- [[../../raw/twir/276/articles/04 - Moving Railway's Frontend Off Next.js|04 - Moving Railway's Frontend Off Next.js]]
+- [[../../raw/twir/258/articles/02 - Vercel — Support for TanStack Start|02 - Vercel — Support for TanStack Start]]
 
 ## Open Questions
 

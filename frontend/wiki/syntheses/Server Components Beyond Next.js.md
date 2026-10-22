@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - server-components
   - nextjs
@@ -61,6 +61,9 @@ The real question is not whether RSC can exist beyond Next.js. It clearly can. T
 - [[../sources/RSC as Protocol|RSC as Protocol]]
 - [[../sources/RSC Bundle Boundaries|RSC Bundle Boundaries]]
 - [[../sources/Server Functions vs Server Components|Server Functions vs Server Components]]
+
+- [[../tools/Vite|Vite]]
+- [[../sources/Vite Runtime Environments|Vite Runtime Environments]]
 
 ## Sources
 

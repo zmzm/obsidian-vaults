@@ -1,0 +1,153 @@
+---
+type: "twir-recovery"
+issue: 292
+item: 6
+source: "https://xabierlameiro.com/blog/nextjs/nextjs-memory-leak-in-production"
+final_url: "https://xabierlameiro.com/blog/nextjs/nextjs-memory-leak-in-production"
+retrieved: "2026-10-22T11:29:59+00:00"
+original_note: "frontend/raw/twir/292/articles/06 - How to find a Next.js memory leak in production.md"
+editorial_review: "pending"
+truncated: false
+---
+
+Original intake note: [[../articles/06 - How to find a Next.js memory leak in production|How to find a Next.js memory leak in production]]
+
+# 3 Next.js memory leaks measured in production: yours?
+
+[Xabier Lameiro](/) · Jul 18, 2026
+
+## Quick answer
+
+**Update, September 2026.** All three issues below are closed and the fixes shipped in Next.js 16.3.0 (#95094 and #94919 landed in `16.3.0-canary.97` on 25 July, #94890 two days later). The measurements were taken while they were still open, against the versions cited in the reports (Next 15.5.11–16.3.0-canary.50, Node 20/22/24), and they stay here because the method outlives the bugs. If you're on 16.3.x and still growing, upgrade to 16.3.5 first — released on 11 September, it fixes the `use cache` retention tracked in [vercel/next.js#97938](https://github.com/vercel/next.js/issues/97938). Still growing after that? You're on a different one. To find out which route is growing and what holds the memory, run `npx next-leak .` ([source and limits](https://github.com/xabierlameiro/next-leak)).
+
+If your self-hosted Next.js server grows until it dies with `FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory` — or the container gets `OOMKilled` (exit code 137) — don't start by auditing your own code. **Check your Next.js version first.** Between 15.5 and 16.2 there were three documented memory leaks in the framework itself, and all three are fixed in **16.3.0**:
+
+- **The router LRU cache didn't count its keys** ([#94890](https://github.com/vercel/next.js/issues/94890)): a slow drift over days, proportional to the unique URLs you receive, not to your traffic. Fixed by [#96229](https://github.com/vercel/next.js/pull/96229).
+- **The RSC render tree was retained per request** ([#94919](https://github.com/vercel/next.js/issues/94919)): grows with traffic, much worse on Node 22/24 and when clients abort the connection mid-stream. Fixed by [#96173](https://github.com/vercel/next.js/pull/96173).
+- **Middleware `setTimeout` ids were registered forever** ([#95094](https://github.com/vercel/next.js/issues/95094)): stepwise growth tied to traffic that passes through middleware. Fixed by [#96161](https://github.com/vercel/next.js/pull/96161).
+
+So the shortest fix is an upgrade. If you're pinned below 16.3.0 — and plenty of production apps are — the rest of this post is how to tell which of the three you're carrying, and how to prove it rather than guess.
+
+I measured two of them independently while they were still open and posted the numbers on the issues: [#94890 reproduced at a tenth of the reported load](https://github.com/vercel/next.js/issues/94890#issuecomment-5035231906), and [#95094 reproduced](https://github.com/vercel/next.js/issues/95094#issuecomment-5035131691) and then [re-measured against `16.3.0-canary.97` to confirm the fix held](https://github.com/vercel/next.js/issues/95094#issuecomment-5081146010). Everything below is that method, generalised.
+
+On serverless (Vercel) you'll almost never see the OOM: the instance recycles first. There, the same underlying problem surfaces as a `504 FUNCTION_INVOCATION_TIMEOUT` — it happened to this blog, and my numbers are below.
+
+## The shape of the growth tells you where to look
+
+Before touching anything, chart `process.memoryUsage()` (or your APM's equivalent) over hours or days: `heapUsed`, `rss` and `external`. If `external` stays flat while `heapUsed` climbs, the retained memory lives in the V8 heap, not in native memory — exactly the signature the author of #94890 used to narrow down their case over seven days of metrics (+154 MB average heap, no restarts, on 3 hosts at once).
+
+With the curve in front of you, compare it against three things: the number of **unique URLs** served, **total traffic**, and **specific routes**. Each leak has a distinct shape:
+
+| Growth shape | Correlates with | Suspect |
+| --- | --- | --- |
+| Slow, monotonic drift over days | Unique URLs (bots, long slugs) | Router LRU cache (#94890) |
+| Proportional to traffic; worse on heavy pages | RSC payload and client aborts | RSC tree retention (#94919) |
+| Steps the GC never recovers | Requests passing through middleware | Sandbox timeouts (#95094) |
+| No OOM, but sporadic 504s on serverless | Render cost, not memory | Your render is expensive (my case, below) |
+
+To confirm the diagnosis, take two heap snapshots separated by a stretch of load and compare them in Chrome DevTools' Memory tab, looking at the *retainers* of whatever grows. The [official Next.js memory guide](https://nextjs.org/docs/app/guides/memory-usage) documents how to expose the inspector:
+
+`NODE_OPTIONS='--inspect' next start`
+
+For *build-time* issues (rather than runtime), the same guide adds `next build --experimental-debug-memory-usage`, which prints heap and GC statistics and dumps a snapshot when it receives the `SIGUSR2` signal.
+
+The names that show up as retainers are the diagnosis: `LRUNode` points at leak 1, `reactServerStream` and Flight objects at leak 2, and the sandbox `TimeoutsManager` at leak 3.
+
+One pair of snapshots can still fool you: warm-up growth looks exactly like a leak until you force GC and measure in cycles. The protocol I used to tell them apart, with the before/after run that confirmed #95094, is in [how to prove a Next.js memory leak with heap snapshot diffs](https://xabierlameiro.com/blog/nextjs/measure-nextjs-memory-leak).
+
+## Leak 1: the router LRU cache doesn't count its keys
+
+The Next.js router keeps an LRU cache for route resolution (`getItemsLru`, in `packages/next/src/server/lib/router-utils/filesystem.ts`) with `maxSize = 1024 * 1024`. The problem, as #94890 documents: the size function only adds up the *value* strings (`fsPath`, `itemPath`, `type`) and counts `1` for negative entries — **the URL used as the key is never accounted for**, even though it's usually the dominant cost per entry.
+
+The result is a cache that believes it's tiny while retaining up to ~1,048,576 keys with their full strings: hundreds of MB in a process that's been up for days. The issue author measured it in production (self-hosted Next 15.5.x, and verified the behavior persists in 16.2.9 and canary): +154 MB of average heap in a week, with external memory flat and the growth tracking the **cardinality of unique URLs**, not request volume. Their retainer trace always ended at `LRUNode`.
+
+Hence the non-obvious tip: if you suspect this leak, don't chart your heap against requests per second — chart it against **distinct routes** served. Bots crawling URLs with endless parameter tails and long i18n slugs are the perfect amplifier.
+
+The regression comes from the migration to a custom LRU (the size function lost the `key` parameter it had in v14), and the fix proposed in the issue is to restore it. Until it lands, what you can do:
+
+- Reduce the cardinality that reaches the router: normalize or reject junk bot URLs at the proxy/CDN before Next resolves them.
+- Watch heap against unique URLs, and accept a restart cadence if your process lives for weeks.
+
+## Leak 2: the RSC tree is retained when the client disconnects
+
+In the App Router, #94919 documents that under sustained traffic the heap grows monotonically, doesn't recover after GC, and ends in `OOMKilled`. The strong trigger is **streams that don't finish normally**: clients disconnecting mid-response (mobile networks, crawlers, users navigating away). In the repro, twelve rounds of abort-load double `heapUsed` (46 → 92 MB) and nearly triple RSS, while the same load read to completion returns cleanly to baseline.
+
+Two data points from the report that help you recognize it:
+
+- It's **much stronger on Node 22/24** than on Node 20 (due to the switch to AsyncContextFrame in AsyncLocalStorage).
+- In their production app the magnitude scales with the size of the serialized RSC tree: heavy listing pages leaked ~2 MB per request; light pages, nothing.
+
+The author's snapshot diff shows what stays pinned: the RSC stream (`reactServerStream`), retained via an `AbortController` and the Flight request's `cacheController`, which in turn holds the full element tree — plus per-request zlib compression contexts and socket listeners.
+
+While the issue stays open, the reasonable mitigations: trim the RSC payload of your heaviest pages (paginate long lists — a good idea anyway), and if you self-host with a custom server on Node 22/24, keep in mind the reporter observed the leak to be considerably weaker on Node 20 when comparing.
+
+## Leak 3: the middleware `setTimeout` ids the sandbox never releases
+
+Middleware runs in a sandbox whose `TimeoutsManager` (introduced so old Edge-runtime contexts could be torn down in dev, PR #57235) registers every `setTimeout` id. Per #95094, that registration is only released if your code explicitly calls `clearTimeout(id)` or the whole context is torn down — **a timeout that completes naturally leaves its id retained forever**. On a long-lived standalone server, every request that goes through a middleware with fire-and-forget timeouts adds retention: stepwise growth until OOM. Reported on next 16.3.0-canary.50.
+
+The useful part: the escape hatch exists and it's in your hands. If your middleware schedules one-shot timeouts, release the id yourself when it finishes:
+
+`// middleware.ts — until the fix lands: release the id explicitly,
+
+// removal from the TimeoutsManager only happens on clearTimeout(id)
+
+const timeoutId = setTimeout(() => {`
+
+Calling `clearTimeout` on an already-fired timeout is harmless in Node, and it removes the id from the sandbox manager.
+
+## On serverless the leak wears a disguise: my 504
+
+None of this caught me on a long-lived server: it caught me on Vercel, and not as an OOM but as a `504 FUNCTION_INVOCATION_TIMEOUT` when navigating the tag pages of this very blog, in July 2026.
+
+The cause wasn't a leak but algorithmic waste, which on serverless hurts just as much: my post loader parsed the **entire** MDX corpus to resolve a single slug, `getAllPosts` called it once per slug (O(N²)), and `getAllCategories` repeated that for every category and tag (O(C·N²)): around 18,000 disk reads and parses per page. Tag URLs render on demand (`fallback: 'blocking'`) inside a serverless function, and a ~32-second render against a ~10-second limit is a guaranteed 504. Profiling showed `getAllCategories` alone taking between 3.9 and 11.2 seconds; MDX serialization, my first suspect, turned out to be a 94 ms red herring.
+
+The fix was to spend memory **on purpose**: read and parse the corpus exactly once per instance, in a module-level cache:
+
+`// src/helpers/fileReader.ts — the corpus is static per deploy: parse it ONCE
+
+let corpusCache: ParsedPost[] | null = null;
+
+const loadCorpus = (): ParsedPost[] => {
+
+if (corpusCache && process.env.NODE_ENV === 'production') {
+
+corpusCache = findMdxFiles(POST_PATH).map(buildPost);`
+
+The numbers measured before and after, in this repo:
+
+|  | Before | After |
+| --- | --- | --- |
+| `next build` | ~17.5 min | 34 s |
+| Prerender per post page | ~32,000 ms | ~1,600 ms |
+| On-demand render of a tag facet | 504 (timeout) | ~134 ms |
+
+The takeaway that connects back to the three leaks above: **serverless doesn't free you from memory problems — it transforms them**. Instance recycling hides cumulative retention, but any per-request waste comes back as latency, cost and timeouts. And a module-level cache is per-instance memory you choose to spend: bounded and static per deploy, it's a fix; unbounded and growing with traffic, it would be leak number 4.
+
+## How I measured this (instead of trusting my hunches)
+
+Everything above came from manual snapshot diffing. After the third time I ran that ritual by hand — warm-up, forced GC, baseline snapshot, load, idle, GC again, sample, diff — I automated it into a CLI: [next-leak](https://github.com/xabierlameiro/next-leak).
+
+It boots your standalone build route by route in a fresh process, drives real load (including clients that hang up mid-stream), forces GC before every sample, and judges the **shape** of the post-GC curve instead of absolute sizes. Against the reproduction for #95094 it found the leak and named the retainer on its own:
+
+`✖ /api/heap leak (+4.70 MB/1000 req)
+
+heap 28.7 → 40.3 → 59.0 → 75.8 → 75.9 → 101.2 → 101.2 → 139.0 → 139.0 MB
+
+↳ grown [object] Array 112.5 MB — TimeoutsManager#object[.resources]
+
+<- system / Context#object[.timeoutsManager] <- …`
+
+That is the stepwise growth of leak 3 with the sandbox `TimeoutsManager` named in the retainer chain — the same diagnosis as above, in about three minutes.
+
+The full protocol, why each step exists, and the before/after pair that proves the diagnosis was right are in [Heap snapshot diffs: how to prove a Next.js memory leak](https://xabierlameiro.com/blog/nextjs/measure-nextjs-memory-leak).
+
+Two honest data points from measuring all three: #94890 reproduced with a tenth of the original load; #94919 did **not** reproduce on a standalone build even with 4,000 real mid-stream disconnections per cycle — the repro's pages answer in ~6 ms, so there is no stream left to abandon. That matches the reporter's own note that the magnitude scales with the RSC payload: if you suspect leak 2, measure your heaviest real pages, not a minimal repro. Every verdict ships with the raw snapshots and a machine-readable `run.json`, so you can verify every claim yourself in DevTools.
+
+## Is it Next.js or is it your code?
+
+My checklist after this trip:
+
+1. **Look at retainers, not hunches.** `LRUNode`, `reactServerStream` or the sandbox `TimeoutsManager` in the trace → it's one of the three framework leaks, so upgrade to 16.3.0. Closures and structures from your own modules → it's yours.
+2. **Correlate before you blame.** Heap tracking unique URLs → leak 1. Heap tracking traffic and aborts → leak 2. Steps with middleware → leak 3. One specific route driving the curve → almost certainly your code.
+3. **`--max-old-space-size` fixes nothing** — size the heap to your container so you don't die early, but a monotonic slope will eventually hit any limit.
+4. **On serverless, profile time instead of memory.** If you're seeing 504s, hunt for quadratic or repeated per-request work; my whole case is in the previous section.

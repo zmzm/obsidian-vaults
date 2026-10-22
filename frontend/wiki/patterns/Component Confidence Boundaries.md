@@ -1,7 +1,9 @@
 ---
 type: pattern
+evidence: mixed
+evidence_reviewed: 2026-10-22
 status: active
-updated: 2026-04-30
+updated: 2026-10-22
 tags:
   - testing
   - component-testing
@@ -18,6 +20,11 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - Component testing is strongest when it verifies real user-visible states, interactions, and accessibility behavior rather than implementation details.
 - Story-driven coverage can make missing UI states obvious, but it does not automatically prove full application integration correctness.
 - Browser-realistic runtimes raise the ceiling of component confidence, yet they still sit below workflow-level confidence.
+
+- Visual baselines answer appearance questions, while semantic roles, keyboard interaction, and focus behavior need explicit interaction evidence.
+- The v0 instant-navigation case checks which content is available before navigation-only work arrives; such a test is stronger evidence for prefetch coverage than an arbitrary elapsed-time threshold.
+
+- The recovered Pure UI essay makes display-relevant role, plan, billing, and flag state explicit so selected combinations can become stories or tests. A state grid proves neither exhaustive state coverage nor server authorization.
 
 ## Practical Significance
 
@@ -47,6 +54,14 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - [[../sources/TWIR 265|TWIR 265]]
 - [[../sources/TWIR 274|TWIR 274]]
 
+- [[../case-studies/Base UI Filterable Menu Semantics|Base UI Filterable Menu Semantics]]
+- [[../case-studies/v0 Partial Prefetching|v0 Partial Prefetching]]
+- [[Design System Styling Contracts|Design System Styling Contracts]]
+
+- [[../case-studies/Static Blog with Preact Islands|Static Blog with Preact Islands]]
+
+- [[Optimistic Mutation Coordination|Optimistic Mutation Coordination]]
+
 ## Sources
 
 - [[../../raw/twir/237/articles/01 - Storybook 9|Storybook 9]]
@@ -61,6 +76,12 @@ Component Confidence Boundaries is the pattern page for deciding what component-
 - [[../sources/Automated Accessibility Testing at Slack|Automated Accessibility Testing at Slack]]
 - [[../sources/Storybook Component Testing|Storybook Component Testing]]
 - [[../sources/Vitest Browser Mode|Vitest Browser Mode]]
+
+- [[../../raw/twir/302/articles/07 - Building a filterable menu that works for everyone|07 - Building a filterable menu that works for everyone]]
+- [[../../raw/twir/302/articles/06 - Improving navigation experience in v0 with Next.js 16.4|06 - Improving navigation experience in v0 with Next.js 16.4]]
+- [[../../raw/twir/293/articles/05 - Visual Regression Testing The Most Important Test You're Not Running|05 - Visual Regression Testing The Most Important Test You're Not Running]] — summary-only visual-testing reference.
+
+- [[../../raw/twir/302/recovered/08 - Pure UI in the Agentic Era|08 - Pure UI in the Agentic Era]]
 
 ## Open Questions
 

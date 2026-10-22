@@ -1,7 +1,7 @@
 ---
 type: tool
 status: active
-updated: 2026-06-26
+updated: 2026-10-22
 tags:
   - astro
   - framework
@@ -51,6 +51,11 @@ Astro is the tool hub for content-heavy, static-first, and island-architecture f
 - [[../sources/TWIR 272|TWIR 272]]
 - [[../sources/TWIR 280|TWIR 280]]
 - [[../sources/TWIR 287|TWIR 287]]
+
+- [[Vite|Vite]]
+- [[Preact|Preact]]
+- [[../sources/Vite Runtime Environments|Vite Runtime Environments]]
+- [[../case-studies/Static Blog with Preact Islands|Static Blog with Preact Islands]]
 
 ## Sources
 

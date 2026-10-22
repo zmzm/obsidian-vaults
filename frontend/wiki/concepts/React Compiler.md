@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-07-27
+updated: 2026-10-22
 tags:
   - react
   - compiler
@@ -16,6 +16,9 @@ React Compiler is a direction in the React ecosystem where part of the optimizat
 - The compiler aims to infer optimizations that previously often required manual patterns.
 - Changes around React Compiler affect not only performance but also the way components are authored.
 - A Rust-based implementation and tighter integration with other toolchain components could affect both performance and adoption.
+
+- Broad context invalidation and expensive descendant rendering are different costs. The captured context example derives a narrow prop in a consumer and lets memoization or compiler caching protect the expensive child; this is not a context-selector API.
+- Library tracking and compiler memoization need compatible ownership. The MobX plugin PR uses observer wrapping and use no memo boundaries; treat the integration as a proposal rather than automatic compatibility.
 
 ## Practical Significance
 
@@ -82,6 +85,9 @@ React Compiler is a direction in the React ecosystem where part of the optimizat
 - [[../sources/React Compiler at Wakelet|React Compiler at Wakelet]]
 - [[../sources/React Compiler Toolchain Adoption|React Compiler Toolchain Adoption]]
 - [[../sources/React Compiler Production Memoization|React Compiler Production Memoization]]
+
+- [[../../raw/twir/300/articles/06 - Making React Context Cheap with React Compiler|06 - Making React Context Cheap with React Compiler]]
+- [[../../raw/twir/301/articles/03 - MobX PR - MobX React plugin|03 - MobX PR - MobX React plugin]]
 
 ## Open Questions
 

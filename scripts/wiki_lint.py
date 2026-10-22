@@ -36,6 +36,7 @@ ALLOWED_TYPES = {
     "synthesis",
 }
 ALLOWED_STATUSES = {"seed", "active", "review"}
+ALLOWED_EVIDENCE = {"full-text", "mixed", "summary-only", "unassessed"}
 REQUIRED_SECTIONS = {
     "concept": ["Key Ideas", "Practical Significance", "Related Pages", "Sources", "Open Questions"],
     "tool": ["Key Ideas", "Practical Significance", "Related Pages", "Sources", "Open Questions"],
@@ -131,6 +132,9 @@ def check_frontmatter() -> list[str]:
             errors.append(f"{rel(path)}: invalid or missing type: {page_type!r}")
         if status not in ALLOWED_STATUSES:
             errors.append(f"{rel(path)}: invalid or missing status: {status!r}")
+        evidence = frontmatter.get("evidence")
+        if evidence is not None and evidence not in ALLOWED_EVIDENCE:
+            errors.append(f"{rel(path)}: invalid evidence: {evidence!r}")
         if not updated:
             errors.append(f"{rel(path)}: missing updated")
     return errors

@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-04-22
+updated: 2026-10-22
 tags:
   - twir
   - digest
@@ -35,6 +35,9 @@ TWIR #272 is a useful routing source for state internals, React Compiler tradeof
 - [[../tools/Astro|Astro]]
 - [[../topics/React Rendering|React Rendering]]
 - [[../concepts/Server Components|Server Components]]
+
+- [[../tools/Vite|Vite]]
+- [[Vite Runtime Environments|Vite Runtime Environments]]
 
 ## Raw Source
 

@@ -1,94 +1,64 @@
 ---
 type: synthesis
 status: active
-updated: 2026-07-27
-tags:
-  - frameworks
-  - ai
-  - nextjs
-  - conventions
+evidence: mixed
+evidence_reviewed: 2026-10-22
+updated: 2026-10-22
+tags: [frameworks, ai, conventions, evidence]
 ---
 
 # Frameworks as Constraints in the AI Era
 
-This synthesis connects the framework and AI-oriented branch in the vault: agent-facing tooling, host-environment integration, and the role of conventions as coordination infrastructure.
+This synthesis compares what explicit conventions and observable behavior contribute to human-and-agent development across framework adoption, migration, and narrowly scoped custom tooling.
 
 ## Short Thesis
 
-The current source base suggests that frameworks become more valuable in the AI era not because agents need more abstraction, but because human-and-agent systems need stronger shared constraints.
+Shared contracts and verifiable outcomes help teams coordinate. A framework can supply those contracts, but its size or popularity does not by itself establish their value.
 
-## The Core Shift
+## Evidence and Counterexamples
 
-- Classic framework arguments often focused on productivity, routing, bundling, or data APIs.
-- The newer material adds another reason: frameworks help humans and agents produce code inside the same shape.
-- This makes conventions, file boundaries, route structure, and runtime contracts more valuable as coordination mechanisms.
+- The Framework Conventions case argues that losing established structure made one agent-assisted project harder to coordinate. Treat it as a bounded experience, not a controlled comparison of all frameworks.
+- The extracted static-blog account is a counterexample: a narrow workload used an owned build pipeline, Preact islands, and route-output parity checks. The author also accepted browser-quirk and maintenance ownership.
+- The recovered Lovable migration combines import boundaries, platform adapters, deterministic feature flags, measurable migration progress, and staged rollout. These are concrete coordination mechanisms that work across two frameworks.
+- The extracted v0 navigation case makes prepared UI testable; React DevTools adds component-level runtime evidence. Both make implementation claims inspectable rather than relying only on an agent’s completion report.
+- The recovered Pure UI essay proposes explicit display-state inputs and chosen state combinations. Its examples are illustrative; it does not measure agent reliability or establish exhaustive coverage.
 
-## Why Constraints Matter
+## Practical Significance
 
-- Without framework structure, code organization drifts faster under mixed human and AI authorship.
-- Host environments impose non-obvious runtime constraints that frameworks must absorb or expose cleanly.
-- Agent-facing tooling only becomes useful when framework state is observable, structured, and predictable.
+- Name the contract: route structure, import boundaries, state inputs, cache behavior, ownership, or runtime constraints. Then identify what would expose a violation.
+- Choose the amount of framework integration that fits the workload and maintenance capacity. Fewer APIs can reduce coordination costs while shifting platform and compatibility work to the team.
+- Keep assertions proportional to evidence: output parity, route parity, component behavior, and production latency each prove different properties.
 
-## What the Current Evidence Suggests
+## Evidence Limits
 
-- Next.js is positioning runtime context, debugging state, and tool integration as part of framework direction.
-- Real host-environment integration work shows that framework behavior is deeply shaped by embedding constraints, not just by browser APIs.
-- A direct experiment removing Next.js in an AI-heavy workflow suggests that losing conventions harms maintainability and coordination before it harms feature velocity.
-- Newer accessibility and security material adds a sharper failure mode: AI tools can produce visually plausible but semantically invalid UI, and third-party agentic tooling can become part of the operational risk surface.
-- ReactBench adds an evaluation-shaped signal for the same argument: production React agent work needs framework conventions, semantic checks, accessibility rules, and maintainability constraints beyond ordinary green tests.
-- The security-boundaries synthesis sharpens the same point from another angle: framework conventions are also trust-boundary infrastructure for server functions, middleware, deployment behavior, and CI.
-
-## Main Distinction
-
-This is not mainly a debate about "framework versus no framework."
-
-It is a debate about whether teams want implicit local conventions or explicit shared constraints that both humans and agents can rely on. The current vault points toward the second option becoming more important, not less.
-
-## Practical Heuristic
-
-- Prefer stronger framework conventions when multiple contributors, generated code, or agent-heavy workflows are involved.
-- Prefer explicit framework surfaces when host environments or embedded runtimes create nonstandard constraints.
-- Treat framework complexity more charitably when it buys predictable coordination rather than just more features.
-
-## Why This Synthesis Matters
-
-- It ties together several pages that already existed in the vault but did not yet form one explicit argument.
-- It also gives the wiki a way to talk about AI-native framework value without reducing the subject to hype or tooling announcements.
+- This is a synthesis of selected reports, not a representative framework benchmark. Several outcomes combine architectural change with tooling, staffing, and hosting changes.
+- Lovable’s author reports better agent behavior with its newer stack, but that observation does not isolate training data, prompts, conventions, or framework design as the cause.
+- Source dates and framework generations matter. Current API knowledge and historical migration experience should not be collapsed into one claim.
 
 ## Related Pages
 
-- [[../tools/Next.js|Next.js]]
 - [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
-- [[Next.js Portability Boundaries|Next.js Portability Boundaries]]
+- [[../tools/Remix|Remix]]
+- [[../tools/React DevTools|React DevTools]]
+- [[../patterns/Component Confidence Boundaries|Component Confidence Boundaries]]
 - [[../case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]]
-- [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
-- [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
-- [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
-- [[../sources/Next.js Skills|Next.js Skills]]
-- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
-- [[../sources/ReactBench|ReactBench]]
-- [[Frontend Security Boundaries in Server-First React]]
-- [[../sources/TWIR 278|TWIR 278]]
-- [[../sources/TWIR 291|TWIR 291]]
+- [[../case-studies/Static Blog with Preact Islands|Static Blog with Preact Islands]]
+- [[../case-studies/Remix v2 to React Router Route Parity|Remix v2 to React Router Route Parity]]
+- [[../case-studies/Lovable Incremental Framework Migration|Lovable Incremental Framework Migration]]
+- [[../case-studies/v0 Partial Prefetching|v0 Partial Prefetching]]
+- [[Frontend Security Boundaries in Server-First React|Frontend Security Boundaries in Server-First React]]
 
 ## Sources
 
-- [[../tools/Next.js|Next.js]]
-- [[../sources/Next.js Agentic Future|Next.js Agentic Future]]
-- [[../sources/Next.js Skills|Next.js Skills]]
 - [[../case-studies/Framework Conventions in the AI Era|Framework Conventions in the AI Era]]
-- [[../case-studies/Next.js Inside ChatGPT|Next.js Inside ChatGPT]]
-- [[../case-studies/Migrating 6000 React Tests with AI and ASTs|Migrating 6000 React Tests with AI and ASTs]]
-- [[../sources/AI-Generated UI Accessibility|AI-Generated UI Accessibility]]
-- [[Frontend Security Boundaries in Server-First React]]
-- [[Next.js vs TanStack Start|Next.js vs TanStack Start]]
-- [[../../raw/twir/255/articles/10 - Running Next.js inside ChatGPT A deep dive into native app integration|Running Next.js inside ChatGPT]]
-- [[../../raw/twir/266/articles/13 - Next.js Skills - Newly published Vercel Agent skills for common Next.js workflows|Next.js Skills - Newly published Vercel Agent skills for common Next.js workflows]]
-- [[../../raw/twir/269/articles/04 - Building Next.js for an agentic future|Building Next.js for an agentic future]]
-- [[../../raw/twir/270/articles/09 - Removing Next.js Taught Me Why Frameworks Are Still Essential Even for AI|Removing Next.js Taught Me Why Frameworks Are Still Essential Even for AI]]
-- [[../../raw/twir/291/articles/05 - ReactBench - Evaluates frontier coding agents on production React work|ReactBench - Evaluates frontier coding agents on production React work]]
+- [[../../raw/twir/296/articles/07 - Replacing Next.js with a vibe-coded framework|07 - Replacing Next.js with a vibe-coded framework]]
+- [[../../raw/twir/294/recovered/10 - How Lovable.dev Migrated from Next.js to TanStack Start|10 - How Lovable.dev Migrated from Next.js to TanStack Start]]
+- [[../../raw/twir/302/articles/06 - Improving navigation experience in v0 with Next.js 16.4|06 - Improving navigation experience in v0 with Next.js 16.4]]
+- [[../../raw/twir/302/articles/05 - React docs - React DevTools for agents|05 - React docs - React DevTools for agents]]
+- [[../../raw/twir/302/recovered/08 - Pure UI in the Agentic Era|08 - Pure UI in the Agentic Era]]
+- [[../../raw/twir/302/articles/01 - build mode - What nobody tells you about writing agent skills|01 - build mode - What nobody tells you about writing agent skills]]
 
 ## Open Questions
 
-- Whether AI-assisted development will favor fewer broad frameworks or more explicit smaller frameworks over time.
-- Which framework conventions are genuinely valuable coordination primitives and which are just incidental complexity.
+- Which contract and feedback-loop changes improve outcomes independently of model or framework choice?
+- What maintenance costs appear after the initial success of an owned framework?

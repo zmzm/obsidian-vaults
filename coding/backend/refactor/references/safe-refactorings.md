@@ -7,7 +7,7 @@ topics: [refactor, safe refactorings]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
 # Safe Refactorings (No Permission Needed)
@@ -20,6 +20,8 @@ Use this document when:
 - Extracting utilities or constants
 - Improving type safety
 - Simplifying logic
+
+These examples apply within the user's approved task scope. Use [verification and change safety](../../../common/engineering/references/verification-and-change-safety.md) for shared authorization and refactoring principles, and [contracts and validation](../../../common/engineering/references/contracts-and-validation.md) to distinguish internal renames from contract changes.
 
 ## Extract Utility Functions
 

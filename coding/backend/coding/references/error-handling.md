@@ -6,8 +6,8 @@ domain: backend
 topics: [coding, error handling]
 priority: medium
 status: stable
-canonical: true
-updated: 2026-04-16
+canonical: false
+updated: 2026-10-23
 ---
 
 # Error Handling
@@ -21,28 +21,19 @@ Use this document when:
 - Working with external service integrations
 - Understanding NestJS exception filters
 
+> **Canonical shared guidance**: [errors and observability](../../../common/engineering/references/errors-and-observability.md) owns error categories, causal context, redaction, and catch decisions. This page owns NestJS boundary translation and filter examples.
+
 ## Rules
 
-- Let NestJS exception filters handle Prisma errors
-- Use try/catch for external operations only
+- Use the project's configured filters for Prisma-to-HTTP mapping when they own that translation; this mapping must be implemented/configured.
+- Catch at any layer when translating, recovering, isolating work, or adding useful context; otherwise propagate to the established handler.
 - Controllers throw HTTP exceptions (NotFoundException, ConflictException)
 - Services return null for not-found, let controller decide response
 - Log errors with context using NestJS Logger
 
 ## When to Use Try/Catch
 
-### ✅ Use for external operations
-
-- External API calls
-- File system operations
-- Email sending
-- Third-party service integrations
-
-### ❌ Don't use for
-
-- Prisma database operations (let exception filters handle)
-- Simple validation (use DTOs and pipes)
-- Business logic errors (throw appropriate exceptions)
+Follow the shared catch guidance linked above. In NestJS, prefer configured filters for consistent HTTP translation and pipes for transport validation. A local catch may still be appropriate for a known Prisma conflict or recovery step; an external call may simply propagate when a caller already owns handling.
 
 ## Examples
 
@@ -54,13 +45,15 @@ Use this document when:
 export class NotificationService {
   private readonly logger = new Logger(NotificationService.name);
 
-  async sendPushNotification(userId: string, message: string): Promise<void> {
+  async sendPushNotification(userId: string, message: string): Promise<'sent' | 'recipient_missing'> {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return 'recipient_missing';
     try {
-      const user = await this.prisma.user.findUnique({ where: { id: userId } });
       await this.pushService.send(user.deviceToken, message);
+      return 'sent';
     } catch (error) {
-      this.logger.error(`Push notification failed: ${error.message}`, error.stack);
-      throw new InternalServerErrorException('Failed to send notification');
+      this.logger.error({ event: 'push_notification_failed', category: 'dependency_failure' });
+      throw new InternalServerErrorException('Failed to send notification', { cause: error });
     }
   }
 }
@@ -69,7 +62,7 @@ export class NotificationService {
 @Injectable()
 export class UsersService {
   async findOne(id: string): Promise<User | null> {
-    // No try/catch - let exception filters handle Prisma errors
+    // Propagate to the configured application handler; no local recovery is needed
     return this.prisma.user.findUnique({ where: { id } });
   }
 }
@@ -91,7 +84,7 @@ export class UsersController {
 ### Bad example
 
 ```typescript
-// ❌ Bad: Unnecessary try/catch for Prisma
+// ❌ Bad: Catch discards the Prisma failure
 async create(dto: CreateUserDto) {
   try {
     return await this.prisma.user.create({ data: dto });
@@ -100,9 +93,9 @@ async create(dto: CreateUserDto) {
   }
 }
 
-// ❌ Bad: No error handling for external call
+// ❌ Bad: Failure is detached from the caller with no owning handler
 async sendEmail(email: string) {
-  await this.emailService.send(email); // ❌ No try/catch for external
+  void this.emailService.send(email); // Rejection and delivery outcome are lost
 }
 ```
 
@@ -116,7 +109,7 @@ async sendEmail(email: string) {
 
 ## Notes
 
-- NestJS exception filters transform Prisma errors to HTTP responses
+- Configured application exception filters can translate known Prisma errors into safe HTTP responses
 - Use appropriate HTTP exceptions: NotFoundException, ConflictException, BadRequestException
-- Always log errors with context (user ID, operation, etc.)
+- Log safe structured context at the owning boundary; the configured handler must avoid serializing raw causes or stacks without redaction.
 - See `security` skill for security-related error handling

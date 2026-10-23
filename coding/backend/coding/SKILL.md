@@ -4,7 +4,7 @@ description:
 
   Guide for general NestJS backend development practices, code architecture, and structural patterns. Use when creating or modifying NestJS
   controllers, services, modules, DTOs, or any backend code that involves business logic, validation, dependency injection, or error
-  handling. This skill focuses on framework-agnostic patterns, not specific security or testing concerns.
+  handling. This skill focuses on NestJS conventions; shared engineering principles belong to common/engineering.
 ---
 
 # Backend Coding Skill
@@ -38,6 +38,8 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Shared principles → [readability and boundaries](../../common/engineering/references/readability-and-boundaries.md), [contracts and validation](../../common/engineering/references/contracts-and-validation.md), or [errors and observability](../../common/engineering/references/errors-and-observability.md), only as needed. These are canonical for framework-independent decisions; this skill owns NestJS conventions.
+
 Always start here, then follow references as needed:
 
 - Controllers → `references/controllers.md`
@@ -55,7 +57,7 @@ Always start here, then follow references as needed:
 ## Local rules
 
 - `<default>` Default: Controllers remain thin - delegate all business logic to services
-- `<default>` Default: Services contain all business logic and inject PrismaService
+- `<default>` Default: Services own feature business logic; inject PrismaService when a service directly owns Prisma access, or use the project's existing persistence abstraction.
 - `<heuristic>` Heuristic: DTOs use class-validator decorators and match Prisma schema naming
 - `<exception>` Exception: Modules follow Nx feature module structure
 

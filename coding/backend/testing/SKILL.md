@@ -16,7 +16,7 @@ Use this skill when you are:
 - Testing service layer business logic
 - Testing utility functions
 - Setting up mocks for Prisma and external services
-- Ensuring 80%+ code coverage
+- Meeting project-specific coverage requirements
 
 ## When not to use this knowledge
 
@@ -35,6 +35,8 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Test selection and verification claims → [verification and change safety](../../common/engineering/references/verification-and-change-safety.md), the canonical shared guidance; keep Jest/NestJS setup here.
+
 Always start here, then follow references as needed:
 
 - Test layer patterns → `references/test-layer-patterns.md`
@@ -52,7 +54,7 @@ Always start here, then follow references as needed:
 - `<default>` Default: Follow AAA pattern (Arrange → Act → Assert)
 - `<default>` Default: Test success and error scenarios
 - `<heuristic>` Heuristic: Mock external dependencies (Prisma, services, APIs)
-- `<exception>` Exception: Achieve 80% minimum code coverage
+- `<default>` Default: Meet the project's configured coverage thresholds; 80% is appropriate only when the project requires it.
 
 For cross-vault wording and priority rules, see `../../RULES.md` or the nearest root copy in context.
 

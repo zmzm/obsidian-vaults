@@ -38,6 +38,9 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Recovery across storage and remote effects → [state and recovery](../../common/engineering/references/state-and-recovery.md).
+- Persisted schema compatibility → [contracts and validation](../../common/engineering/references/contracts-and-validation.md). These own shared principles; Prisma examples remain below.
+
 Always start here, then follow references as needed:
 
 - Queries → `references/queries.md`

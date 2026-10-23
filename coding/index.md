@@ -1,7 +1,7 @@
 ---
 type: index
 status: active
-updated: 2026-04-20
+updated: 2026-10-23
 ---
 
 # Coding Vault Index
@@ -12,7 +12,9 @@ This file is the map of the coding vault. Start here, then move into the most re
 
 - [[frontend/INDEX|Frontend Skills Index]] — frontend implementation guidance for React, UI, routing, testing, performance, accessibility, and adjacent concerns.
 - [[backend/INDEX|Backend Skills Index]] — backend implementation guidance for NestJS, API structure, database work, debugging, security, testing, and versioning.
-- [[common/INDEX|Common Skills Index]] — cross-cutting skills for workflow, Serena usage, and skill authoring/packaging.
+- [[common/INDEX|Common Skills Index]] — cross-cutting skills for engineering, workflow, Serena usage, and skill authoring/packaging.
+
+For framework-independent module boundaries, runtime contracts, uncertain retries, crash recovery, and verification evidence, use [engineering](common/engineering/SKILL.md). Select the smallest relevant reference set alongside domain conventions.
 
 ## Root Files
 

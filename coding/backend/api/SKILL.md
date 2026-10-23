@@ -39,6 +39,9 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Shared contract and compatibility decisions → [contracts and validation](../../common/engineering/references/contracts-and-validation.md).
+- Shared error semantics and safe diagnostics → [errors and observability](../../common/engineering/references/errors-and-observability.md). HTTP/NestJS conventions remain below.
+
 Always start here, then follow references as needed:
 
 - RESTful conventions → `references/restful-conventions.md`

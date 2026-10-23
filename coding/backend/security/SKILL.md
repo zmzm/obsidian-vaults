@@ -39,6 +39,8 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Runtime boundary validation → [contracts and validation](../../common/engineering/references/contracts-and-validation.md); this is the canonical shared principle. Use the references below for NestJS security controls.
+
 Always start here, then follow references as needed:
 
 - OWASP protection → `references/owasp-protection.md`

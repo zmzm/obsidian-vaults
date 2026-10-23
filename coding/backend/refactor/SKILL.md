@@ -27,17 +27,20 @@ Use this skill when you are:
 
 This skill provides guidance for:
 
-- Safe refactorings that don't require permission
-- Refactorings that require explicit permission
+- Behavior-preserving refactorings within approved scope
+- Contract or scope changes that may require additional authorization
 - Anti-patterns to fix
 - Refactoring checklist
 
 ## Knowledge map
 
+- Shared extraction decisions → [readability and boundaries](../../common/engineering/references/readability-and-boundaries.md).
+- Shared behavior-preservation, evidence, and authorization principles → [verification and change safety](../../common/engineering/references/verification-and-change-safety.md).
+
 Always start here, then follow references as needed:
 
 - Safe refactorings → `references/safe-refactorings.md`
-- Permission required → `references/permission-required.md`
+- Scope and permission → `references/permission-required.md`
 - Anti-patterns → `references/anti-patterns.md`
 
 ## Fast decision hints
@@ -51,7 +54,7 @@ Always start here, then follow references as needed:
 - `<default>` Default: Preserve existing behavior (all tests must pass)
 - `<default>` Default: Run tests before and after refactoring
 - `<heuristic>` Heuristic: Commit frequently with descriptive messages
-- `<exception>` Exception: Keep code coverage ≥80%
+- `<default>` Default: Follow project coverage requirements; coverage percentages are project-specific, not exceptions or universal quality targets.
 
 For cross-vault wording and priority rules, see `../../RULES.md` or the nearest root copy in context.
 

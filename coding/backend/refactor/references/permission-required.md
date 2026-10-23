@@ -7,10 +7,10 @@ topics: [refactor, permission required]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
-# Refactorings Requiring Permission
+# Refactoring Scope and Permission
 
 ## When to use
 
@@ -23,10 +23,12 @@ Use this document when:
 
 ## Rules
 
-These changes require explicit permission before proceeding:
+First check the existing task authorization. These changes need additional approval only when their impact or execution falls outside the approved scope. Routine authorized work does not require repeated permission. See the canonical [verification and change safety](../../../common/engineering/references/verification-and-change-safety.md) guidance and [contracts and validation](../../../common/engineering/references/contracts-and-validation.md).
+
+Inspect the impact of:
 
 - Changing endpoint routes
-- Renaming DTOs
+- Renaming DTOs that affect exported or generated contracts
 - Modifying public method signatures
 - Database schema changes
 - Adding new dependencies
@@ -34,10 +36,11 @@ These changes require explicit permission before proceeding:
 ## Changing Endpoint Routes
 
 ```typescript
-// ⚠️ Requires permission - breaking change for API consumers
+// Internal parameter rename: update bindings; the concrete URL is unchanged.
+// Check generated client/schema impact separately.
 @Get('users/:id')  →  @Get('users/:userId')
 
-// ⚠️ Requires permission - route change
+// Check authorization and compatibility - route change
 @Get('user-profiles')  →  @Get('profiles')
 ```
 
@@ -46,26 +49,26 @@ These changes require explicit permission before proceeding:
 ## Renaming DTOs
 
 ```typescript
-// ⚠️ Requires permission - affects API consumers
+// Internal rename unless imports or generated schemas expose this name
 export class CreateUserDto { ... }  →  export class RegisterUserDto { ... }
 
-// ⚠️ Requires permission - field name change
+// Check authorization and compatibility - field name change
 export class CreateUserDto {
   userName: string;  →  displayName: string;
 }
 ```
 
-**Why:** API request/response structure changes.
+**Why:** A class rename alone need not change serialized data. It can affect imports, generated clients, or schema names if exposed; a serialized field rename changes the wire contract. Update internal callers together, and check actual consumers before classifying the change.
 
 ## Modifying Public Method Signatures
 
 ```typescript
-// ⚠️ Requires permission - breaking change for other modules
+// Check authorization and compatibility - breaking change for other modules
 async findOne(id: string): Promise<User>
   →
 async findOne(id: string, includeDeleted: boolean): Promise<User>
 
-// ⚠️ Requires permission - return type change
+// Check authorization and compatibility - return type change
 async findOne(id: string): Promise<User>
   →
 async findOne(id: string): Promise<User | null>
@@ -76,17 +79,17 @@ async findOne(id: string): Promise<User | null>
 ## Database Schema Changes
 
 ```prisma
-// ⚠️ Requires permission - migration needed
+// Check authorization and compatibility - migration needed
 model User {
   email String  →  emailAddress String
 }
 
-// ⚠️ Requires permission - data loss possible
+// Check authorization and compatibility - data loss possible
 model User {
   middleName String?  // Removing this field
 }
 
-// ⚠️ Requires permission - making optional required
+// Check authorization and compatibility - making optional required
 model User {
   phone String?  →  phone String
 }
@@ -97,7 +100,7 @@ model User {
 ## Adding New Dependencies
 
 ```bash
-# ⚠️ Requires permission - affects bundle size and security
+# Check authorization - affects bundle size and security
 pnpm add new-package
 ```
 
@@ -105,7 +108,7 @@ pnpm add new-package
 
 ## How to Request Permission
 
-When you need permission for a breaking change:
+When the required change is outside existing authorization:
 
 1. **Explain the change:** What you want to change and why
 2. **Show the impact:** What will break and who is affected
@@ -115,15 +118,14 @@ When you need permission for a breaking change:
 ```markdown
 ⚠️ Breaking Change Request:
 
-**Change:** Rename `CreateUserDto` to `RegisterUserDto` **Reason:** Better semantic naming for registration endpoint **Impact:** Frontend
-registration form needs update **Migration:** Update frontend in same PR **Risk:** Low - internal API only
+**Change:** Rename the serialized request field `userName` to `displayName`. **Reason:** Align the public contract. **Impact:** Existing clients sending `userName` would fail. **Migration:** Temporarily accept both names and update clients before removal. **Approval needed:** This public contract change is outside the approved internal refactor.
 
 Proceed? [y/n]
 ```
 
 ## Notes
 
-- When in doubt, ask first
+- Clarify missing authorization when necessary; preserve existing approval for routine work already in scope
 - Breaking changes should be batched when possible
 - Consider deprecation period for public APIs
 - Document all breaking changes in CHANGELOG

@@ -1,6 +1,6 @@
 # Vaults Workspace
 
-Personal knowledge-base vaults maintained as LLM-driven wikis, stored as markdown and browsed in Obsidian.
+Personal knowledge vaults and a reusable coding instruction library, stored as Markdown and browsed in Obsidian.
 
 ## Vaults
 
@@ -20,9 +20,9 @@ The primary vault. An LLM-maintained wiki built on top of *This Week in React* s
 
 Notes on transformer architecture, reasoning models, and how LLMs work internally.
 
-### `coding/` — Coding Wiki
+### `coding/` — Coding Instruction Library
 
-A second LLM-maintained wiki covering backend, frontend, and general coding practices.
+A curated library of reusable frontend, backend, and cross-cutting engineering skills. Start with [coding/index.md](coding/index.md); [coding/AGENTS.md](coding/AGENTS.md) defines its instruction-oriented structure and authoring rules. It does not use raw/source ingestion layers.
 
 ## Workspace-level Files
 
@@ -32,7 +32,7 @@ A second LLM-maintained wiki covering backend, frontend, and general coding prac
 
 - Markdown-first, Obsidian-compatible with `[[wikilinks]]`.
 - Each vault is self-contained: its own `AGENTS.md`, `index.md`, `log.md`.
-- Raw layers store immutable sources; wiki layers hold agent-curated knowledge.
-- All vaults follow the ingest → normalize → synthesize → lint cycle described in `LLM-WIKI.md`.
+- Where a vault uses raw/wiki layers, raw layers store immutable sources and wiki layers hold agent-curated knowledge.
+- The frontend wiki follows the ingest → normalize → synthesize → lint cycle described in `LLM-WIKI.md`; `coding/` follows its skill authoring and validation conventions.
 - TWIR ingest helpers live in `scripts/`; agents should run `python3 scripts/twir_status.py` before and after TWIR ingest, then use `twir_promotion_candidates.py` to flag repeated themes for editorial review.
-- User-facing workflow is intentionally simple: ask the agent for `ingest` or `lint`; the agent runs the scripts and performs the wiki updates/checks.
+- For the frontend wiki, ask the agent for `ingest` or `lint`; the agent runs the scripts and performs the wiki updates/checks.

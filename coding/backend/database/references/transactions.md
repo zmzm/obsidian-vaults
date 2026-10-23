@@ -7,7 +7,7 @@ topics: [database, transactions]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
 # Transactions
@@ -24,7 +24,7 @@ Use this document when:
 ## Rules
 
 - Use transactions for multi-step operations
-- All operations succeed or all fail
+- Operations inside the database transaction commit or roll back together; local files and remote actions are outside that boundary. See [state and recovery](../../../common/engineering/references/state-and-recovery.md) for cross-boundary effects.
 - Keep transactions short
 - Handle errors appropriately
 

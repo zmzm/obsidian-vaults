@@ -1,7 +1,7 @@
 ---
 type: log
 status: active
-updated: 2026-05-08
+updated: 2026-10-23
 ---
 
 # Log
@@ -57,3 +57,12 @@ updated: 2026-05-08
 - Added `index.md` as the root navigation map for `frontend`, `backend`, and `common`.
 - Added `backend/INDEX.md` and `common/INDEX.md` so those branches have explicit entry points like `frontend/INDEX.md`.
 - Next sensible step: normalize metadata and formatting across `SKILL.md` and `references/` files, then reduce duplicated cross-skill guidance.
+
+## [2026-10-23] common | Framework-independent engineering skill
+
+- Added `common/engineering/SKILL.md` and six canonical references for readability/boundaries, runtime contracts, state/recovery, retries/idempotency, safe diagnostics, and verification/change safety.
+- Linked engineering from the root/common indexes, task-workflow, and relevant backend/frontend skills; retained framework-specific examples in their domains.
+- Narrowly corrected method-length, coverage category, Prisma catch/injection, internal rename, transaction-boundary, and already-authorized scope guidance.
+- Corrected the workspace README to describe `coding/` as an instruction library without raw/source ingestion layers.
+- Validation: both skill validators and changed-link/metadata/index checks passed. Four unconstrained Knowledge Router queries selected engineering and returned the relevant reference content using an isolated checkout and temporary cache; production indexes were not rebuilt.
+- Deferred: legacy exception labels for Nx module structure, protected-endpoint authorization, DTO validation, and unique-constraint handling remain in backend skills. They are ordinary domain constraints/conventions rather than documented bypasses; correcting those categories is separate from this focused addition.

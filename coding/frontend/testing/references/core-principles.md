@@ -7,7 +7,7 @@ topics: [testing, core principles]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
 # Testing Core Principles
@@ -28,7 +28,7 @@ Use this document when:
 - Use renderComponent from `@mentory/test-utils` library
 - Use setupMswServer from `@mentory/test-utils` library
 - Follow AAA pattern: Arrange → Act → Assert
-- Achieve 80% minimum code coverage
+- Follow the project's configured coverage threshold (80% only where required)
 - Test user behavior, not implementation details
 - Prefer getByRole over other queries (accessibility)
 - Test loading, success, and error states
@@ -110,7 +110,7 @@ route-level tests until those suites are fully MSW-based.
 
 ### Coverage Requirements
 
-- Minimum 80% coverage for all files
+- Coverage thresholds and per-file requirements are project-specific; see [verification and change safety](../../../common/engineering/references/verification-and-change-safety.md) for shared test strategy and evidence limits.
 - Test all user-facing features
 - Test loading, success, and error states
 - Test accessibility (ARIA labels, keyboard navigation)

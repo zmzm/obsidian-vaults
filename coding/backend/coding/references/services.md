@@ -7,7 +7,7 @@ topics: [coding, services]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
 # Services
@@ -21,13 +21,15 @@ Use this document when:
 - Handling external service integrations
 - Managing error handling in services
 
+> **Shared principles**: [readability and boundaries](../../../common/engineering/references/readability-and-boundaries.md) and [errors and observability](../../../common/engineering/references/errors-and-observability.md) are canonical for framework-independent decisions. This page covers NestJS service conventions.
+
 ## Rules
 
 - Contain all business logic for the feature
-- Inject PrismaService for database operations
+- Inject PrismaService where the service directly owns Prisma access; use an existing persistence abstraction where the project has one. Services without database work need neither.
 - Return typed promises (Promise<Type>)
-- Let NestJS exception filters handle Prisma errors
-- Use try/catch for external operations only (email, APIs, file I/O)
+- Delegate Prisma-to-HTTP translation to the project's configured exception filter when it owns that policy; NestJS does not automatically supply application-specific Prisma mapping.
+- Catch Prisma or other failures when translating, recovering, isolating work, or adding useful context; otherwise let them reach the established handler.
 - Return null for not-found cases (let controller decide response)
 
 ## Examples
@@ -54,14 +56,15 @@ export class UsersService {
     });
   }
 
-  async sendWelcomeEmail(userId: string): Promise<void> {
+  async sendWelcomeEmail(userId: string): Promise<'sent' | 'recipient_missing'> {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return 'recipient_missing';
     try {
-      // External operation - use try/catch
-      const user = await this.prisma.user.findUnique({ where: { id: userId } });
       await this.emailService.send(user.email, 'Welcome!');
+      return 'sent';
     } catch (error) {
-      this.logger.error(`Failed to send welcome email: ${error.message}`);
-      throw new InternalServerErrorException('Failed to send email');
+      this.logger.error({ event: 'welcome_email_failed', category: 'dependency_failure' });
+      throw new InternalServerErrorException('Failed to send email', { cause: error });
     }
   }
 }
@@ -75,7 +78,7 @@ export class UsersService {
   async create(data: any) {
     // ❌ No typing
     try {
-      return await this.prisma.user.create({ data }); // ❌ Unnecessary try/catch for Prisma
+      return await this.prisma.user.create({ data }); // Catch discards the failure
     } catch (error) {
       return null; // ❌ Swallowing errors
     }
@@ -86,7 +89,7 @@ export class UsersService {
 ## Anti-patterns
 
 - Using `any` type for parameters or returns
-- Wrapping Prisma operations in try/catch
+- Catching Prisma failures only to discard or obscure them
 - Swallowing errors (return null/undefined without throwing)
 - Mutating input parameters
 - Missing Logger for important events

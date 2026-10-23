@@ -42,6 +42,8 @@ This skill provides guidance for:
 
 ## Knowledge map
 
+- Test selection and evidence limits → [verification and change safety](../../common/engineering/references/verification-and-change-safety.md), the canonical shared guidance; use the references below for React test conventions.
+
 Always start here, then follow references as needed:
 
 - Core Principles → `references/core-principles.md`

@@ -7,7 +7,7 @@ topics: [refactor, anti patterns]
 priority: medium
 status: stable
 canonical: false
-updated: 2026-04-16
+updated: 2026-10-23
 ---
 
 # Anti-Patterns to Fix
@@ -203,7 +203,7 @@ if (!user.permissions.includes('DELETE')) return;
 
 ## Notes
 
-- Keep methods under 50 lines
+- Heuristic: Use method length (including roughly 50 lines) as a review signal for cohesion and hidden effects, not a fixed limit; see the canonical [readability and boundaries](../../../common/engineering/references/readability-and-boundaries.md) guidance.
 - Each class should have a single responsibility
 - Extract repeated code into utilities
 - Use descriptive names for variables and methods

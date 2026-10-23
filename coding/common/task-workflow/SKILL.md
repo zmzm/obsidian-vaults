@@ -18,6 +18,7 @@ Use this skill when you are:
 
 ## When not to use this knowledge
 
+- engineering decisions about maintainability and reliability, which belong to [engineering](../engineering/SKILL.md)
 - detailed domain implementation concerns that belong to frontend or backend skills
 - semantic code navigation concerns that belong to `serena`
 - creation, packaging, or normalization of skills themselves, which belongs to `skill-creator`
@@ -58,6 +59,7 @@ This skill covers **workflow choice and context discipline**. For:
 
 - **semantic code navigation and symbol-level editing** → see `serena`
 - **creating or packaging skills** → see `skill-creator`
+- **shared engineering decisions** → see [engineering](../engineering/SKILL.md), loading only the references needed by the scoped task
 - **domain implementation rules** → move into the relevant frontend or backend skill once the task is scoped
 
 ## Maintenance Notes

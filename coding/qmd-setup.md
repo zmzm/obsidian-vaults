@@ -1,10 +1,15 @@
 ---
 type: guide
-status: active
-updated: 2026-04-20
+status: deprecated
+updated: 2026-09-17
 ---
 
 # QMD Setup Guide
+
+> **DEPRECATED (2026-09-17):** `QMD` has been replaced by
+> [knowledge-router](/home/pentagon-admin/Documents/apps/knowledge-router), a local
+> deterministic retrieval engine for this vault. See its `README.md` and `AGENT-USAGE.md`.
+> This guide is kept for history only and is excluded from retrieval by default.
 
 This file explains how to rebuild the `QMD` index for this coding vault on another computer.
 

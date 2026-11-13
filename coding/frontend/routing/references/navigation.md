@@ -3,7 +3,7 @@ id: frontend/routing/navigation
 name: frontend/routing/navigation
 kind: reference
 domain: frontend
-topics: [routing, navigation]
+topics: [routing, navigation, URL state, query params, query strings]
 priority: medium
 status: stable
 canonical: false

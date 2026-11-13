@@ -3,7 +3,7 @@ id: backend/security/owasp-protection
 name: backend/security/owasp-protection
 kind: reference
 domain: backend
-topics: [security, owasp protection]
+topics: [security, owasp protection, endpoint authorization, server-side access control]
 priority: medium
 status: stable
 canonical: false

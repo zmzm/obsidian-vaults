@@ -1,4 +1,5 @@
 ---
+keywords: ["component testing", "component tests", "testing standards"]
 name: fe-testing
 description: Testing with RTL, MSW, Jest. Use renderComponent and setupMswServer from @mentory/test-utils.
 triggers:

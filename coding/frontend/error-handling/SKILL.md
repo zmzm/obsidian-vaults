@@ -1,4 +1,6 @@
 ---
+metadata:
+  frameworks: [React]
 name: fe-error-handling
 description: Error boundaries, toast notifications, API error handling. Use for user feedback on errors.
 triggers:

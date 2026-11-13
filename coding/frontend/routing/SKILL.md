@@ -1,4 +1,5 @@
 ---
+keywords: ["URL state", "react router", "useSearchParams"]
 name: fe-routing
 description: React Router patterns, route guards, navigation. Use for routes.tsx and navigation logic.
 triggers:

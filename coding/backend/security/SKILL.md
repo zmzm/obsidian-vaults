@@ -1,4 +1,5 @@
 ---
+keywords: ["backend authorization", "protected endpoints", "endpoint authorization", "server authorization"]
 name: be-security
 description:
 

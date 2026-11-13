@@ -1,4 +1,6 @@
 ---
+metadata:
+  frameworks: [NestJS]
 name: be-coding
 description:
 
